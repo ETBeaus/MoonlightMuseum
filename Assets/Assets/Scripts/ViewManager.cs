@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class ViewManager : MonoBehaviour
 {
-    public List<Texture2D> backgrounds;
+    public List<Texture2D> views;
     public RawImage backgroundImage;
     public CanvasGroup fadePanel;
 
@@ -56,7 +56,7 @@ public class ViewManager : MonoBehaviour
 
         if (fadePanel.alpha == 1 && _isFadingOut)
         {
-            backgroundImage.texture = backgrounds[nextViewIndex];
+            backgroundImage.texture = views[nextViewIndex];
             _isFadingOut = false;
             _isFadingIn = true;
         }

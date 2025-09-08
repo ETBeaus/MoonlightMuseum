@@ -794,7 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ee58404dd0c4e4cbac9ae0de670ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ViewManager1
-  backgrounds:
+  views:
   - {fileID: 2800000, guid: acdaab06845526a4ab86a808d2322af5, type: 3}
   - {fileID: 2800000, guid: 792f9a6f8b0ec2f42a728972d788c510, type: 3}
   backgroundImage: {fileID: 464360428}
