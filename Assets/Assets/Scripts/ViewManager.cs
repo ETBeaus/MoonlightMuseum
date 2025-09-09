@@ -10,6 +10,8 @@ public class ViewManager : MonoBehaviour
     public RawImage backgroundImage;
     public CanvasGroup fadePanel;
 
+    public float fadeSpeed = 1f;
+
     bool _isChangingBackground = false;
     bool _hasChangedUI = false;
     bool _isFadingOut = false;
@@ -39,6 +41,16 @@ public class ViewManager : MonoBehaviour
         _isChangingBackground = true;
     }
 
+    public void DisableActiveButtons(GameObject activeButtons)
+    {
+        activeButtons.SetActive(false);
+    }
+
+    public void MiscInteraction(GameObject textToShow)
+    {
+        textToShow.SetActive(true);
+    }
+
     private void ChangeBackground(int nextViewIndex)
     {
         if (fadePanel.alpha == 0 && _timer == 0)
@@ -50,7 +62,7 @@ public class ViewManager : MonoBehaviour
         {
             if (fadePanel.alpha < 1)
             {
-                fadePanel.alpha += Time.deltaTime;
+                fadePanel.alpha += Time.deltaTime * fadeSpeed;
             }
         }
 
@@ -65,7 +77,7 @@ public class ViewManager : MonoBehaviour
         {
             if (fadePanel.alpha > 0)
             {
-                fadePanel.alpha -= Time.deltaTime;
+                fadePanel.alpha -= Time.deltaTime * fadeSpeed;
             }
         }
 
