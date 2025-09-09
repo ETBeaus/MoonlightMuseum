@@ -7,49 +7,57 @@ using UnityEngine.UIElements;
 public class ViewManager : MonoBehaviour
 {
     public List<Texture2D> views;
+    public List<GameObject> buttonGroups;
     public RawImage backgroundImage;
     public CanvasGroup fadePanel;
 
     public float fadeSpeed = 1f;
 
     bool _isChangingBackground = false;
-    bool _hasChangedUI = false;
     bool _isFadingOut = false;
     bool _isFadingIn = false;
     float _timer = 0;
 
+    int _previousViewIndex;
     int _currentViewIndex = 0;
     int _nextViewIndex;
+
+    int _nextViewButtonsIndex;
 
     void Update()
     {
         if (_isChangingBackground)
         {
-            if (!_hasChangedUI)
-            {
-                ChangeUI();
-                _hasChangedUI = true;
-            }
             ChangeBackground(_nextViewIndex);
         }
     }
 
+    //-------------------------UI OnClick() METHODS--------------------------------
+
     public void ChangeBackgroundButton(int nextViewIndex)
     {
+        _previousViewIndex = _currentViewIndex;
         _nextViewIndex = nextViewIndex;
-        _currentViewIndex = nextViewIndex;
         _isChangingBackground = true;
     }
 
-    public void DisableActiveButtons(GameObject activeButtons)
+    public void DisableActiveButtons(int activeButtonsIndex)
     {
-        activeButtons.SetActive(false);
+        buttonGroups[activeButtonsIndex].SetActive(false);
+    }
+
+    public void EnableNextViewButtons(int nextViewButtonsIndex)
+    {
+        _nextViewButtonsIndex = nextViewButtonsIndex;
     }
 
     public void MiscInteraction(GameObject textToShow)
     {
         textToShow.SetActive(true);
     }
+
+
+    //------------------------PRIVATE METHODS---------------------------------
 
     private void ChangeBackground(int nextViewIndex)
     {
@@ -69,6 +77,7 @@ public class ViewManager : MonoBehaviour
         if (fadePanel.alpha == 1 && _isFadingOut)
         {
             backgroundImage.texture = views[nextViewIndex];
+            _currentViewIndex = nextViewIndex;
             _isFadingOut = false;
             _isFadingIn = true;
         }
@@ -83,15 +92,11 @@ public class ViewManager : MonoBehaviour
 
         if (fadePanel.alpha == 0 && _isFadingIn)
         {
+            buttonGroups[_nextViewButtonsIndex].SetActive(true); //Activates the UI buttons for next room
             _isFadingIn = false;
             _timer = 0;
             _isChangingBackground = false;
-            _hasChangedUI = false;
         }
     }
 
-    private void ChangeUI()
-    {
-        //Here, we'll add the logic to change UI from view to view
-    }
 }
