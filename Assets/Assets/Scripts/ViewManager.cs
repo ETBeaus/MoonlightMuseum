@@ -22,7 +22,10 @@ public class ViewManager : MonoBehaviour
     int _currentViewIndex = 0;
     int _nextViewIndex;
 
+    int _previousViewButtonsIndex;
+    int _currentViewButtonsIndex = 0;
     int _nextViewButtonsIndex;
+    
 
     void Update()
     {
@@ -41,19 +44,28 @@ public class ViewManager : MonoBehaviour
         _isChangingBackground = true;
     }
 
-    public void DisableActiveButtons(int activeButtonsIndex)
+    public void DisableActiveButtons()
     {
-        buttonGroups[activeButtonsIndex].SetActive(false);
+        buttonGroups[_currentViewButtonsIndex].SetActive(false);
     }
 
     public void EnableNextViewButtons(int nextViewButtonsIndex)
     {
+        _previousViewButtonsIndex = _currentViewButtonsIndex;
         _nextViewButtonsIndex = nextViewButtonsIndex;
+        _currentViewButtonsIndex = _nextViewButtonsIndex;
     }
 
     public void MiscInteraction(GameObject textToShow)
     {
         textToShow.SetActive(true);
+    }
+
+    public void WalkBack()
+    {
+        DisableActiveButtons();
+        ChangeBackgroundButton(_previousViewIndex);
+        EnableNextViewButtons(_previousViewButtonsIndex);
     }
 
 
