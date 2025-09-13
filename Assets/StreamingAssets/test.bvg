@@ -4,72 +4,64 @@ count=9
 
 id=0
 label=arrrgh
-
 pos={2487.511963, 1903.858398}
 background_id=0
-_0
+e=0
 
 id=1
 label=yoooo
-
 pos={3127.511963, 3043.858398}
 background_id=3
-_0
-_1
+e=0
+e=1
 
 id=2
 label=boop
-
 pos={4127.511719, 3103.858398}
 background_id=0
-_1
-_2
-_3
-_4
+e=1
+e=2
+e=3
+e=4
 
 id=3
 label=blabla
-
 pos={4062.511719, 4118.858398}
 background_id=1
-_2
+e=2
 
 id=4
 label=beep
-
 pos={4847.511719, 2648.858398}
 background_id=0
-_3
-_6
+e=3
+e=6
 
 id=5
 label=bop
-
 pos={5102.511719, 4043.858154}
 background_id=1
-_4
-_5
+e=4
+e=5
 
 id=6
 label=room6
-
 pos={6540.347656, 3236.024902}
 background_id=3
-_6
+e=6
 
 id=7
 label=room7
-
 pos={6250.347656, 4491.024414}
 background_id=0
-_5
-_7
+e=5
+e=7
 
 id=8
 label=room8
 pos={7130.347656, 4116.024414}
 background_id=-1
-_7
+e=7
 
 [edges]
 count=8
