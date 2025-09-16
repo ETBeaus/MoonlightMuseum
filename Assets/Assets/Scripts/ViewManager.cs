@@ -19,13 +19,21 @@ public class ViewManager : MonoBehaviour
     float _timer = 0;
 
     int _previousViewIndex;
-    int _currentViewIndex = 0;
+    int _currentViewIndex;
     int _nextViewIndex;
 
     int _previousViewButtonsIndex;
     int _currentViewButtonsIndex = 0;
     int _nextViewButtonsIndex;
-    
+
+	public MapLoader _mapLoader;
+	
+	// NOTE: **
+	// For use in test scene
+	public void SetViewId(int id) { 
+		_currentViewIndex = id;
+		backgroundImage.texture = views[id];
+	}
 
     void Update()
     {
@@ -110,5 +118,4 @@ public class ViewManager : MonoBehaviour
             _isChangingBackground = false;
         }
     }
-
 }

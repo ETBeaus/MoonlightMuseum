@@ -1,13 +1,14 @@
-using UnityEngine;
 using System.IO;
+using UnityEngine;
+using UnityEngine.UI;
 
-public struct NodeData
+public class NodeData
 {
 	// Node index
 	public byte Id;
 
 	// Background texture index
-	public byte Background;
+	public sbyte Background;
 
 	// Number of connected edges
 	public byte EdgeCount;
@@ -19,7 +20,7 @@ public struct NodeData
 	public string Label;
 }
 
-public struct EdgeData
+public class EdgeData
 {
 	// Edge index
 	public byte Id;	
@@ -36,26 +37,40 @@ public class MapLoader : MonoBehaviour
 	public byte NodeCount;
 	public byte EdgeCount;
 
-	public NodeData[] nodes = new NodeData[byte.MaxValue];
-	public EdgeData[] edges = new EdgeData[byte.MaxValue];
+	public NodeData[] nodes; 
+	public EdgeData[] edges; 
 
 	private delegate void _parseLineFn(string key, string val, ref byte currId);
 	private _parseLineFn[] _parseFns;
 
+	private ViewManager _viewManager;
+
+	public GameObject RoomPrefab;
+	public GameObject DoorPrefab;
+
     void Start()
     {
+		nodes = new NodeData[byte.MaxValue];
+		edges = new EdgeData[byte.MaxValue];
+
 		for(byte i = 0; i < byte.MaxValue; i++) 
 		{
 			// Allocate edge reference array on nodes
+			nodes[i] = new NodeData(); 
 			nodes[i].Edges = new byte[8];
 
 			// Allocate node references and point arrays on edges
+			edges[i] = new EdgeData();
 			edges[i].Nodes = new byte[2];
 			edges[i].Points = new Vector2[2];
 		}
 
 		// Set function pointers/delegates
 		_parseFns = new _parseLineFn[] { ParseLineNodes, ParseLineEdges };
+		
+		//_viewManager = gameObject.GetComponent<ViewManager>();
+		_viewManager = GameObject.Find("Background/Fade").GetComponent<ViewManager>();
+		_viewManager._mapLoader = this;
 		
 		LoadMap("test.txt");
     }
@@ -83,6 +98,14 @@ public class MapLoader : MonoBehaviour
 
 		// Close file stream
 		reader.Dispose();
+
+	    //for(byte i = 0; i < NodeCount; i++)
+	    //	Debug.Log($"node[{i}] bg: {nodes[i].Background}");
+
+		PrintNodeData();
+
+		// Set start view
+		_viewManager.SetViewId(nodes[0].Background);
 	}
 
 	private void ParseLine(string line, ref sbyte sector, ref byte currId) 
@@ -118,6 +141,7 @@ public class MapLoader : MonoBehaviour
 
 			case "id":
 				currId = byte.Parse(val);
+				nodes[currId].Id = currId;
 				Debug.Log($"currId: {currId}");
 				break;
 			
@@ -125,8 +149,8 @@ public class MapLoader : MonoBehaviour
 				nodes[currId].Label = val;
 				break;
 
-			case "backgound_id":
-				nodes[currId].Background = byte.Parse(val);
+			case "background_id":
+				nodes[currId].Background = sbyte.Parse(val);
 				break;
 
 			case "e":
@@ -167,7 +191,6 @@ public class MapLoader : MonoBehaviour
 
 	private Vector2 ParseVec2(string str)
 	{
-		Debug.Log($"parsing vec2: {str}");
 
 		int braceOpenId = str.IndexOf('{');
 		int BraceCloseId = str.IndexOf('}');
@@ -176,10 +199,42 @@ public class MapLoader : MonoBehaviour
 		string strFloatX = str[(braceOpenId+1)..commaId];
 		string strFloatY = str[(commaId+2)..BraceCloseId];
 
-		Debug.Log($"str_x: {strFloatX}");
-		Debug.Log($"str_y: {strFloatY}");
+		//Debug.Log($"parsing vec2: {str}");
+		//Debug.Log($"str_x: {strFloatX}");
+		//Debug.Log($"str_y: {strFloatY}");
 
 		return new Vector2(float.Parse(strFloatX), float.Parse(strFloatY));
+	}
+
+	private void InitMapObjects() 
+	{
+		for(byte i = 0; i < NodeCount; i++)
+		{
+			/*
+			_viewManager.Rooms.Add(
+					Instantiate(RoomPrefab, Vector2.zero, Quaternion.identity)
+			);
+			*/
+		}
+
+		for(byte i = 0; i < EdgeCount; i++)
+		{
+		}
+	}
+
+	private void PrintNodeData()
+	{
+		Debug.Log("----- NODE DATA -----");
+
+		for(byte i = 0; i < NodeCount; i++)
+		{
+			Debug.Log($"raw index: {i}");
+			Debug.Log($"id: {nodes[i].Id}");
+			Debug.Log($"label: {nodes[i].Label}");
+			Debug.Log($"bg: {nodes[i].Background}");
+		}
+
+		Debug.Log("---------------------");
 	}
 }
 

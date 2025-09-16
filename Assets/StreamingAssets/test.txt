@@ -5,7 +5,7 @@ count=9
 id=0
 label=arrrgh
 #pos={2487.511963, 1903.858398}
-background_id=0
+background_id=5
 e=0
 
 id=1
