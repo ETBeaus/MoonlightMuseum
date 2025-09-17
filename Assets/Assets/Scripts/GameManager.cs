@@ -10,13 +10,11 @@ public class GameManager : MonoBehaviour
 
     public int currentViewIndex;
 
-    public List<string> genericDialogueList;
-
-    public List<string> specificDialogueList;
+    
 
     public List<bool> answeredTriviaList;
 
-    public TMP_Text dialogueBox;
+    
 
     [SerializeField] private bool _hasAnsweredTriviaRoom1 = false;
 
