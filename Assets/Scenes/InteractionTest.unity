@@ -1301,7 +1301,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 234967338}
-        m_TargetAssemblyTypeName: BeaverInteraction, Assembly-CSharp
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: NextLine
         m_Mode: 1
         m_Arguments:
@@ -1686,33 +1686,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 234967336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b8920cfde4f26448e4d66b732ac2d9, type: 3}
+  m_Script: {fileID: 11500000, guid: bbeae11395ac3764a90bd26f416abc8b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BeaverInteraction
-  currentViewIndex: 0
-  answeredTriviaList: 
-  _hasAnsweredTriviaRoom1: 0
-  roomNumber: 1
-  nameOfPatron: Test Beaver Patron
-  dialogueUI: {fileID: 260772772}
-  beaverButton: {fileID: 550006222}
-  beaverPortraitUI: {fileID: 1794739977}
-  beaverPortraitTexture: {fileID: 2800000, guid: 792f9a6f8b0ec2f42a728972d788c510, type: 3}
-  nextDialogueButton: {fileID: 176033808}
-  dialogueBox: {fileID: 1743999400}
-  nameBox: {fileID: 1665155844}
-  genericDialogueList:
-  - I like this place!
-  - Museums are so cool!
-  - Yay for learning!
-  - This is so much fun!
-  - I love you, Baby Beaver!
-  specificDialogueList:
-  - This is my first line
-  - This is my second line
-  - This is my fourth  line
-  - Joke, it was my third line
-  - What line is that?
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  DialogueCanvas: {fileID: 260772772}
+  BeaverButton: {fileID: 550006222}
+  BeaverPortraitUI: {fileID: 1794739977}
+  DialogueTextOutput: {fileID: 1743999400}
+  NameOutput: {fileID: 1665155844}
+  NextDialogueButton: {fileID: 176033808}
+  DialoguePanel: {fileID: 1005014733}
+  ChoicePanel: {fileID: 663509392}
+  ChoiceButton_NoImpact_Prefab: {fileID: 8483594955216161987, guid: d6091f2513e6ba44bb72367f34beba4e, type: 3}
+  SO_DialogueEvents:
+  - {fileID: 11400000, guid: eb2ab859be0f7f341b2f78a8816af26d, type: 2}
+  - {fileID: 11400000, guid: b2fd0f125e0dd4c46b073aa9a9f2f862, type: 2}
+  - {fileID: 11400000, guid: 15042a0a387d3bf4490510070f7ee2a0, type: 2}
+  - {fileID: 11400000, guid: 46dd3a5fa8be49e4bbb77289fb1a08d9, type: 2}
 --- !u!1 &250833678
 GameObject:
   m_ObjectHideFlags: 0
@@ -3655,7 +3645,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 234967338}
-        m_TargetAssemblyTypeName: BeaverInteraction, Assembly-CSharp
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: StartDialogue
         m_Mode: 1
         m_Arguments:
@@ -4060,6 +4050,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619506448}
   m_CullTransparentMesh: 1
+--- !u!1 &663509392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 663509393}
+  - component: {fileID: 663509396}
+  - component: {fileID: 663509395}
+  - component: {fileID: 663509394}
+  m_Layer: 5
+  m_Name: ChoicePanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &663509393
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663509392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 983827877}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 63.379, y: -19.134}
+  m_SizeDelta: {x: -166.76, y: -53.268}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &663509394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663509392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 1
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &663509395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663509392}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &663509396
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663509392}
+  m_CullTransparentMesh: 1
 --- !u!1 &733554321
 GameObject:
   m_ObjectHideFlags: 0
@@ -4353,53 +4445,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738784145}
   m_CullTransparentMesh: 1
---- !u!1 &808638816
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 808638818}
-  - component: {fileID: 808638817}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &808638817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808638816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb291805dff7fa9499adbbcdc78af4ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  currentViewIndex: 0
-  answeredTriviaList: 
-  _hasAnsweredTriviaRoom1: 0
---- !u!4 &808638818
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808638816}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &812074195
 GameObject:
   m_ObjectHideFlags: 0
@@ -4895,6 +4940,7 @@ RectTransform:
   - {fileID: 1005014734}
   - {fileID: 1794739976}
   - {fileID: 1665155843}
+  - {fileID: 663509393}
   m_Father: {fileID: 260772773}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -4952,7 +4998,7 @@ GameObject:
   - component: {fileID: 1005014736}
   - component: {fileID: 1005014735}
   m_Layer: 5
-  m_Name: DialogueText
+  m_Name: DialoguePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10148,7 +10194,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 234967338}
-        m_TargetAssemblyTypeName: BeaverInteraction, Assembly-CSharp
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: EndDialogue
         m_Mode: 1
         m_Arguments:
@@ -11104,5 +11150,4 @@ SceneRoots:
   - {fileID: 1941051134}
   - {fileID: 1282296956}
   - {fileID: 382535218}
-  - {fileID: 808638818}
   - {fileID: 234967337}
