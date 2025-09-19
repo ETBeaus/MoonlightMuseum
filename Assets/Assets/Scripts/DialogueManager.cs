@@ -6,7 +6,8 @@ using System.Runtime.CompilerServices;
 
 public class DialogueManager : MonoBehaviour
 {
-    //References to set in inspector
+    #region Public Fields
+    [Header("References")]
     public GameObject DialogueCanvas;
     public GameObject BeaverButton;
     public RawImage BeaverPortraitUI;
@@ -16,14 +17,18 @@ public class DialogueManager : MonoBehaviour
     public GameObject DialoguePanel;
     public GameObject ChoicePanel;
     public GameObject ChoiceButton_NoImpact_Prefab;
-
     public List<SO_DialogueTemplate> SO_DialogueEvents;
+    #endregion
 
-    //Private variables
+    #region Private Fields
+    [Header("Other")]
+    [SerializeField] private bool questionWasAnswered = false;
     private int _currentDialogueIndex;
     private List<GameObject> _choiceButtons = new List<GameObject>();
+    #endregion
 
-    //Public button methods
+    //------------------------------------------------PUBLIC BUTTON METHODS------------------------------------------------------
+    #region Public Button Methods
     public void StartDialogue()
     {
         ActivateDialogueCanvas();
@@ -82,8 +87,10 @@ public class DialogueManager : MonoBehaviour
             }
         DeactivateDialogueCanvas();
     }
+    #endregion
 
-    //Private methods
+    //------------------------------------------------PRIVATE METHODS------------------------------------------------------
+    #region Private Methods
     private void ResetDialogueIndex()
     {
         _currentDialogueIndex = 0;
@@ -178,5 +185,5 @@ public class DialogueManager : MonoBehaviour
     {
         BeaverButton.SetActive(true);
     }
-
+    #endregion
 }
