@@ -9,21 +9,21 @@ public class DialogueManager : MonoBehaviour
     #region Public Fields
     [Header("References")]
     public GameObject DialogueCanvas;
-    public GameObject BeaverButton;
+    public GameObject InitialButton;
     public RawImage BeaverPortraitUI;
     public TMP_Text DialogueTextOutput;
     public TMP_Text NameOutput;
     public GameObject NextDialogueButton;
     public GameObject DialoguePanel;
     public GameObject ChoicePanel;
-    public GameObject ChoiceButton_NoImpact_Prefab;
+    public GameObject ChoiceButton_Prefab;
     public List<SO_DialogueTemplate> SO_DialogueEvents;
     #endregion
 
     #region Private Fields
     [Header("Other")]
-    [SerializeField] private bool questionWasAnswered = false;
-    private int _currentDialogueIndex;
+    [SerializeField] private bool _questionWasAnswered = false;
+    [SerializeField] private int _currentDialogueIndex;
     private List<GameObject> _choiceButtons = new List<GameObject>();
     #endregion
 
@@ -33,58 +33,95 @@ public class DialogueManager : MonoBehaviour
     {
         ActivateDialogueCanvas();
         ResetDialogueIndex();
-        DeactivateBeaverButton();
-        SetPortraitImage(_currentDialogueIndex);
-        SetName(_currentDialogueIndex);
-        if (SO_DialogueEvents[_currentDialogueIndex].IsARepliesChoice)
-        {
-            DeactivateDialoguePanel();
-            ActivateChoicePanel();
-            SetupChoiceButtons();
-        }
-        else
-        {
-            DeactivateChoicePanel();
-            ActivateDialoguePanel();
-            SetLine(_currentDialogueIndex);
-        }
-        ActivateNextDialogueButton();
+        DeactivateInitialButton();
+        DisplayLine();
     }
 
+    /// <summary>
+    /// Resets the buttons and increments the _currentDialogueIndex.
+    /// If need be, reloads the question.
+    /// Then, display the associated line.
+    /// </summary>
     public void NextLine()
     {
         if (SO_DialogueEvents[_currentDialogueIndex].IsARepliesChoice)
         {
             ResetChoiceButtonList();
         }
-        _currentDialogueIndex++;
-        SetPortraitImage(_currentDialogueIndex);
-        SetName(_currentDialogueIndex);
-        if (SO_DialogueEvents[_currentDialogueIndex].IsARepliesChoice)
+
+        if (SO_DialogueEvents[_currentDialogueIndex].IsWrongAnswerReaction)
         {
-            DeactivateDialoguePanel();
-            ActivateChoicePanel();
-            SetupChoiceButtons();
+            ReloadQuestion();
+        }
+        else if (SO_DialogueEvents[_currentDialogueIndex].IsSecondTryRightAnswerReaction || SO_DialogueEvents[_currentDialogueIndex].IsFirstTryRightAnswerReaction)
+        {
+            JumpToAfterQuestionDialogue();
         }
         else
         {
-            DeactivateChoicePanel();
-            ActivateDialoguePanel();
-            SetLine(_currentDialogueIndex);
+            _currentDialogueIndex++;
         }
-        ActivateNextDialogueButton();
+
+        DisplayLine();
+    }
+
+    public void RightAnswer()
+    {
+        if (!_questionWasAnswered)
+        {
+            //StickerLogic
+
+            _questionWasAnswered = true;
+
+            for (int i = 0; i < SO_DialogueEvents.Count; i++)
+            {
+                if (SO_DialogueEvents[i].IsFirstTryRightAnswerReaction)
+                {
+                    _currentDialogueIndex = i;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < SO_DialogueEvents.Count; i++)
+            {
+                if (SO_DialogueEvents[i].IsSecondTryRightAnswerReaction)
+                {
+                    _currentDialogueIndex = i;
+                    break;
+                }
+            }
+        }
+        ResetChoiceButtonList();
+        DisplayLine();
+    }
+
+    public void WrongAnswer()
+    {
+        _questionWasAnswered = true;
+        for (int i = 0; i < SO_DialogueEvents.Count; i++)
+        {
+            if (SO_DialogueEvents[i].IsWrongAnswerReaction)
+            {
+                _currentDialogueIndex = i;
+                break;
+            }
+        }
+        ResetChoiceButtonList();
+        DisplayLine();
     }
 
     public void EndDialogue()
     {
-        if (SO_DialogueEvents[_currentDialogueIndex].IsARepliesChoice)
+        if (SO_DialogueEvents[_currentDialogueIndex].AnswerChoices.Count > 0)
         {
             ResetChoiceButtonList();
         }
         if (_currentDialogueIndex != SO_DialogueEvents.Count - 1)
-            {
-                ActivateBeaverButton();
-            }
+        {
+            ActivateInitialButton();
+        }
         DeactivateDialogueCanvas();
     }
     #endregion
@@ -103,6 +140,52 @@ public class DialogueManager : MonoBehaviour
             Destroy(_choiceButtons[i]);
         }
         _choiceButtons.Clear();
+    }
+
+    private void ReloadQuestion()
+    {
+        for (int i = 0; i < SO_DialogueEvents.Count; i++)
+        {
+            if (SO_DialogueEvents[i].IsAQuestion)
+            {
+                _currentDialogueIndex = i;
+                break;
+            }
+        }
+    }
+
+    private void JumpToAfterQuestionDialogue()
+    {
+        for (int i = 0; i < SO_DialogueEvents.Count; i++)
+        {
+            if (SO_DialogueEvents[i].IsFirstLineAfterQuestion)
+            {
+                _currentDialogueIndex = i;
+                break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Cycles through the methods needed to display the correct name, portrait and line or buttons
+    /// </summary>
+    private void DisplayLine()
+    {
+        SetPortraitImage(_currentDialogueIndex);
+        SetName(_currentDialogueIndex);
+        if (SO_DialogueEvents[_currentDialogueIndex].IsARepliesChoice)
+        {
+            DeactivateDialoguePanel();
+            ActivateChoicePanel();
+            SetupChoiceButtons();
+        }
+        else
+        {
+            DeactivateChoicePanel();
+            ActivateDialoguePanel();
+            SetLine(_currentDialogueIndex);
+        }
+        ActivateNextDialogueButton();
     }
 
     private void SetPortraitImage(int dialogueIndex)
@@ -162,28 +245,47 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// Instantiates button prefabs by cycling through the Answer List.
+    /// Populates them with the corresponding answer.
+    /// Adds a OnClick() method depending on the answer type.
+    /// </summary>
     private void SetupChoiceButtons()
     {
-        for (int i = 0; i < SO_DialogueEvents[_currentDialogueIndex].ReplyChoices.Count; i++)
+        for (int i = 0; i < SO_DialogueEvents[_currentDialogueIndex].AnswerChoices.Count; i++)
         {
-            _choiceButtons.Add(Instantiate(ChoiceButton_NoImpact_Prefab, ChoicePanel.transform));
+            _choiceButtons.Add(Instantiate(ChoiceButton_Prefab, ChoicePanel.transform));
         }
 
         for (int i = 0; i < _choiceButtons.Count; i++)
         {
-            _choiceButtons[i].GetComponentInChildren<TMP_Text>().text = SO_DialogueEvents[_currentDialogueIndex].ReplyChoices[i];
-            _choiceButtons[i].GetComponent<Button>().onClick.AddListener(NextLine);
+            if (SO_DialogueEvents[_currentDialogueIndex].AnswerChoices[i].IsRightAnswer)
+            {
+                _choiceButtons[i].GetComponentInChildren<TMP_Text>().text = SO_DialogueEvents[_currentDialogueIndex].AnswerChoices[i].Answer;
+                _choiceButtons[i].GetComponent<Button>().onClick.AddListener(RightAnswer);
+            }
+            else if (SO_DialogueEvents[_currentDialogueIndex].AnswerChoices[i].IsWrongAnswer)
+            {
+                _choiceButtons[i].GetComponentInChildren<TMP_Text>().text = SO_DialogueEvents[_currentDialogueIndex].AnswerChoices[i].Answer;
+                _choiceButtons[i].GetComponent<Button>().onClick.AddListener(WrongAnswer);
+            }
+            else
+            {
+                _choiceButtons[i].GetComponentInChildren<TMP_Text>().text = SO_DialogueEvents[_currentDialogueIndex].AnswerChoices[i].Answer;
+                _choiceButtons[i].GetComponent<Button>().onClick.AddListener(NextLine);
+            }
         }
     }
 
-    private void DeactivateBeaverButton()
+    private void DeactivateInitialButton()
     {
-        BeaverButton.SetActive(false);
+        InitialButton.SetActive(false);
     }
 
-    private void ActivateBeaverButton()
+    private void ActivateInitialButton()
     {
-        BeaverButton.SetActive(true);
+        InitialButton.SetActive(true);
     }
     #endregion
 }

@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
-  m_Name: Line_03
+  m_Name: Line_07
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
-  NameToDisplay: Baby Beaver
-  PortraitTexture: {fileID: 2800000, guid: 792f9a6f8b0ec2f42a728972d788c510, type: 3}
-  IsARepliesChoice: 1
-  ReplyChoices:
-  - 'My name is Charles Beaverton and I am six years old! '
-  - 'I''m BEAVERMAN! Do you like my cape? '
-  DialogueLine: 
+  NameToDisplay: Castor
+  PortraitTexture: {fileID: 2800000, guid: acdaab06845526a4ab86a808d2322af5, type: 3}
+  DialogueLine: There you go! I knew you would get it!
+  IsAQuestion: 0
+  IsARepliesChoice: 0
+  AnswerChoices: []
+  IsFirstLineAfterQuestion: 0
+  IsWrongAnswerReaction: 0
+  IsSecondTryRightAnswerReaction: 1
+  IsFirstTryRightAnswerReaction: 0
