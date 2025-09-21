@@ -47,9 +47,6 @@ public class MapLoader : MonoBehaviour
 	private _parseLineFn[] _parseFns;
 
 	private ViewManager _viewManager;
-
-	public GameObject RoomPrefab;
-	public GameObject DoorPrefab;
 	
 	private Movement _movement;
 	private PlayerMovement _pMovement;
@@ -74,15 +71,13 @@ public class MapLoader : MonoBehaviour
 		// Set function pointers/delegates
 		_parseFns = new _parseLineFn[] { ParseLineNodes, ParseLineEdges };
 		
-		//_viewManager = gameObject.GetComponent<ViewManager>();
 		_viewManager = GameObject.Find("Background/Fade").GetComponent<ViewManager>();
 		_viewManager._mapLoader = this;
 
-		//_movement = GameObject.Find("PlayerObject").GetComponent<Movement>();
 		_pMovement = GameObject.Find("PlayerObject").GetComponent<PlayerMovement>();
+		_pMovement._map = this;
 
 		LoadMap("test.txt");
-		//_movement.Init();
 		_pMovement.Init();
     }
 
@@ -215,22 +210,6 @@ public class MapLoader : MonoBehaviour
 		Vector2 raw = new Vector2(float.Parse(strFloatX), float.Parse(strFloatY));
 
 		return new Vector2(raw.x * scale.x, raw.y * scale.y);
-	}
-
-	private void InitMapObjects() 
-	{
-		for(byte i = 0; i < NodeCount; i++)
-		{
-			/*
-			_viewManager.Rooms.Add(
-					Instantiate(RoomPrefab, Vector2.zero, Quaternion.identity)
-			);
-			*/
-		}
-
-		for(byte i = 0; i < EdgeCount; i++)
-		{
-		}
 	}
 
 	private void PrintNodeData()
