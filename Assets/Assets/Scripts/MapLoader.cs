@@ -1,7 +1,9 @@
+using System;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Serializable]
 public class NodeData
 {
 	// Node index
@@ -20,6 +22,7 @@ public class NodeData
 	public string Label;
 }
 
+[Serializable]
 public class EdgeData
 {
 	// Edge index
@@ -47,6 +50,9 @@ public class MapLoader : MonoBehaviour
 
 	public GameObject RoomPrefab;
 	public GameObject DoorPrefab;
+	
+	private Movement _movement;
+	private PlayerMovement _pMovement;
 
     void Start()
     {
@@ -71,8 +77,13 @@ public class MapLoader : MonoBehaviour
 		//_viewManager = gameObject.GetComponent<ViewManager>();
 		_viewManager = GameObject.Find("Background/Fade").GetComponent<ViewManager>();
 		_viewManager._mapLoader = this;
-		
+
+		//_movement = GameObject.Find("PlayerObject").GetComponent<Movement>();
+		_pMovement = GameObject.Find("PlayerObject").GetComponent<PlayerMovement>();
+
 		LoadMap("test.txt");
+		//_movement.Init();
+		_pMovement.Init();
     }
 
 	private void LoadMap(string filePath) 
@@ -198,12 +209,12 @@ public class MapLoader : MonoBehaviour
 
 		string strFloatX = str[(braceOpenId+1)..commaId];
 		string strFloatY = str[(commaId+2)..BraceCloseId];
+		
+	    Vector2 scale = new Vector2(800/440, 600/330);
+		//Vector2 scale = Vector2.one;
+		Vector2 raw = new Vector2(float.Parse(strFloatX), float.Parse(strFloatY));
 
-		//Debug.Log($"parsing vec2: {str}");
-		//Debug.Log($"str_x: {strFloatX}");
-		//Debug.Log($"str_y: {strFloatY}");
-
-		return new Vector2(float.Parse(strFloatX), float.Parse(strFloatY));
+		return new Vector2(raw.x * scale.x, raw.y * scale.y);
 	}
 
 	private void InitMapObjects() 

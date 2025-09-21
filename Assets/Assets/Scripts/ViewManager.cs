@@ -72,7 +72,7 @@ public class ViewManager : MonoBehaviour
 
     public void WalkBack()
     {
-        DisableActiveButtons();
+        //DisableActiveButtons();
         ChangeBackgroundButton(_previousViewIndex);
         EnableNextViewButtons(_previousViewButtonsIndex);
     }
