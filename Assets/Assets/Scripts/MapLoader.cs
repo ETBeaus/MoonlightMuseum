@@ -48,7 +48,6 @@ public class MapLoader : MonoBehaviour
 
 	private ViewManager _viewManager;
 	
-	private Movement _movement;
 	private PlayerMovement _pMovement;
 
     void Start()

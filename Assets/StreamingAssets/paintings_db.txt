@@ -1,0 +1,83 @@
+[Untitled (Whitefish River Looking South to Manitoulin Island)]
+link=https://www.gallery.ca/collection/artwork/untitled-whitefish-river-looking-south-to-manitoulin-island
+desc=This piece is Untitled, but it depicts Manitoulin Island, which is found in lake Huron. It's beautiful green and blue hues give the viewer a sense of freedom afforded only by vastly open spaces.   
+key_word=Green and Blue
+data_point=Northern leopard frog (Rocky Mountain population)
+painter_name=Franklin Carmichael
+
+[Fishing Stages, Newfoundland]
+link=https://www.gallery.ca/collection/artwork/fishing-stages-newfoundland
+desc=It's hard to believe, but people lived and worked in these shacks. Under them, the sea drifts, full of fish and other bounties.  
+key_word=Sea, Drifts 
+data_point=Leatherback sea turtle (Atlantic population) 
+painter_name=Maurice Cullen
+
+[Underpass, Montreal]
+link=https://www.gallery.ca/collection/artwork/underpass-montreal
+desc=Despite being grey, our cities are home to many species, you just have to keep your eyes peeled. Though this underpass looks like repairs are past needed, you probably wouldn't guess that it's the perfect home for a surprising species.
+key_word=Repairs are past 
+data_point=Common nighthawk 
+painter_name=Ghitta Caiserman
+
+[Manitoba Landscape]
+link=https://www.gallery.ca/collection/artwork/manitoba-landscape
+desc=Paintings in this style are called "pointilist" and you might think "who will say that this is a landscape?" Believe us, sometimes it's hard to see! But look closesly, let the colours blend in to one another, and see what your mind comes up with. 
+key_word=Who will say 
+data_point=Dusky dune moth 
+painter_name=L.L. FitzGerald
+
+[Logged-Over Hillside]
+link=https://www.gallery.ca/collection/artwork/logged-over-hillside
+desc=The forests of Canadian past have become myth, in the past they had treelines so dense it was like looking in to another world. This piece shows that loss, that which we have for so long now been missing. 
+key_word=become myth,  
+data_point=Mountain beaver 
+painter_name=Emily Carr
+
+[The Jack Pine]
+link=https://www.gallery.ca/collection/artwork/the-jack-pine
+desc=Here, a beautiful pine grows from the ashes of the ground, superimposed on a colourful sunrise. The painter has said that this scene is meant to represent the soul of Northern Ontario. 
+key_word=the ashes, 
+data_point=Eastern hog-nosed snake
+painter_name=Tom Thomson
+
+[The Ferry Trail, Nort Saskatchewan River]
+link=https://www.gallery.ca/collection/artwork/the-ferry-trail-north-saskatchewan-river
+desc=This sleepy landscape reminds us: it's not too late - it's never too late! Take it slow and take it easy, sit back and let the clouds crawl across the sky. 
+key_word=not too late 
+data_point=Black-Tailed Prairie Dog 
+painter_name=Gus Kenderdine
+
+[Straight of Juan de Fuca]
+link=https://www.gallery.ca/collection/artwork/strait-of-juan-de-fuca
+desc=Bright, bold brushstroked evoke a feeling of movement in the rivers, the sea, and make it seem like the waves might spill right out of the frame and wash the viewer away!
+key_word=the rivers, the sea 
+data_point=North Atlantic right whale AND North Pacific right whale
+painter_name=Emily Carr
+
+[Bluffs and Beach, Turkey Point, Lake Erie]
+link=https://www.gallery.ca/collection/artwork/bluffs-and-beach-turkey-point-lake-erie
+desc=Along this beach there is, brilliantly, a spark of colour. When you look at this painting, can you smell the flowers? Feel the breeze and the sand under your feet? Hear the swell of Lake Erie's waves against the shore?
+key_word=a spark
+data_point=Five-lined skink (Great Lakes/St. Lawrence population)
+painter_name=Eva Brook Donly
+
+[Prairie Fantasy]
+link=https://www.gallery.ca/collection/artwork/prairie-fantasy
+desc=What kind of species might live in this tapestry? The prairies, so unassuming at first, host more life than you could imagine!
+key_word=this tapestry
+data_point=Burrowing owl
+painter_name=L.L. FitzGerald
+
+[Cove Fields, Quebec]
+link=https://www.gallery.ca/collection/artwork/cove-fields-quebec
+desc=The beams of light through the clouds pursue the curve of the cove, in a painting that evokes the thoughts of chilly coastal Autumn days and the smell of wet grass and ocean spray. 
+key_word=pursue,
+data_point=Caribou (Atlantic-Gaspésie population)
+painter_name=Edmund Morris
+
+[British Columbia Landscape]
+link=https://www.gallery.ca/collection/artwork/british-columbia-landscape-0
+desc=Once upon a time, many years ago, Canada's forests were dense and dark, with trees that stand together like little tin soldiers, shoulder to shoulder. When you look at this piece, what do you feel? What do you see? Is it as simple as tree upon tree?
+key_word=stand together
+data_point=Taylor's checkerspot
+painter_name=Emily Carr
