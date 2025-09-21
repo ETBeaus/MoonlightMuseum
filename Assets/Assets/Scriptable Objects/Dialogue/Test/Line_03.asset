@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
+  m_Name: Line_03
+  m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
+  NameToDisplay: Baby Beaver
+  PortraitTexture: {fileID: 2800000, guid: 792f9a6f8b0ec2f42a728972d788c510, type: 3}
+  IsARepliesChoice: 1
+  AnswerChoices:
+  - {fileID: 11400000, guid: 8ee44a0bf3d5d6045b0822d6d8dd3798, type: 2}
+  - {fileID: 11400000, guid: 07eef790364e3b549b3e5656a0c58727, type: 2}
+  DialogueLine: 

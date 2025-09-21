@@ -10,6 +10,7 @@ public class ViewManager : MonoBehaviour
     public List<GameObject> buttonGroups;
     public RawImage backgroundImage;
     public CanvasGroup fadePanel;
+    
 
     public float fadeSpeed = 1f;
 
