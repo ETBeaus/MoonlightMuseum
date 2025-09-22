@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject ChoicePanel;
     public GameObject ChoiceButton_Prefab;
     public List<SO_DialogueTemplate> SO_DialogueEvents;
+    public bool IsRepeatableInteraction = false;
     #endregion
 
     #region Private Fields
@@ -118,7 +119,7 @@ public class DialogueManager : MonoBehaviour
         {
             ResetChoiceButtonList();
         }
-        if (_currentDialogueIndex != SO_DialogueEvents.Count - 1)
+        if (_currentDialogueIndex != SO_DialogueEvents.Count - 1 || IsRepeatableInteraction)
         {
             ActivateInitialButton();
         }
