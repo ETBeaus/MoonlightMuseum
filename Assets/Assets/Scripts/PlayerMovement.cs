@@ -115,4 +115,3 @@ public class PlayerMovement : MonoBehaviour
 		_viewManager.SetViewId(id);
 	}
 }
-
