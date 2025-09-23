@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: 'Castor '
   PortraitTexture: {fileID: 0}
-  DialogueLine: Now without further ado, please, tilt your heads upwards for the
-    display, and once again, thank you for your participation.
+  DialogueLine: Delightful! An opportunity to educate the mind of young kits has
+    been brought upon our humble exhibition. WELCOME!
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []
   IsFirstLineAfterQuestion: 0
-  IsWrongAnswerReaction: 0
+  IsWrongAnswerReaction: 1
   IsSecondTryRightAnswerReaction: 0
   IsFirstTryRightAnswerReaction: 0

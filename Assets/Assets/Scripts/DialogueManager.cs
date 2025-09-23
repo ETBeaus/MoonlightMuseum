@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject ChoiceButton_Prefab;
     public List<SO_DialogueTemplate> SO_DialogueEvents;
     public bool IsRepeatableInteraction = false;
+    public bool hasQuizQuestion = false;
     #endregion
 
     #region Private Fields
@@ -50,9 +51,13 @@ public class DialogueManager : MonoBehaviour
             ResetChoiceButtonList();
         }
 
-        if (SO_DialogueEvents[_currentDialogueIndex].IsWrongAnswerReaction)
+        if (SO_DialogueEvents[_currentDialogueIndex].IsWrongAnswerReaction && hasQuizQuestion)
         {
             ReloadQuestion();
+        }
+        else if (SO_DialogueEvents[_currentDialogueIndex].IsWrongAnswerReaction && !hasQuizQuestion)
+        {
+            JumpToAfterQuestionDialogue();
         }
         else if (SO_DialogueEvents[_currentDialogueIndex].IsSecondTryRightAnswerReaction || SO_DialogueEvents[_currentDialogueIndex].IsFirstTryRightAnswerReaction)
         {
@@ -74,7 +79,7 @@ public class DialogueManager : MonoBehaviour
 
             _questionWasAnswered = true;
 
-            for (int i = 0; i < SO_DialogueEvents.Count; i++)
+            for (int i = _currentDialogueIndex; i < SO_DialogueEvents.Count; i++)
             {
                 if (SO_DialogueEvents[i].IsFirstTryRightAnswerReaction)
                 {
@@ -85,7 +90,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < SO_DialogueEvents.Count; i++)
+            for (int i = _currentDialogueIndex; i < SO_DialogueEvents.Count; i++)
             {
                 if (SO_DialogueEvents[i].IsSecondTryRightAnswerReaction)
                 {
@@ -101,7 +106,7 @@ public class DialogueManager : MonoBehaviour
     public void WrongAnswer()
     {
         _questionWasAnswered = true;
-        for (int i = 0; i < SO_DialogueEvents.Count; i++)
+        for (int i = _currentDialogueIndex; i < SO_DialogueEvents.Count; i++)
         {
             if (SO_DialogueEvents[i].IsWrongAnswerReaction)
             {
@@ -157,7 +162,7 @@ public class DialogueManager : MonoBehaviour
 
     private void JumpToAfterQuestionDialogue()
     {
-        for (int i = 0; i < SO_DialogueEvents.Count; i++)
+        for (int i = _currentDialogueIndex; i < SO_DialogueEvents.Count; i++)
         {
             if (SO_DialogueEvents[i].IsFirstLineAfterQuestion)
             {

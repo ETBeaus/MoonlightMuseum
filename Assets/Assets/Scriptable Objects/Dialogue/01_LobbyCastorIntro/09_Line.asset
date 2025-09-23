@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
   m_Name: 09_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
-  NameToDisplay: Garrett
+  NameToDisplay: Baby Beaver
   PortraitTexture: {fileID: 0}
-  DialogueLine: Like right out of a painting!
+  DialogueLine: 
   IsAQuestion: 0
-  IsARepliesChoice: 0
-  AnswerChoices: []
+  IsARepliesChoice: 1
+  AnswerChoices:
+  - {fileID: 11400000, guid: 74c1e851907c21542b8fdef3df3b2804, type: 2}
+  - {fileID: 11400000, guid: cf5d10ebbd39667408a32dfc2b497097, type: 2}
   IsFirstLineAfterQuestion: 0
   IsWrongAnswerReaction: 0
   IsSecondTryRightAnswerReaction: 0

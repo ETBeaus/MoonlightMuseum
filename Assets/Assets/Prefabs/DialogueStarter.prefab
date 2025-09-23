@@ -94,7 +94,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5396016527325231320
 RectTransform:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3181456945919133482
 RectTransform:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 5
 --- !u!1 &4112939759666960100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,6 +1534,7 @@ MonoBehaviour:
   ChoicePanel: {fileID: 6446514068156397942}
   ChoiceButton_Prefab: {fileID: 8483594955216161987, guid: d6091f2513e6ba44bb72367f34beba4e, type: 3}
   SO_DialogueEvents: []
+  IsRepeatableInteraction: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!1 &9110416408319116908

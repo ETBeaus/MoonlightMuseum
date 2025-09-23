@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
   m_Name: 15_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
-  NameToDisplay: Baby Beaver
+  NameToDisplay: Castor
   PortraitTexture: {fileID: 0}
-  DialogueLine: Thank you! I had so much fun! See you next time!
-  IsAQuestion: 0
+  DialogueLine: Now then, shall we begin our artistic journey to educate ourselves
+    about the wonderful environment of our native Canada?
+  IsAQuestion: 1
   IsARepliesChoice: 0
   AnswerChoices: []
   IsFirstLineAfterQuestion: 0

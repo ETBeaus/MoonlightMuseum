@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ed78e377018124d9ec1560ec5a6007, type: 3}
   m_Name: Answer_02
   m_EditorClassIdentifier: Assembly-CSharp::SO_AnswersTemplate
-  Answer: 
-  IsRightAnswer: 0
+  Answer: Teacher says I'm also an artist! (Show finger-painting)
+  IsRightAnswer: 1
   IsWrongAnswer: 0

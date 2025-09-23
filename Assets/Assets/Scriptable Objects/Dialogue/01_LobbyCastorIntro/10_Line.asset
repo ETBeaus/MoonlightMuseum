@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
   m_Name: 10_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
-  NameToDisplay: Ralph
+  NameToDisplay: Castor
   PortraitTexture: {fileID: 0}
-  DialogueLine: It's so cool! And so shiny!
+  DialogueLine: 'Ah of course! It is quite simple really! All you have to do is point!
+    Clicking on an object or person will allow you to interact with them. For example,
+    if you use your mouse to click on a person, you will begin talking to that person!
+    If you want to move locations, simply click on a hallway entrance and you will
+    move to the next room! Easy peasy! If you have any further questions or need
+    a reminder, you can always check the instructions in the pause menu! '
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []
   IsFirstLineAfterQuestion: 0
-  IsWrongAnswerReaction: 0
+  IsWrongAnswerReaction: 1
   IsSecondTryRightAnswerReaction: 0
   IsFirstTryRightAnswerReaction: 0

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ed78e377018124d9ec1560ec5a6007, type: 3}
   m_Name: Answer_01
   m_EditorClassIdentifier: Assembly-CSharp::SO_AnswersTemplate
-  Answer: 
+  Answer: My name is Baby Beaver, and I'm here on a school trip!
   IsRightAnswer: 0
-  IsWrongAnswer: 0
+  IsWrongAnswer: 1

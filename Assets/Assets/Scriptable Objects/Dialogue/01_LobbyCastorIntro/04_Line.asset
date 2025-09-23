@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
   m_Name: 04_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
-  NameToDisplay: Castor
+  NameToDisplay: Baby Beaver
   PortraitTexture: {fileID: 0}
-  DialogueLine: As our journey through Canadian art and environmental awareness comes
-    to a close for the night, we here at the museum would like to urge you to continue
-    your research and contribute to helping keep our planet clean and prosperous
-    for all forms of life.
+  DialogueLine: 
   IsAQuestion: 0
-  IsARepliesChoice: 0
-  AnswerChoices: []
+  IsARepliesChoice: 1
+  AnswerChoices:
+  - {fileID: 11400000, guid: 6a10504cb2bea25408795f7cbfc9de36, type: 2}
+  - {fileID: 11400000, guid: afd06717a36c1a44c9d5fba020023c23, type: 2}
   IsFirstLineAfterQuestion: 0
   IsWrongAnswerReaction: 0
   IsSecondTryRightAnswerReaction: 0

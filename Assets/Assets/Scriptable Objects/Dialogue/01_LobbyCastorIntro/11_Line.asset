@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
   m_Name: 11_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
-  NameToDisplay: 'Toni '
+  NameToDisplay: Castor
   PortraitTexture: {fileID: 0}
-  DialogueLine: I could write a song about this!
+  DialogueLine: Good, I see you are ready.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []
   IsFirstLineAfterQuestion: 0
   IsWrongAnswerReaction: 0
-  IsSecondTryRightAnswerReaction: 0
-  IsFirstTryRightAnswerReaction: 0
+  IsSecondTryRightAnswerReaction: 1
+  IsFirstTryRightAnswerReaction: 1

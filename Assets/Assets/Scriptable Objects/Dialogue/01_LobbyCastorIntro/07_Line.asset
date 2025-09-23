@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
   m_Name: 07_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
-  NameToDisplay: Fisherman Carl
+  NameToDisplay: Castor
   PortraitTexture: {fileID: 0}
-  DialogueLine: 'I don''t see a fishing Beaver though? '
+  DialogueLine: It is my honor this evening to guide you through our wonderful exhibition.
+    My name is Castor, and should you have any questions about the exhibits, do not
+    be a stranger!
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []
-  IsFirstLineAfterQuestion: 0
+  IsFirstLineAfterQuestion: 1
   IsWrongAnswerReaction: 0
   IsSecondTryRightAnswerReaction: 0
   IsFirstTryRightAnswerReaction: 0

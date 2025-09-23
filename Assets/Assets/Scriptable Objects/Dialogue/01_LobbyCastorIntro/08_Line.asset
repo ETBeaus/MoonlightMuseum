@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
   m_Name: 08_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
-  NameToDisplay: Sherry
+  NameToDisplay: Baby Beaver
   PortraitTexture: {fileID: 0}
-  DialogueLine: Oh, look at the birds flying by! So gorgeous how they light up against
-    the moon!
-  IsAQuestion: 0
+  DialogueLine: '(Ask Castor how the exhibition works?) '
+  IsAQuestion: 1
   IsARepliesChoice: 0
   AnswerChoices: []
   IsFirstLineAfterQuestion: 0

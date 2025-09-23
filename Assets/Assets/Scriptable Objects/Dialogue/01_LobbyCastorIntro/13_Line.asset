@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
   m_Name: 13_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
-  NameToDisplay: 'Professor '
+  NameToDisplay: Castor
   PortraitTexture: {fileID: 0}
-  DialogueLine: Truly remarkable, the wonders of the world!
+  DialogueLine: I myself will have some questions for you throughout the exhibition.
+    Answer my questions right on the first try and I will reward you with a sticker!
+    Yours to keep and only available tonight.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
   m_Name: 14_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
-  NameToDisplay: 'Castor '
+  NameToDisplay: Baby Beaver
   PortraitTexture: {fileID: 0}
-  DialogueLine: I believe your teacher is calling you young kit. You have been a
-    wonderful guest and it has been an honour to guide you tonight.
+  DialogueLine: Ohhhh stcikers!
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []
