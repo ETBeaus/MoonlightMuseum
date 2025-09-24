@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 01_Line_Oscar Peterson
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: C Jam Blues by the legendary Oscar Peterson, who isin't just one
     of Canada's first jazz legends but is wildly considered one of the greatest Jazz
     piano players in the history of the genre! Did you know Peterson has over 200

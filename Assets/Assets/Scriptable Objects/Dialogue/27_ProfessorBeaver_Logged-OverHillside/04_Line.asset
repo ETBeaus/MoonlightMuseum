@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 04_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Baby Beaver
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: 0b51c82f032243e478212f9f1e513cd2, type: 3}
   DialogueLine: My name isin't kit, it's Baby Beaver!
   IsAQuestion: 0
   IsARepliesChoice: 0

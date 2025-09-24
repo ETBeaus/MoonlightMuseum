@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 02_Line_Wilf Carter
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: Wilfred Arthur Charles Carter, or better known as Wilf Carter, has
     written over 500 songs and has been inducted in both the Canadian Country Music
     Hall of Fame and the Canadian Songwriters Hall of Fame. Interestingly, most might

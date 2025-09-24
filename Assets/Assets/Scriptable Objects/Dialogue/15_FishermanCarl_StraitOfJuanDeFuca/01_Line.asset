@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 01_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Fisherman Carl
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: f62c22c89814ead4e8541d06b783a501, type: 3}
   DialogueLine: Well ahoy there Baby Beaver! Come to look at the Right Whales? Amazing
     creatures ain't they!
   IsAQuestion: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 07_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Richard
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: e32d0ef20c410a746b8bef45c430a84f, type: 3}
   DialogueLine: Much like if I were to leave my network, they can't go on without
     me! We all have to work together and help each other out!
   IsAQuestion: 0

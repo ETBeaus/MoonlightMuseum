@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 05_Line_Dame Emma Albani
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: Arguably one of Canada's most famous performers, Emma Albani was
     an international star, touring Opera houses around the world! In fact, I believe
     the "Place-des-Arts" metro station in Montreal has a mural dedicated to her.

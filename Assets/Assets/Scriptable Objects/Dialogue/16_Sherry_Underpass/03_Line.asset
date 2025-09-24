@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 03_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Sherry
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: d67fbe12724a5fe4d89a4c66e1869ba2, type: 3}
   DialogueLine: It's almost like in the movies, how dreamy! A show of skill to win
     over their love!
   IsAQuestion: 0
