@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 12_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: Now then! a task for you, young kit! Before you is a poem of great
     importance to the themes of this exhibition. However, you can see that there
     are words missing from it. Perhaps by taking the knowledge learned from each

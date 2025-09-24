@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 05_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: 'Toni '
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: 37d870c9b70f2e446b8b5d91c9f4f7ba, type: 3}
   DialogueLine: They're a threatened species, meaning we can work together to keep
     them from reaching endangered if we just started showing a bit more compassion
     to the animals we share this earth with.

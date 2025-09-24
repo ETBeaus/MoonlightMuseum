@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 05_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Richard
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: e32d0ef20c410a746b8bef45c430a84f, type: 3}
   DialogueLine: The big worry though is that because so many other animals rely on
     their burrows and that they are also a source of food for other animals like
     badgers

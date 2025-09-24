@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 02_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Richard
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: e32d0ef20c410a746b8bef45c430a84f, type: 3}
   DialogueLine: They're smart talkers too, having different ways to vocalise themselves
     depending on what kind of danger they're in!
   IsAQuestion: 0

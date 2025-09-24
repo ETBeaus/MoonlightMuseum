@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 05_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Professor Beaver
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: c21dff99f1659d34d9fb6e62b943370a, type: 3}
   DialogueLine: 'In 2002, the Species at Risk Act was created to help protect and
     asses endangered species, keeping an eye on them and finding ways to ensure they
     can rebuild their populations. '

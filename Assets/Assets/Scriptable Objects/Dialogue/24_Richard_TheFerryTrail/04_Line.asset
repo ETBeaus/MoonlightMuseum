@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 04_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Richard
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: e32d0ef20c410a746b8bef45c430a84f, type: 3}
   DialogueLine: 'They''re pretty cool creatures, eaten on seeds, weeds, and plants.
     Very easy diet if I do say so myself. '
   IsAQuestion: 0

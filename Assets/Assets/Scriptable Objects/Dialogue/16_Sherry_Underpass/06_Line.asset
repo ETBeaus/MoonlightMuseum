@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 06_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Baby Beaver
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: 0b51c82f032243e478212f9f1e513cd2, type: 3}
   DialogueLine: Like when I cannonball into the water?
   IsAQuestion: 0
   IsARepliesChoice: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 05_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Sherry
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: d67fbe12724a5fe4d89a4c66e1869ba2, type: 3}
   DialogueLine: They can go so fast that they are known to make a explosive sound
     when they fly, made by the combination of wind hitting their feathers as they
     dive downwards, like a swimmer diving into the ocean!

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 09_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Richard
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: e32d0ef20c410a746b8bef45c430a84f, type: 3}
   DialogueLine: My only question is, why wasn't I ever invited? I bet I'd be great
     at their social gatherings.
   IsAQuestion: 0

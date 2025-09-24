@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 04_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: 'Toni '
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: 37d870c9b70f2e446b8b5d91c9f4f7ba, type: 3}
   DialogueLine: It a shame that human progress has put them at risk. Building roads
     right through their homes and building houses and pipelines around them can do
     a real number on their food supply.

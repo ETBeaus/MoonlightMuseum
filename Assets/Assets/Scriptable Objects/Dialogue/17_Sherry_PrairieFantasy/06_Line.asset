@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 06_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Sherry
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: d67fbe12724a5fe4d89a4c66e1869ba2, type: 3}
   DialogueLine: A large factor in that is actually pesticide use. You see, pesticides
     effect the food they eat like insects and mice.
   IsAQuestion: 0

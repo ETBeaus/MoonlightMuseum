@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 05_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Professor Beaver
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: c21dff99f1659d34d9fb6e62b943370a, type: 3}
   DialogueLine: 'While they are not territorial creatures, it has become more and
     more difficult for them to find suitable areas to live in, espically near lakes
     and rivers. '

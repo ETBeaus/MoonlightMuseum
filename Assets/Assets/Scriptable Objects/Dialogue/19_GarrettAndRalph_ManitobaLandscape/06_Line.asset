@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 06_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Garrett
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: a20efab136abf9e4ca5a02fa59770ebe, type: 3}
   DialogueLine: 'The main goal was still to help build Canada''s own artistic identity
     and expression. This group was also made up of 28 people, and with that, a much
     larger selection of styles. '

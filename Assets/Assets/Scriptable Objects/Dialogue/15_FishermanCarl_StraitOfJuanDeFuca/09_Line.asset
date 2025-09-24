@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 09_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Fisherman Carl
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: f62c22c89814ead4e8541d06b783a501, type: 3}
   DialogueLine: 'They''re just creatures trying to live their lives just like us,
     best to let em do just that. '
   IsAQuestion: 0

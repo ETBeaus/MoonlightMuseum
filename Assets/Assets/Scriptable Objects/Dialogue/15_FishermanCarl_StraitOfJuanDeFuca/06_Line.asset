@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 06_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Fisherman Carl
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: f62c22c89814ead4e8541d06b783a501, type: 3}
   DialogueLine: Hehehe, no can do. I think my fishing poll would snap under that
     pressure! Besides, I wouldin't want to disturb them.
   IsAQuestion: 0

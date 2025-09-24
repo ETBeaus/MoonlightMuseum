@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 08_Line
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Garrett
-  PortraitTexture: {fileID: 0}
+  PortraitTexture: {fileID: 2800000, guid: a20efab136abf9e4ca5a02fa59770ebe, type: 3}
   DialogueLine: "Well, that wouldn\u2019t be very inclusive to the possible 29th
     member who could have joined, would it?"
   IsAQuestion: 0
