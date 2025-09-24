@@ -1,4 +1,14 @@
+using System;
 using UnityEngine;
+
+[Serializable]
+public class JournalEntry
+{
+	public bool collected;
+	public DB_Entry painting;
+
+	public JournalEntry(DB_Entry _painting) { painting = _painting; }
+}
 
 public class Journal : MonoBehaviour
 {
@@ -14,14 +24,16 @@ public class Journal : MonoBehaviour
 	private Canvas _canvas; 
 	private PaintingData _paintingData;
 
-	public bool[] KeywordCollected;
+	public JournalEntry[] entries;
+
+	private int _collectCount = 0;
 	
     void Start()
     {
        	_canvas = GetComponent<Canvas>(); 
 		_paintingData = GameObject.Find("Paintings").GetComponent<PaintingData>();
 
-		KeywordCollected = new bool[_paintingData.dbEntries.Length];	
+		entries = new JournalEntry[_paintingData.dbEntries.Length];	
     }
 
     void Update()
@@ -34,6 +46,20 @@ public class Journal : MonoBehaviour
 		{
 		}
     }
+
+	public void AddEntry(DB_Entry painting) 
+	{
+		// Check if already in journal
+		for(byte i = 0; i < _collectCount; i++)
+		{
+			// Don't add entry if it exists already
+			bool skipAdd = (entries[i].painting.keyWord == painting.keyWord);	
+			if(skipAdd) return;
+		}
+
+		// Add entry, increment collected count
+		entries[_collectCount++] = new JournalEntry(painting);
+	}
 
 	// *
 	// Flag helper functions:
