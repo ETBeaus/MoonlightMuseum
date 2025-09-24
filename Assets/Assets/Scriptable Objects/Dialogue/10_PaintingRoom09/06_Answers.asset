@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 06_Answers
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Baby Beaver
-  PortraitTexture: {fileID: 2800000, guid: 792f9a6f8b0ec2f42a728972d788c510, type: 3}
+  PortraitTexture: {fileID: 2800000, guid: 0b51c82f032243e478212f9f1e513cd2, type: 3}
   DialogueLine: 
   IsAQuestion: 0
   IsARepliesChoice: 1
