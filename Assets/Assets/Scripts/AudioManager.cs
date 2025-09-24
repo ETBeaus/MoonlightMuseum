@@ -34,8 +34,8 @@ public class AudioManager : MonoBehaviour
         for (int i = 0; i < _playedSongsList.Count; i++)
         {
             RadioSongsList.Add(_playedSongsList[i]);
-            _playedSongsList.Remove(_playedSongsList[i]);
         }
+        _playedSongsList.Clear();
     }
 
     private void RandomizeNextSong()
