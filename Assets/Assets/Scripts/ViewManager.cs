@@ -10,7 +10,6 @@ public class ViewManager : MonoBehaviour
     public List<GameObject> ButtonGroups;
     public RawImage BackgroundImage;
     public CanvasGroup FadePanel;
-    
 
     public float FadeSpeed = 3f;
 
@@ -31,9 +30,15 @@ public class ViewManager : MonoBehaviour
 	
 	// NOTE: **
 	// For use in test scene
-	public void SetViewId(int id) { 
+	public void SetViewId(int id) 
+	{ 
 		_currentViewIndex = id;
 		BackgroundImage.texture = Views[id];
+	}
+
+	public int GetViewId() 
+	{
+		return _currentViewIndex;
 	}
 
     void Update()
