@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Net.Http;
 using UnityEngine;
 
 [Serializable]
@@ -71,7 +70,7 @@ public class PaintingData : MonoBehaviour
             {
 				// Get entry title
                 int braceCloseId = line.IndexOf(']');
-                string title = line.Substring(1, braceCloseId - 1).Trim();
+				string title = line[1..braceCloseId];
 
 				// Increment current entry, set title 
                 dbEntries[++currId].title = title;
@@ -122,3 +121,4 @@ public class PaintingData : MonoBehaviour
         }
     }
 }
+

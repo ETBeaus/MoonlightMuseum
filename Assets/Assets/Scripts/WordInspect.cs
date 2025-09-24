@@ -1,49 +1,42 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
-
-public class ResponseGroup
-{
-    public string[] str;
-    public ResponseGroup(string[] _str) { str = _str; }
-}
+using TMPro; 
 
 public class WordInspect : MonoBehaviour 
 {
-    static string[] _responseCorrect = {
-        "Yes!",
-        "Correct!",
-        "That's right!",
-        "You got it!"
-    };
-
-    static string[] _responseWrong = {
-        "Nope..",
-        "Incorrect.",
-        "That's not right, sorry...",
-        "Keep trying..."
-    };
-
-    ResponseGroup[] _respGroups = {
-        new ResponseGroup(_responseCorrect),
-        new ResponseGroup(_responseWrong)
-    };
-
+	private PaintingData _db;
 	private DialogueManager _diagManager;
 
+	private byte _currPainting;
+
+	public bool inspectActive = false;
+
+	private bool _keywordHovered; 
+	private int _hoveredId;
+	
     void Start()
     {
-
+		_db = GameObject.Find("PaintingStuff").GetComponent<PaintingData>();
+		_diagManager = GameObject.Find("DialogueStarter").GetComponent<DialogueManager>();
     }
 
     void Update()
     {
-    }
+		if(!inspectActive) return;
+		
+		/*	
+		_hoveredId = TMPro.TMP_TextUtilities.FindIntersectingCharacter(
+				_diagManager.DialogueTextOutput,
+				Input.mousePosition,
+				null,
+				true
+		);
+		*/
 
-    public void WordInspectResponse(bool success)
-    {
-        byte _responseId = (byte)Random.Range(0, 4);
+		int kwStart = _db.dbEntries[_currPainting].keyStart;
+		int kwEnd   = _db.dbEntries[_currPainting].keyEnd;
+
+		_keywordHovered = (_hoveredId >= kwStart &&  _hoveredId <= kwEnd);
     }
 }
 
