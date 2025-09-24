@@ -39209,6 +39209,9 @@ MonoBehaviour:
   - {fileID: 1159498289}
   - {fileID: 1639057879}
   - {fileID: 1109627124}
+  - {fileID: 1716307197}
+  - {fileID: 1322892511}
+  - {fileID: 1257407838}
   BackgroundImage: {fileID: 464360428}
   FadePanel: {fileID: 1064141992}
   FadeSpeed: 3
