@@ -9,10 +9,10 @@ public class DialogueManager : MonoBehaviour
     #region Public Fields
     [Header("References")]
     public GameObject DialogueCanvas;
-    public GameObject InitialButton;
     public RawImage BeaverPortraitUI;
     public TMP_Text DialogueTextOutput;
     public TMP_Text NameOutput;
+    public GameObject EndDialogueButton;
     public GameObject NextDialogueButton;
     public GameObject DialoguePanel;
     public GameObject ChoicePanel;
@@ -34,6 +34,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue()
     {
         ActivateDialogueCanvas();
+        ActivateEndDialogueButton();
         ResetDialogueIndex();
         DeactivateInitialButton();
         DisplayLine();
@@ -148,6 +149,13 @@ public class DialogueManager : MonoBehaviour
         _choiceButtons.Clear();
     }
 
+    private void ActivateEndDialogueButton()
+    {
+        EndDialogueButton.SetActive(true);
+        EndDialogueButton.GetComponent<Button>().onClick.RemoveListener(EndDialogue);
+        EndDialogueButton.GetComponent<Button>().onClick.AddListener(EndDialogue);
+    }
+
     private void ReloadQuestion()
     {
         for (int i = 0; i < SO_DialogueEvents.Count; i++)
@@ -244,6 +252,8 @@ public class DialogueManager : MonoBehaviour
         if (SO_DialogueEvents.Count > 1 && _currentDialogueIndex != SO_DialogueEvents.Count - 1 && !SO_DialogueEvents[_currentDialogueIndex].IsARepliesChoice)
         {
             NextDialogueButton.SetActive(true);
+            NextDialogueButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            NextDialogueButton.GetComponent<Button>().onClick.AddListener(NextLine);
         }
         else
         {
@@ -286,12 +296,12 @@ public class DialogueManager : MonoBehaviour
 
     private void DeactivateInitialButton()
     {
-        InitialButton.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 
     private void ActivateInitialButton()
     {
-        InitialButton.SetActive(true);
+        this.gameObject.SetActive(true);
     }
     #endregion
 }

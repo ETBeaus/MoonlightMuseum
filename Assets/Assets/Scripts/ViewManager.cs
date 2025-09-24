@@ -53,9 +53,19 @@ public class ViewManager : MonoBehaviour
         _isChangingBackground = true;
     }
 
-    public void DisableActiveButtons()
+    /// <summary>
+    /// Flips the switch on the buttons linked to this view. If active, deactivates them. If inactive, activates them.
+    /// </summary>
+    public void ToggleActiveButtons()
     {
-        ButtonGroups[_currentViewButtonsIndex].SetActive(false);
+        if (ButtonGroups[_currentViewButtonsIndex].activeSelf)
+        {
+            ButtonGroups[_currentViewButtonsIndex].SetActive(false);
+        }
+        else
+        {
+            ButtonGroups[_currentViewButtonsIndex].SetActive(true);
+        }
     }
 
     public void EnableNextViewButtons(int nextViewButtonsIndex)
@@ -72,7 +82,7 @@ public class ViewManager : MonoBehaviour
 
     public void WalkBack()
     {
-        DisableActiveButtons();
+        ToggleActiveButtons();
         ChangeBackgroundButton(_previousViewIndex);
         EnableNextViewButtons(_previousViewButtonsIndex);
     }
@@ -118,5 +128,6 @@ public class ViewManager : MonoBehaviour
             _timer = 0;
             _isChangingBackground = false;
         }
+        Debug.Log("Entering view" + _currentViewIndex);
     }
 }
