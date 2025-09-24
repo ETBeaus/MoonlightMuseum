@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "MoonlightMuseum.sln"
+    "dotnet.defaultSolution": "MoonlightMuseum-ViewsImplementation.sln"
 }

@@ -42,4 +42,3 @@ public class WordInspect : MonoBehaviour
 		_keywordHovered = (_hoveredId >= kwStart &&  _hoveredId <= kwEnd);
     }
 }
-
