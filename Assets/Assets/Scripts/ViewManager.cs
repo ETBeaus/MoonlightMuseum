@@ -6,26 +6,26 @@ using UnityEngine.UIElements;
 
 public class ViewManager : MonoBehaviour
 {
-    public List<Texture2D> views;
-    public List<GameObject> buttonGroups;
-    public RawImage backgroundImage;
-    public CanvasGroup fadePanel;
+    public List<Texture2D> Views;
+    public List<GameObject> ButtonGroups;
+    public RawImage BackgroundImage;
+    public CanvasGroup FadePanel;
     
 
-    public float fadeSpeed = 1f;
+    public float FadeSpeed = 3f;
 
-    bool _isChangingBackground = false;
-    bool _isFadingOut = false;
-    bool _isFadingIn = false;
-    float _timer = 0;
+    private bool _isChangingBackground = false;
+    private bool _isFadingOut = false;
+    private bool _isFadingIn = false;
+    private float _timer = 0;
 
-    int _previousViewIndex;
-    int _currentViewIndex;
-    int _nextViewIndex;
+    private int _previousViewIndex;
+    private int _currentViewIndex;
+    private int _nextViewIndex;
 
-    int _previousViewButtonsIndex;
-    int _currentViewButtonsIndex = 0;
-    int _nextViewButtonsIndex;
+    private int _previousViewButtonsIndex;
+    private int _currentViewButtonsIndex = 0;
+    private int _nextViewButtonsIndex;
 
 	public MapLoader _mapLoader;
 	
@@ -33,7 +33,7 @@ public class ViewManager : MonoBehaviour
 	// For use in test scene
 	public void SetViewId(int id) { 
 		_currentViewIndex = id;
-		backgroundImage.texture = views[id];
+		BackgroundImage.texture = Views[id];
 	}
 
     void Update()
@@ -53,9 +53,19 @@ public class ViewManager : MonoBehaviour
         _isChangingBackground = true;
     }
 
-    public void DisableActiveButtons()
+    /// <summary>
+    /// Flips the switch on the buttons linked to this view. If active, deactivates them. If inactive, activates them.
+    /// </summary>
+    public void ToggleActiveButtons()
     {
-        buttonGroups[_currentViewButtonsIndex].SetActive(false);
+        if (ButtonGroups[_currentViewButtonsIndex].activeSelf)
+        {
+            ButtonGroups[_currentViewButtonsIndex].SetActive(false);
+        }
+        else
+        {
+            ButtonGroups[_currentViewButtonsIndex].SetActive(true);
+        }
     }
 
     public void EnableNextViewButtons(int nextViewButtonsIndex)
@@ -72,7 +82,7 @@ public class ViewManager : MonoBehaviour
 
     public void WalkBack()
     {
-        DisableActiveButtons();
+        ToggleActiveButtons();
         ChangeBackgroundButton(_previousViewIndex);
         EnableNextViewButtons(_previousViewButtonsIndex);
     }
@@ -82,22 +92,22 @@ public class ViewManager : MonoBehaviour
 
     private void ChangeBackground(int nextViewIndex)
     {
-        if (fadePanel.alpha == 0 && _timer == 0)
+        if (FadePanel.alpha == 0 && _timer == 0)
         {
             _isFadingOut = true;
         }
         _timer += Time.deltaTime;
         if (_isFadingOut == true)
         {
-            if (fadePanel.alpha < 1)
+            if (FadePanel.alpha < 1)
             {
-                fadePanel.alpha += Time.deltaTime * fadeSpeed;
+                FadePanel.alpha += Time.deltaTime * FadeSpeed;
             }
         }
 
-        if (fadePanel.alpha == 1 && _isFadingOut)
+        if (FadePanel.alpha == 1 && _isFadingOut)
         {
-            backgroundImage.texture = views[nextViewIndex];
+            BackgroundImage.texture = Views[nextViewIndex];
             _currentViewIndex = nextViewIndex;
             _isFadingOut = false;
             _isFadingIn = true;
@@ -105,18 +115,19 @@ public class ViewManager : MonoBehaviour
 
         if (_isFadingIn == true)
         {
-            if (fadePanel.alpha > 0)
+            if (FadePanel.alpha > 0)
             {
-                fadePanel.alpha -= Time.deltaTime * fadeSpeed;
+                FadePanel.alpha -= Time.deltaTime * FadeSpeed;
             }
         }
 
-        if (fadePanel.alpha == 0 && _isFadingIn)
+        if (FadePanel.alpha == 0 && _isFadingIn)
         {
-            buttonGroups[_nextViewButtonsIndex].SetActive(true); //Activates the UI buttons for next room
+            ButtonGroups[_nextViewButtonsIndex].SetActive(true); //Activates the UI buttons for next room
             _isFadingIn = false;
             _timer = 0;
             _isChangingBackground = false;
         }
+        Debug.Log("Entering view" + _currentViewIndex);
     }
 }

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
+  m_Name: 12_Line
+  m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
+  NameToDisplay: Castor
+  PortraitTexture: {fileID: 0}
+  DialogueLine: Now then! a task for you, young kit! Before you is a poem of great
+    importance to the themes of this exhibition. However, you can see that there
+    are words missing from it. Perhaps by taking the knowledge learned from each
+    exhibit, you could fill in those blanks!
+  IsAQuestion: 0
+  IsARepliesChoice: 0
+  AnswerChoices: []
+  IsFirstLineAfterQuestion: 1
+  IsWrongAnswerReaction: 0
+  IsSecondTryRightAnswerReaction: 0
+  IsFirstTryRightAnswerReaction: 0

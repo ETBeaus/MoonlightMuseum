@@ -9,15 +9,17 @@ public class DialogueManager : MonoBehaviour
     #region Public Fields
     [Header("References")]
     public GameObject DialogueCanvas;
-    public GameObject InitialButton;
     public RawImage BeaverPortraitUI;
     public TMP_Text DialogueTextOutput;
     public TMP_Text NameOutput;
+    public GameObject EndDialogueButton;
     public GameObject NextDialogueButton;
     public GameObject DialoguePanel;
     public GameObject ChoicePanel;
     public GameObject ChoiceButton_Prefab;
     public List<SO_DialogueTemplate> SO_DialogueEvents;
+    public bool IsRepeatableInteraction = false;
+    public bool hasQuizQuestion = false;
     #endregion
 
     #region Private Fields
@@ -32,6 +34,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue()
     {
         ActivateDialogueCanvas();
+        ActivateEndDialogueButton();
         ResetDialogueIndex();
         DeactivateInitialButton();
         DisplayLine();
@@ -49,9 +52,13 @@ public class DialogueManager : MonoBehaviour
             ResetChoiceButtonList();
         }
 
-        if (SO_DialogueEvents[_currentDialogueIndex].IsWrongAnswerReaction)
+        if (SO_DialogueEvents[_currentDialogueIndex].IsWrongAnswerReaction && hasQuizQuestion)
         {
             ReloadQuestion();
+        }
+        else if (SO_DialogueEvents[_currentDialogueIndex].IsWrongAnswerReaction && !hasQuizQuestion)
+        {
+            JumpToAfterQuestionDialogue();
         }
         else if (SO_DialogueEvents[_currentDialogueIndex].IsSecondTryRightAnswerReaction || SO_DialogueEvents[_currentDialogueIndex].IsFirstTryRightAnswerReaction)
         {
@@ -73,7 +80,7 @@ public class DialogueManager : MonoBehaviour
 
             _questionWasAnswered = true;
 
-            for (int i = 0; i < SO_DialogueEvents.Count; i++)
+            for (int i = _currentDialogueIndex; i < SO_DialogueEvents.Count; i++)
             {
                 if (SO_DialogueEvents[i].IsFirstTryRightAnswerReaction)
                 {
@@ -84,7 +91,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < SO_DialogueEvents.Count; i++)
+            for (int i = _currentDialogueIndex; i < SO_DialogueEvents.Count; i++)
             {
                 if (SO_DialogueEvents[i].IsSecondTryRightAnswerReaction)
                 {
@@ -100,7 +107,7 @@ public class DialogueManager : MonoBehaviour
     public void WrongAnswer()
     {
         _questionWasAnswered = true;
-        for (int i = 0; i < SO_DialogueEvents.Count; i++)
+        for (int i = _currentDialogueIndex; i < SO_DialogueEvents.Count; i++)
         {
             if (SO_DialogueEvents[i].IsWrongAnswerReaction)
             {
@@ -118,7 +125,7 @@ public class DialogueManager : MonoBehaviour
         {
             ResetChoiceButtonList();
         }
-        if (_currentDialogueIndex != SO_DialogueEvents.Count - 1)
+        if (_currentDialogueIndex != SO_DialogueEvents.Count - 1 || IsRepeatableInteraction)
         {
             ActivateInitialButton();
         }
@@ -142,6 +149,13 @@ public class DialogueManager : MonoBehaviour
         _choiceButtons.Clear();
     }
 
+    private void ActivateEndDialogueButton()
+    {
+        EndDialogueButton.SetActive(true);
+        EndDialogueButton.GetComponent<Button>().onClick.RemoveListener(EndDialogue);
+        EndDialogueButton.GetComponent<Button>().onClick.AddListener(EndDialogue);
+    }
+
     private void ReloadQuestion()
     {
         for (int i = 0; i < SO_DialogueEvents.Count; i++)
@@ -156,7 +170,7 @@ public class DialogueManager : MonoBehaviour
 
     private void JumpToAfterQuestionDialogue()
     {
-        for (int i = 0; i < SO_DialogueEvents.Count; i++)
+        for (int i = _currentDialogueIndex; i < SO_DialogueEvents.Count; i++)
         {
             if (SO_DialogueEvents[i].IsFirstLineAfterQuestion)
             {
@@ -238,6 +252,8 @@ public class DialogueManager : MonoBehaviour
         if (SO_DialogueEvents.Count > 1 && _currentDialogueIndex != SO_DialogueEvents.Count - 1 && !SO_DialogueEvents[_currentDialogueIndex].IsARepliesChoice)
         {
             NextDialogueButton.SetActive(true);
+            NextDialogueButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            NextDialogueButton.GetComponent<Button>().onClick.AddListener(NextLine);
         }
         else
         {
@@ -280,12 +296,12 @@ public class DialogueManager : MonoBehaviour
 
     private void DeactivateInitialButton()
     {
-        InitialButton.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 
     private void ActivateInitialButton()
     {
-        InitialButton.SetActive(true);
+        this.gameObject.SetActive(true);
     }
     #endregion
 }
