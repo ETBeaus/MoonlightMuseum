@@ -48,7 +48,7 @@ public class WordInspect : MonoBehaviour
 		// Get click state
 		bool click = Mouse.current.leftButton.wasPressedThisFrame;
 
-		// Add keyword to journal, if clicked
+		// Add keyword to journal if clicked
 		if(click && _keywordHovered)
 		{
 			_journal.AddEntry(_db.dbEntries[_currPainting]);

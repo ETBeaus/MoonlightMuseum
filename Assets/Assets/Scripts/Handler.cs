@@ -28,7 +28,7 @@ public class Handler : MonoBehaviour
 		_tm = GetComponentInChildren<TextMeshProUGUI>();
 		_wordInspect.textMesh = _tm;
 
-		// note: 
+		// *note: 
 		// Set in editor, this is broken?
 		//canvas = GetComponentInChildren<Canvas>();
     }
@@ -59,7 +59,6 @@ public class Handler : MonoBehaviour
 
 	private void PaintingTextInit()
 	{
-		//gameObject.GetComponentInChildren<Canvas>().enabled = true;
 		canvas.enabled = true;
 
 		_wordInspect._currPainting = paintingId; 
@@ -71,7 +70,6 @@ public class Handler : MonoBehaviour
 
 	private void PaintingTextClose()
 	{
-		//gameObject.GetComponentInChildren<Canvas>().enabled = false;
 		canvas.enabled = false;
 		_wordInspect.inspectActive = false;
 		_tm.enabled = false;

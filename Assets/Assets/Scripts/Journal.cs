@@ -1,12 +1,14 @@
 using System;
 using UnityEngine;
+using TMPro;
 
 [Serializable]
 public class JournalEntry
 {
-	public bool collected;
+	// jnote:
+	// Currently, class only stores painting entry for showing keyword text...
+	// More could be added later, different colors, pictures, etc.
 	public DB_Entry painting;
-
 	public JournalEntry(DB_Entry _painting) { painting = _painting; }
 }
 
@@ -30,7 +32,7 @@ public class Journal : MonoBehaviour
 	
     void Start()
     {
-       	_canvas = GetComponent<Canvas>(); 
+		_canvas = GameObject.Find("JournalCanvas").GetComponent<Canvas>();
 		_paintingData = GameObject.Find("Paintings").GetComponent<PaintingData>();
 
 		entries = new JournalEntry[_paintingData.dbEntries.Length];	
@@ -45,6 +47,9 @@ public class Journal : MonoBehaviour
     	if(!FlagCheck((byte)flag.f_lock)) 
 		{
 		}
+
+		// If show journal, enable canvas
+		_canvas.enabled = (FlagCheck((byte)flag.f_show));
     }
 
 	public void AddEntry(DB_Entry painting) 
@@ -59,6 +64,20 @@ public class Journal : MonoBehaviour
 
 		// Add entry, increment collected count
 		entries[_collectCount++] = new JournalEntry(painting);
+		UpdateText();
+	}
+
+	public void UpdateText()
+	{
+		// Init output string
+		string output =	string.Empty;
+
+		// For each journal entry, print keyword + newline char
+		for(byte i = 0; i < _collectCount; i++)
+			output += entries[i].painting.keyWord + "\n";
+
+		// Overwrite tm text with output string
+		_canvas.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = output;	
 	}
 
 	// *
