@@ -82,7 +82,7 @@ public class Journal : MonoBehaviour
 
 		// For each journal entry, print keyword + newline char
 		for(byte i = 0; i < _collectCount; i++)
-			output += entries[i].painting.keyWord + "\n";
+			output += " - " + entries[i].painting.keyWord + "\n";
 
 		// Overwrite tm text with output string
 		_canvas.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = output;	
