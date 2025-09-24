@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 [Serializable]
@@ -29,6 +30,8 @@ public class Journal : MonoBehaviour
 	public JournalEntry[] entries;
 
 	private int _collectCount = 0;
+
+	private Button _button;  
 	
     void Start()
     {
@@ -36,6 +39,11 @@ public class Journal : MonoBehaviour
 		_paintingData = GameObject.Find("Paintings").GetComponent<PaintingData>();
 
 		entries = new JournalEntry[_paintingData.dbEntries.Length];	
+
+		_button = GameObject.Find("JournalButton").GetComponent<Button>();
+		_button.onClick.AddListener(() => {
+				FlagToggle((byte)flag.f_show);
+		});
     }
 
     void Update()
