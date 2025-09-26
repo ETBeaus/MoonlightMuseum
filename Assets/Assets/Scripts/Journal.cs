@@ -67,6 +67,7 @@ public class Journal : MonoBehaviour
 		});
 
 		stickerBG = new Texture2D(200, 500);
+		stickerBG.wrapMode = TextureWrapMode.Clamp;
     }
 
     void Update()
@@ -120,6 +121,37 @@ public class Journal : MonoBehaviour
 	{
 		sbyte texId = (sbyte)UnityEngine.Random.Range(0, 11);
 		
+		bool texIdFree = true;
+		for(byte i = 0; i < _stickerCollCount; i++)
+		{
+			if(stickerEntries[i].texId == texId)
+			{
+				texIdFree = false;
+				break;
+			}
+		}
+
+		while(!texIdFree)
+		{
+			texId++;
+			if(texId > 11) texId = 0;
+			
+			bool isFree = true;
+			for(byte i = 0; i < _stickerCollCount; i++)
+			{
+				if(texId == stickerEntries[i].texId)
+				{
+					isFree = false;
+				}
+			}
+
+			if(isFree)
+			{
+				texIdFree = true; 
+				break;
+			}
+		}
+		
 		Vector2 pos = new Vector2(
 			UnityEngine.Random.Range(80, 200 - 80),
 			UnityEngine.Random.Range(80, 500 - 80)
@@ -131,7 +163,8 @@ public class Journal : MonoBehaviour
 
 	public void StickerTexUpdate()
 	{
-		StickerEntry newSticker = stickerEntries[_stickerCollCount-1];
+		// Only apply entry at top of stack's texture 
+		StickerEntry newSticker = stickerEntries[_stickerCollCount - 1];
 		Texture2D tex = stickerTextures[newSticker.texId];
 		
 		// Get pixels
@@ -139,11 +172,14 @@ public class Journal : MonoBehaviour
 		Color[] stickerPX = tex.GetPixels();
 
 		// Copy sticker pixels to background
-		for(UInt16 y = 0; y < (UInt16)(tex.height); y++) {
-			for(UInt16 x = 0; x < (UInt16)(tex.width); x++) {
+		for(UInt16 y = 0; y < (UInt16)(tex.height); y++) 
+		{
+			for(UInt16 x = 0; x < (UInt16)(tex.width); x++) 
+			{
 				// Ignore transparent pixels
 				if(stickerPX[x + y * tex.width].a == 0) continue;	
 
+				// Set background pixel to color local to sticker sprite index
 				bgPX[(UInt16)((x + newSticker.position.x) + (y + newSticker.position.y) * stickerBG.width)]
 					= stickerPX[x + y * tex.width];
 			}
@@ -152,7 +188,8 @@ public class Journal : MonoBehaviour
 		// Set new pixels, apply
 		stickerBG.SetPixels(bgPX);	
 		stickerBG.Apply();
-		Img_stickerBG.sprite = Sprite.Create(stickerBG, new Rect(0, 0, stickerBG.width, stickerBG.height), Vector2.one * 0.5f);
+		//Img_stickerBG.sprite = Sprite.Create(stickerBG, new Rect(0, 0, stickerBG.width, stickerBG.height), Vector2.one * 0.5f);
+		Img_stickerBG.sprite = Sprite.Create(stickerBG, new Rect(0, 0, stickerBG.width, stickerBG.height), Vector2.zero);
 	}
 
 	// *
