@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 
 [Serializable]
 public class DB_Entry
@@ -16,6 +18,16 @@ public class DB_Entry
     public string keyWord;
     public string dataPoint;
     public string painterName;
+
+	public DB_Entry(string _title, string _link, string _description, string _keyword, string _datapoint, string _painterName)
+	{
+		title = _title;
+		link = _link;
+		description = _description;
+		keyWord = _keyword;
+		dataPoint = _datapoint;
+		painterName = _painterName;
+	}
 }
 
 public class PaintingData : MonoBehaviour
@@ -25,7 +37,8 @@ public class PaintingData : MonoBehaviour
 
     void Start()
     {
-        DB_Read("db_corrected.txt");
+        //DB_Read("db_corrected.txt");
+		DB_HardCodeEntries();
     }
 
     private void DB_Read(string filePath)
@@ -120,5 +133,118 @@ public class PaintingData : MonoBehaviour
 			}
         }
     }
+
+	private void DB_HardCodeEntries()
+	{
+		dbEntries[0] = new DB_Entry(
+			"Bluffs and Beach, Turkey Point, Lake Erie",
+			"https://www.gallery.ca/collection/artwork/bluffs-and-beach-turkey-point-lake-erie",
+			"Along this beach there is, brilliantly, a spark of colour. When you look at this painting, can you smell the flowers? Feel the breeze and the sand under your feet? Hear the swell of Lake Erie's waves against the shore?",
+			"a spark",
+			"Five-lined skink (Great Lakes/St. Lawrence population)",
+			"Eva Brook Donly"
+		);
+
+		dbEntries[1] = new DB_Entry(
+			"Untitled (Whitefish River Looking South to Manitoulin Island)",
+			"https://www.gallery.ca/collection/artwork/untitled-whitefish-river-looking-south-to-manitoulin-island",
+			"This piece is Untitled, but it depicts Manitoulin Island, which is found in lake Huron. It's beautiful green and blue hues give the viewer a sense of freedom afforded only by vastly open spaces.",
+			"green and blue",
+			"Northern leopard frog (Rocky Mountain population)",
+			"Franklin Carmichael"
+		);
+
+		dbEntries[2] = new DB_Entry(
+			"Prairie Fantasy",
+			"https://www.gallery.ca/collection/artwork/prairie-fantasy",
+			"What kind of species might live in this tapestry? The prairies, so unassuming at first, host more life than you could imagine!",
+			"this tapestry",
+			"Burrowing owl",
+			"L.L. FitzGerald"
+		);
+
+		dbEntries[3] = new DB_Entry(
+			"Underpass, Montreal",
+			"https://www.gallery.ca/collection/artwork/underpass-montreal",
+			"Despite being grey, our cities are home to many species, you just have to keep your eyes peeled. Though this underpass looks like repairs are past needed, you probably wouldn't guess that it's the perfect home for a surprising species.",
+			"Repairs are past",
+			"Common nighthawk",
+			"Ghitta Caiserman"
+		);
+
+		dbEntries[4] = new DB_Entry(
+			"Manitoba Landscape",
+			"https://www.gallery.ca/collection/artwork/manitoba-landscape",
+			"Paintings in this style are called 'pointilist' and you might think 'who will say that this is a landscape?' Believe us, sometimes it's hard to see! But look closesly, let the colours blend in to one another, and see what your mind comes up with.",
+			"Who will say",
+			"Dusky dune moth",
+			"L.L. FitzGerald"
+		);
+
+		dbEntries[5] = new DB_Entry(
+			"Cove Fields, Quebec",
+			"https://www.gallery.ca/collection/artwork/cove-fields-quebec",
+			"The beams of light through the clouds pursue the curve of the cove, in a painting that evokes the thoughts of chilly coastal Autumn days and the smell of wet grass and ocean spray.",
+			"pursue",
+			"Caribou (Atlantic-Gaspésie population)",
+			"Edmund Morris"
+		);
+
+		dbEntries[6] = new DB_Entry(
+			"Fishing Stages, Newfoundland",
+			"https://www.gallery.ca/collection/artwork/fishing-stages-newfoundland",
+			"It's hard to believe, but people lived and worked in these shacks. Under them, the sea drifts, full of fish and other bounties.",
+			"Sea Drifts",
+			"Leatherback sea turtle (Atlantic population)",
+			"Maurice Cullen"
+		);
+
+		dbEntries[7] = new DB_Entry(
+			"The Jack Pine",
+			"https://www.gallery.ca/collection/artwork/the-jack-pine",
+			"Here, a beautiful pine grows from the ashes of the ground, superimposed on a colourful sunrise. The painter has said that this scene is meant to represent the soul of Northern Ontario.",
+			"the ashes",
+			"Eastern hog-nosed snake",
+			"Tom Thomson"
+		);
+
+		dbEntries[8] = new DB_Entry(
+			"Straight of Juan de Fuca",
+			"https://www.gallery.ca/collection/artwork/strait-of-juan-de-fuca",
+			"Bright, bold brushstroked evoke a feeling of movement in the rivers, the sea, and make it seem like the waves might spill right out of the frame and wash the viewer away!",
+			"the rivers, the sea",
+			"North Atlantic right whale AND North Pacific right whale",
+			"Emily Carr"
+		);
+
+		dbEntries[9] = new DB_Entry(
+			"British Columbia Landscape",
+			"https://www.gallery.ca/collection/artwork/british-columbia-landscape-0",
+			"Once upon a time, many years ago, Canada's forests were dense and dark, with trees that stand together like little tin soldiers, shoulder to shoulder. When you look at this piece, what do you feel? What do you see? Is it as simple as tree upon tree?",
+			"stand together",
+			"Taylor's checkerspot",
+			"Emily Carr"
+		);
+
+		dbEntries[10] = new DB_Entry(
+			"Prairie Fantasy",
+			"https://www.gallery.ca/collection/artwork/prairie-fantasy",
+			"What kind of species might live in this tapestry? The prairies, so unassuming at first, host more life than you could imagine!",
+			"this tapestry",
+			"Burrowing owl",
+			"L.L. FitzGerald"
+		);
+
+		dbEntries[11] = new DB_Entry(
+			"Logged-Over Hillside",
+			"https://www.gallery.ca/collection/artwork/logged-over-hillside",
+			"The forests of Canadian past have become myth, in the past they had treelines so dense it was like looking in to another world. This piece shows that loss, that which we have for so long now been missing.",
+			"become myth,",
+			"Mountain beaver",
+			"Emily Carr"
+		);
+
+		SetKeyIds();
+	}
 }
 
