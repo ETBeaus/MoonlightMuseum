@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Handler : MonoBehaviour
@@ -18,6 +19,9 @@ public class Handler : MonoBehaviour
 
 	public TextMeshProUGUI _tm;
 	public Canvas canvas;
+
+	public Button btn_Prev;
+	public Button btn_Next;
 	
     void Start()
     {
@@ -31,6 +35,10 @@ public class Handler : MonoBehaviour
 		// *note: 
 		// Set in editor, this is broken?
 		//canvas = GetComponentInChildren<Canvas>();
+
+
+		//btn_Prev.onClick.AddListener( () => {CyclePage(-1);} );
+		//btn_Next.onClick.AddListener( () => {CyclePage(+1);} );
     }
 
     void Update()
@@ -40,11 +48,11 @@ public class Handler : MonoBehaviour
 		prevViewId = currViewId;
 		currViewId = _viewManager.GetViewId();
 
-		paintingViewActive = (currViewId >= _paintingsStartId && currViewId <= _paintingsStartId + _paintingCount);
+		paintingViewActive = (currViewId >= _paintingsStartId && currViewId <= _paintingsStartId + _paintingCount - 1);
 
 		if(paintingViewActive)		
 		{
-			paintingId = (currViewId - _paintingsStartId);
+			paintingId = (currViewId - _paintingsStartId - 1);
 
 			if(prevViewId != currViewId)
 			{
@@ -57,7 +65,7 @@ public class Handler : MonoBehaviour
 		}
     }
 
-	private void PaintingTextInit()
+	public void PaintingTextInit()
 	{
 		canvas.enabled = true;
 
@@ -66,13 +74,24 @@ public class Handler : MonoBehaviour
 
 		_tm.enabled = true;
 		_tm.text = _paintingData.dbEntries[paintingId].description;
+
+		paintingViewActive = true;
+		_tm.pageToDisplay = 0;
 	}
 
-	private void PaintingTextClose()
+	public void PaintingTextClose()
 	{
 		canvas.enabled = false;
 		_wordInspect.inspectActive = false;
 		_tm.enabled = false;
+
+		paintingViewActive = false;
+	}
+
+	public void CyclePage(sbyte dir) 	
+	{
+		//if(!(_tm.pageToDisplay + dir > -1 && _tm.pageToDisplay < _tm.GetTextInfo(_tm.text).pageCount - 1)) return;
+		//_tm.pageToDisplay += dir;
 	}
 }
 

@@ -4,13 +4,18 @@ using UnityEngine.UI;
 using TMPro;
 
 [Serializable]
-public class JournalEntry
+public class WordEntry
 {
 	// jnote:
 	// Currently, class only stores painting entry for showing keyword text...
 	// More could be added later, different colors, pictures, etc.
 	public DB_Entry painting;
-	public JournalEntry(DB_Entry _painting) { painting = _painting; }
+	public WordEntry(DB_Entry _painting) { painting = _painting; }
+}
+
+[Serializable]
+public class StickerEntry
+{
 }
 
 public class Journal : MonoBehaviour
@@ -18,7 +23,8 @@ public class Journal : MonoBehaviour
 	// Bit field enum for state flags
 	public enum flag : byte {
 		f_show = 0x01,	// Show journal
-		f_lock = 0x02	// Lock journal
+		f_lock = 0x02,	// Lock journal view
+		f_poem = 0x04	// Poem edit mode
 	}
 
 	// All flags off on start
@@ -26,8 +32,9 @@ public class Journal : MonoBehaviour
 
 	private Canvas _canvas; 
 	private PaintingData _paintingData;
+	private Handler _handler;
 
-	public JournalEntry[] entries;
+	public WordEntry[] entries;
 
 	private int _collectCount = 0;
 
@@ -37,12 +44,13 @@ public class Journal : MonoBehaviour
     {
 		_canvas = GameObject.Find("JournalCanvas").GetComponent<Canvas>();
 		_paintingData = GameObject.Find("Paintings").GetComponent<PaintingData>();
+		_handler = GameObject.Find("HandlerObject").GetComponent<Handler>();
 
-		entries = new JournalEntry[_paintingData.dbEntries.Length];	
+		entries = new WordEntry[_paintingData.dbEntries.Length];	
 
 		_button = GameObject.Find("JournalButton").GetComponent<Button>();
 		_button.onClick.AddListener(() => {
-				FlagToggle((byte)flag.f_show);
+				FlagToggle(flag.f_show);
 		});
     }
 
@@ -52,15 +60,15 @@ public class Journal : MonoBehaviour
 		// todo: Add inputs with InputSystem, 
 		// toggle show flag
 		// Only if not locked
-    	if(!FlagCheck((byte)flag.f_lock)) 
+    	if(!FlagCheck(flag.f_lock)) 
 		{
 		}
 
 		// If show journal, enable canvas
-		_canvas.enabled = (FlagCheck((byte)flag.f_show));
+		_canvas.enabled = (FlagCheck(flag.f_show));
     }
 
-	public void AddEntry(DB_Entry painting) 
+	public void AddKeywordEntry(DB_Entry painting) 
 	{
 		// Check if already in journal
 		for(byte i = 0; i < _collectCount; i++)
@@ -71,11 +79,16 @@ public class Journal : MonoBehaviour
 		}
 
 		// Add entry, increment collected count
-		entries[_collectCount++] = new JournalEntry(painting);
-		UpdateText();
+		entries[_collectCount++] = new WordEntry(painting);
+
+		// Update text mesh
+		UpdateKeywordText();
+		
+		// Close painting description	
+		_handler.PaintingTextClose();
 	}
 
-	public void UpdateText()
+	public void UpdateKeywordText()
 	{
 		// Init output string
 		string output =	string.Empty;
@@ -90,22 +103,22 @@ public class Journal : MonoBehaviour
 
 	// *
 	// Flag helper functions:
-	// note: type casting being necessary kinda sad /,:
+	// *note: type casting being necessary kinda sad /,:
 	//
 	// Check if flag is on/off 
-	public bool FlagCheck(byte flag) 	
+	public bool FlagCheck(Journal.flag flag) 	
 	{ return ((flags & (byte)flag) != 0); }
 
 	// Set flag to on
-	public void FlagSetOn(byte flag) 	
+	public void FlagSetOn(Journal.flag flag) 	
 	{ flags |= (byte)flag; }
 
 	// Set flag to off
-	public void FlagSetOff(byte flag) 	
+	public void FlagSetOff(Journal.flag flag) 	
 	{ flags &= (byte)~flag; }
 
 	// Toggle flag on/off
-	public void FlagToggle(byte flag)	
+	public void FlagToggle(Journal.flag flag)	
 	{ flags ^= (byte)flag; }
 }
 
