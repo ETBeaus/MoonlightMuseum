@@ -11,6 +11,7 @@ public class Handler : MonoBehaviour
 	private int _paintingCount = 12;
 	private int _paintingsStartId = 42; 
 
+	public bool diagActive = false;
 	public bool paintingViewActive;
 	public int prevViewId;
 	public int currViewId;
@@ -35,32 +36,25 @@ public class Handler : MonoBehaviour
 		// *note: 
 		// Set in editor, this is broken?
 		//canvas = GetComponentInChildren<Canvas>();
-
-		//btn_Prev.onClick.AddListener( () => {CyclePage(-1);} );
-		//btn_Next.onClick.AddListener( () => {CyclePage(+1);} );
     }
 
     void Update()
     {
-		//paintingId = -1;
+		if(diagActive) 
+		{
+			if(paintingViewActive) PaintingTextClose();
+			paintingViewActive = false;
+			return;
+		}
 
 		prevViewId = currViewId;
 		currViewId = _viewManager.GetViewId();
-
-		//paintingViewActive = (currViewId >= _paintingsStartId && currViewId < _paintingsStartId + _paintingCount - 1);
-		//paintingViewActive = (currViewId > 41 && currViewId < 53);
-
-		//paintingId = (currViewId - _paintingsStartId) - 1;
-		//paintingViewActive = (paintingId >= 0 && paintingId <= 11);
 
 		paintingId = currViewId - _paintingsStartId;
 		paintingViewActive = (paintingId >= 0 && paintingId < _paintingCount);
 
 		if(paintingViewActive)		
 		{
-			//paintingId = (currViewId - _paintingsStartId) - 1;
-			//if(paintingId < 0) paintingId = 0;
-
 			if(prevViewId != currViewId)
 			{
 				PaintingTextInit();

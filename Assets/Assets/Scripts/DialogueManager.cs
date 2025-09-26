@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private int _currentDialogueIndex;
     private List<GameObject> _choiceButtons = new List<GameObject>();
 	private Journal _journal;
+	private Handler _handler;
     #endregion
 
     //------------------------------------------------PUBLIC BUTTON METHODS------------------------------------------------------
@@ -42,6 +43,9 @@ public class DialogueManager : MonoBehaviour
         DisplayLine();
 
 		_journal = GameObject.Find("HandlerObject").GetComponent<Journal>();
+		_handler = GameObject.Find("HandlerObject").GetComponent<Handler>();
+
+		_handler.diagActive = true;
     }
 
     /// <summary>
@@ -135,6 +139,8 @@ public class DialogueManager : MonoBehaviour
             ActivateInitialButton();
         }
         DeactivateDialogueCanvas();
+
+		_handler.diagActive = false;
     }
     #endregion
 
