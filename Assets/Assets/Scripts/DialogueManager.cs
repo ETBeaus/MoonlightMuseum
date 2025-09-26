@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     public List<SO_DialogueTemplate> SO_DialogueEvents;
     public bool IsRepeatableInteraction = false;
     public bool hasQuizQuestion = false;
+	public Journal journal;
     #endregion
 
     #region Private Fields
@@ -27,6 +28,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private bool _questionWasAnswered = false;
     [SerializeField] private int _currentDialogueIndex;
     private List<GameObject> _choiceButtons = new List<GameObject>();
+	private Journal _journal;
     #endregion
 
     //------------------------------------------------PUBLIC BUTTON METHODS------------------------------------------------------
@@ -38,6 +40,8 @@ public class DialogueManager : MonoBehaviour
         ResetDialogueIndex();
         DeactivateInitialButton();
         DisplayLine();
+
+		_journal = GameObject.Find("HandlerObject").GetComponent<Journal>();
     }
 
     /// <summary>
@@ -85,6 +89,7 @@ public class DialogueManager : MonoBehaviour
                 if (SO_DialogueEvents[i].IsFirstTryRightAnswerReaction)
                 {
                     _currentDialogueIndex = i;
+					_journal.AddStickerEntry();
                     break;
                 }
             }

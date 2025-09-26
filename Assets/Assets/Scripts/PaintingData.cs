@@ -37,6 +37,9 @@ public class PaintingData : MonoBehaviour
 
     void Start()
     {
+		// *note:
+		// SreamingAssets path needs to be fixed,
+		// also no file io for web builds...
         //DB_Read("db_corrected.txt");
 		DB_HardCodeEntries();
     }
