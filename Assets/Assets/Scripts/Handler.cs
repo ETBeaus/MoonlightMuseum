@@ -36,7 +36,6 @@ public class Handler : MonoBehaviour
 		// Set in editor, this is broken?
 		//canvas = GetComponentInChildren<Canvas>();
 
-
 		//btn_Prev.onClick.AddListener( () => {CyclePage(-1);} );
 		//btn_Next.onClick.AddListener( () => {CyclePage(+1);} );
     }
@@ -48,11 +47,13 @@ public class Handler : MonoBehaviour
 		prevViewId = currViewId;
 		currViewId = _viewManager.GetViewId();
 
-		paintingViewActive = (currViewId >= _paintingsStartId && currViewId <= _paintingsStartId + _paintingCount - 1);
+		//paintingViewActive = (currViewId >= _paintingsStartId && currViewId < _paintingsStartId + _paintingCount - 1);
+		paintingViewActive = (currViewId > 41 && currViewId < 53);
 
 		if(paintingViewActive)		
 		{
-			paintingId = (currViewId - _paintingsStartId - 1);
+			paintingId = (currViewId - _paintingsStartId) - 1;
+			if(paintingId < 0) paintingId = 0;
 
 			if(prevViewId != currViewId)
 			{
@@ -76,7 +77,7 @@ public class Handler : MonoBehaviour
 		_tm.text = _paintingData.dbEntries[paintingId].description;
 
 		paintingViewActive = true;
-		_tm.pageToDisplay = 0;
+		//_tm.pageToDisplay = 0;
 	}
 
 	public void PaintingTextClose()
