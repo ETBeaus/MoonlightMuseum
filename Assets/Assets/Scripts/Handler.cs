@@ -42,22 +42,29 @@ public class Handler : MonoBehaviour
 
     void Update()
     {
-		paintingId = -1;
+		//paintingId = -1;
 
 		prevViewId = currViewId;
 		currViewId = _viewManager.GetViewId();
 
 		//paintingViewActive = (currViewId >= _paintingsStartId && currViewId < _paintingsStartId + _paintingCount - 1);
-		paintingViewActive = (currViewId > 41 && currViewId < 53);
+		//paintingViewActive = (currViewId > 41 && currViewId < 53);
+
+		//paintingId = (currViewId - _paintingsStartId) - 1;
+		//paintingViewActive = (paintingId >= 0 && paintingId <= 11);
+
+		paintingId = currViewId - _paintingsStartId;
+		paintingViewActive = (paintingId >= 0 && paintingId < _paintingCount);
 
 		if(paintingViewActive)		
 		{
-			paintingId = (currViewId - _paintingsStartId) - 1;
-			if(paintingId < 0) paintingId = 0;
+			//paintingId = (currViewId - _paintingsStartId) - 1;
+			//if(paintingId < 0) paintingId = 0;
 
 			if(prevViewId != currViewId)
 			{
 				PaintingTextInit();
+				Debug.Log($"painting id: {paintingId}");
 			}
 		}
 		else if(_wordInspect.inspectActive)

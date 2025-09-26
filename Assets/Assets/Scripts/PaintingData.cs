@@ -25,7 +25,7 @@ public class PaintingData : MonoBehaviour
 
     void Start()
     {
-        DB_Read("paintings_db.txt");
+        DB_Read("db_corrected.txt");
     }
 
     private void DB_Read(string filePath)
