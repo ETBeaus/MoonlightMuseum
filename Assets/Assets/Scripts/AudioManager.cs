@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
 
     private void RandomizeNextSong()
     {
-        int randomIndex = Random.Range(0, RadioSongsList.Count);
+        int randomIndex = Random.Range(0, RadioSongsList.Count-1);
 
         _audioSource.clip = RadioSongsList[randomIndex];
         CurrentRadioSong = _audioSource.clip;
