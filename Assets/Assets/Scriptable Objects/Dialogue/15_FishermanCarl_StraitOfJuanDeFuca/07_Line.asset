@@ -15,8 +15,7 @@ MonoBehaviour:
   NameToDisplay: Fisherman Carl
   PortraitTexture: {fileID: 2800000, guid: f62c22c89814ead4e8541d06b783a501, type: 3}
   DialogueLine: Unfortunately, the whales have become one of the most endangered
-    species here in Canada because of mean people who hunted these poor creatures
-    too much.
+    species here in Canada because of the mean people who overhunted these poor creatures.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

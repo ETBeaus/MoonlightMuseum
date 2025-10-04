@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: For instants, much like a possum, they will roll onto their backs
+  DialogueLine: For instance, much like a possum, they will roll onto their backs
     and pretend to play dead and emit a terrible smell to tick their attackers that
     they are rotten food. Quite clever!
   IsAQuestion: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Professor Beaver
   PortraitTexture: {fileID: 2800000, guid: c21dff99f1659d34d9fb6e62b943370a, type: 3}
-  DialogueLine: 'I''m sure your family has already plently of food put away until
+  DialogueLine: 'I''m sure your family has already plenty of food put away until
     the snow melts away. '
   IsAQuestion: 0
   IsARepliesChoice: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Garrett
   PortraitTexture: {fileID: 2800000, guid: a20efab136abf9e4ca5a02fa59770ebe, type: 3}
-  DialogueLine: Look at this Butterfly son, ain't that something!
+  DialogueLine: Look at this butterfly, son, ain't that something!
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

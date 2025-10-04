@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Ralph
   PortraitTexture: {fileID: 2800000, guid: 2023ad658b8bf304aa09b674c8f1501f, type: 3}
-  DialogueLine: Right! They're so cool! My dad get's scared of them easily though
+  DialogueLine: Right! They're so cool! My dad gets scared of them easily though,
     so he's waiting for me in the other room.
   IsAQuestion: 0
   IsARepliesChoice: 0

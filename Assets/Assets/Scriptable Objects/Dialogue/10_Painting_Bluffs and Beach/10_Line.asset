@@ -15,7 +15,7 @@ MonoBehaviour:
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: The Five-Lined Skink is an adorable animal of the lizard family,
-    who is now unfortunately classified as an endangered species here in Canada.
+    which is now unfortunately classified as an endangered species here in Canada.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

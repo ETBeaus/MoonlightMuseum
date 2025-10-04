@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: Sometimes the answers swim just past us it seems...
+  DialogueLine: Sometimes the answers swim just past us, it seems...
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

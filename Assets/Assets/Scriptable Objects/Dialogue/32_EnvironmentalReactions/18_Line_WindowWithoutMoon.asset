@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ceba9b6529d16744bde46acddf9a7e9, type: 3}
-  m_Name: 08_FirstTryReaction
+  m_Name: 18_Line_WindowWithoutMoon
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
-  NameToDisplay: Castor
-  PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: Ah correct! See, little one, nothing to be afraid of, especially
-    for our sticker winner!
+  NameToDisplay: Baby Beaver
+  PortraitTexture: {fileID: 2800000, guid: 0b51c82f032243e478212f9f1e513cd2, type: 3}
+  DialogueLine: It sure is dark out. I'm sure happy we have lights in here and teacher
+    to guide me home!
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []
   IsFirstLineAfterQuestion: 0
   IsWrongAnswerReaction: 0
   IsSecondTryRightAnswerReaction: 0
-  IsFirstTryRightAnswerReaction: 1
+  IsFirstTryRightAnswerReaction: 0

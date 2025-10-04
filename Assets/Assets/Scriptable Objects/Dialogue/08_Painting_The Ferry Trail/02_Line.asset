@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: Augustus Kenderdine was born in Lancashire, England in 1870 and emigrated
-    to Saskatchewan in 1908.
+  DialogueLine: Augustus Kenderdine was born in Lancashire, England, in 1870 and
+    emigrated to Saskatchewan in 1908.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

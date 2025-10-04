@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Baby Beaver
   PortraitTexture: {fileID: 2800000, guid: 0b51c82f032243e478212f9f1e513cd2, type: 3}
-  DialogueLine: IT'S SO BIG!... I wonder if there's Beavers on the moon?
+  DialogueLine: IT'S SO BIG!... I wonder if there are Beavers on the Moon?
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

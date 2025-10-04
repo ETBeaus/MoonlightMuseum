@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: 'Caribou are a threatend species that can be found in most area''s
+  DialogueLine: 'Caribou are a threatened species that can be found in most areas
     of the country. '
   IsAQuestion: 0
   IsARepliesChoice: 0

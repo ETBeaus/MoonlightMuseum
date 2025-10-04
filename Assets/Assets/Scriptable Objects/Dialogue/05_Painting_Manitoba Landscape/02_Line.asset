@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: FitzGerlad was a member of a collective of Canadian artist known
-    as "The Group of Seven", however, he would focus a grand majority of his artwork
+  DialogueLine: FitzGerald was a member of a collective of Canadian artists known
+    as The Group of Seven; however, he would focus a grand majority of his artwork
     on his home province of Manitoba.
   IsAQuestion: 0
   IsARepliesChoice: 0

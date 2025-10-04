@@ -15,7 +15,7 @@ MonoBehaviour:
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: While they don't build dam's, they do like to burrow into the ground,
-    perhaps do to their anti-social nature as they usally live alone.
+    perhaps due to their anti-social nature as they usally live alone.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

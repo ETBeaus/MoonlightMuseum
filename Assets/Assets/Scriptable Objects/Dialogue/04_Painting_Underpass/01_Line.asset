@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: Ah yes, Underpass, Montreal by the renowned artist Ghitta Caiserman,
-    the first painter to be awarded with the Governor General's Award for Visual
-    Media and Art. A prestigious honor!
+  DialogueLine: Ah, yes, Underpass, Montreal, by the renowned artist Ghitta Caiserman,
+    the first painter to be awarded the Governor General's Award for Visual Media
+    and Art. A prestigious honour!
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

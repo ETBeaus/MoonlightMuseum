@@ -16,8 +16,7 @@ MonoBehaviour:
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: A fun fact I personally enjoy about these beautiful creatures is
     that they are the largest turtles in the world! Getting as long as 5 or even
-    6 feet and can possibly weight up towards 1,000 pounds! Truly, a magnificent
-    creature!
+    6 feet, and can possibly weigh up to 1,000 pounds! Truly, a magnificent creature!
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

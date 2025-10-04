@@ -15,7 +15,7 @@ MonoBehaviour:
   NameToDisplay: 'Professor Beaver '
   PortraitTexture: {fileID: 2800000, guid: c21dff99f1659d34d9fb6e62b943370a, type: 3}
   DialogueLine: 'I sometimes wish we could simply hibernate like other animals and
-    sleep away the winter. I guess we are destined to be busy Beaver''s year-round. '
+    sleep away the winter. I guess we are destined to be busy Beavers year-round. '
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

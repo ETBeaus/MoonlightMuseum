@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: Ah! About the subject tied to this painting! Do not be affraid of
-    it's apperance little one, as this creature is stickingly similar to us. What
+  DialogueLine: Ah! About the subject tied to this painting! Do not be afraid of
+    its appearance, little one, as this creature is stickingly similar to us. What
     do you think its name is?
   IsAQuestion: 1
   IsARepliesChoice: 0

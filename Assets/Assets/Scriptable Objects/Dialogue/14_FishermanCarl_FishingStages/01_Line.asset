@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Fisherman Carl
   PortraitTexture: {fileID: 2800000, guid: f62c22c89814ead4e8541d06b783a501, type: 3}
-  DialogueLine: Can you belive a creature that big! I hear they even weight upwards
+  DialogueLine: Can you believe a creature that big! I hear they even weigh upwards
     of 880 pounds!
   IsAQuestion: 0
   IsARepliesChoice: 0

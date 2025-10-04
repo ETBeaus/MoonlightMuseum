@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: One of Canada's most prolific artist, Carr would also dabble in writing
-    to critical acclaim. Truly a multi-talanted artist.
+  DialogueLine: One of Canada's most prolific artists, Carr would also dabble in
+    writing to critical acclaim. Truly a multi-talented creative.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

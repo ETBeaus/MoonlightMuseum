@@ -15,7 +15,7 @@ MonoBehaviour:
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: These majestic Right Whales are an incredibly rare sight to behold
-    due to their extreme endangered status
+    due to their extreme endangered status.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

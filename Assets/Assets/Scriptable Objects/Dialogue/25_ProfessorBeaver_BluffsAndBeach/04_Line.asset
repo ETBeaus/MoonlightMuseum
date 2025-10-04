@@ -15,7 +15,7 @@ MonoBehaviour:
   NameToDisplay: Professor Beaver
   PortraitTexture: {fileID: 2800000, guid: c21dff99f1659d34d9fb6e62b943370a, type: 3}
   DialogueLine: 'It means extra important! You see, they are the only lizards native
-    to the province of Ontario, but mass urban development has threated their home. '
+    to the province of Ontario, but mass urban development has threatened their home. '
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

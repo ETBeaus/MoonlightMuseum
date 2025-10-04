@@ -15,9 +15,9 @@ MonoBehaviour:
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: Wilfred Arthur Charles Carter, or better known as Wilf Carter, has
-    written over 500 songs and has been inducted in both the Canadian Country Music
+    written over 500 songs and has been inducted into both the Canadian Country Music
     Hall of Fame and the Canadian Songwriters Hall of Fame. Interestingly, most might
-    know him as Montana Slim, a moniker he dawned at the request of the CBS Radio
+    know him as Montana Slim, a moniker he donned at the request of the CBS Radio
     Station.
   IsAQuestion: 0
   IsARepliesChoice: 0

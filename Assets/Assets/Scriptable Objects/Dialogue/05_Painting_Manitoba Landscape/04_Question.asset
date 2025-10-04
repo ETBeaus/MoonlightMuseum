@@ -15,8 +15,8 @@ MonoBehaviour:
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: The fluttery animal our exhibit has tied to this painting is known
-    as the Copablepharon longipenne scientifically, but I'm wondering if you can
-    guess it's more common name?
+    as the Copablepharon Longipenne scientifically, but I'm wondering if you can
+    guess its more common name?
   IsAQuestion: 1
   IsARepliesChoice: 0
   AnswerChoices: []

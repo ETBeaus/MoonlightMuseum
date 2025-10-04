@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: 'Ah of course! It is quite simple really! All you have to do is point!
-    Clicking on an object or person will allow you to interact with them. For example,
-    if you use your mouse to click on a person, you will begin talking to that person!
-    If you want to move locations, simply click on a hallway entrance and you will
-    move to the next room! Easy peasy! If you have any further questions or need
-    a reminder, you can always check the instructions in the pause menu! '
+  DialogueLine: 'Ah, of course! It is quite simple, really! All you have to do is
+    point! Clicking on an object or person will allow you to interact with them.
+    For example, if you use your mouse to click on a person, you will begin talking
+    to that person! If you want to move locations, simply click on a hallway entrance,
+    and you will move to the next room! Easy peasy! If you have any further questions
+    or need a reminder, you can always check the instructions in the pause menu! '
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

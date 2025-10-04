@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: 1947's Manitoba Landscape by L.L FitzGerald, a gorgeous and bright
-    oil painting that sooths my soul every time I walk by.
+  DialogueLine: 1947's Manitoba Landscape by L.L. FitzGerald is a gorgeous and bright
+    oil painting that soothes my soul every time I walk by.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

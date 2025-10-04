@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: One of two L.L Fitzgerald paintings on display, Prairie Fantasy captures
-    the root of FitzGerald's reasong for painting.
+  DialogueLine: One of two L.L. Fitzgerald paintings on display, Prairie Fantasy
+    captures the root of FitzGerald's reason for painting.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Richard
   PortraitTexture: {fileID: 2800000, guid: e32d0ef20c410a746b8bef45c430a84f, type: 3}
-  DialogueLine: I do that sometimes to when the media is hounding me! I give them
-    and old "yip!"
+  DialogueLine: I do that sometimes when the media is hounding me! I give them an
+    old "yip!"
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: The Northern Leopard Frog, specifically of the Rocky Mountain population
+  DialogueLine: The Northern Leopard Frog, specifically the Rocky Mountain population,
     is unfortunately an endangered species due to a number of factors, most prominently
-    being the loss of their habitat due changing climate conditions and urban development
+    being the loss of their habitat due to changing climate conditions and urban
+    development.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

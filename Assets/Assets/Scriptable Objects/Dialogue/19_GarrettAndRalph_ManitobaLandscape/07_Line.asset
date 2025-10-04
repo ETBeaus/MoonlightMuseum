@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Ralph
   PortraitTexture: {fileID: 2800000, guid: 2023ad658b8bf304aa09b674c8f1501f, type: 3}
-  DialogueLine: 'Why didin''t they just call it the Group of 28 then? '
+  DialogueLine: 'Why didn''t they just call it the Group of 28 then? '
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

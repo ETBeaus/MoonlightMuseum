@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: 'Professor Beaver '
   PortraitTexture: {fileID: 2800000, guid: c21dff99f1659d34d9fb6e62b943370a, type: 3}
-  DialogueLine: Ha! Maybe so in looks! But they are actually very easy-going young
-    kit so there's no need to worry.
+  DialogueLine: Ha! Maybe so in looks! But they are actually very easy-going, so
+    there's no need to worry.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

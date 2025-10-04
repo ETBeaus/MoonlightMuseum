@@ -15,7 +15,7 @@ MonoBehaviour:
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: Ah ha! I see you have come across Fishing Stages by Maurice Cullen.
-    A majestic oil painting which captures a small fishing cabin in Newfoundland.
+    A majestic oil painting that captures a small fishing cabin in Newfoundland.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

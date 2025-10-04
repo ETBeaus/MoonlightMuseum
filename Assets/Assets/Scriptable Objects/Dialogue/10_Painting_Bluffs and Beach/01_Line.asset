@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: 'Have you ever been to the beach young kit? This drawing always feels
-    like it transports me there. Nothing better than the warm sun on a Beavers fur. '
+  DialogueLine: 'Have you ever been to the beach, young kit? This drawing always
+    feels like it transports me there. Nothing better than the warm sun on a Beaver''s
+    fur. '
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

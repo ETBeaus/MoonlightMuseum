@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: He was also a member of the famous "Group of Seven," a collective
-    of Canadian artists who specialized in Canadian landscapes and portraying a style
+  DialogueLine: He was also a member of the famous Group of Seven, a collective of
+    Canadian artists who specialized in Canadian landscapes and portrayed a style
     of art unique to our country.
   IsAQuestion: 0
   IsARepliesChoice: 0

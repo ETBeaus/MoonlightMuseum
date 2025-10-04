@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: 'Are you having a "whale," of a time on this exhibit so far? Erm,
+  DialogueLine: 'Are you having a "whale" of a time on this exhibit so far? Erm,
     well, perhaps it''s best we ignore that attempt at humour and move on. '
   IsAQuestion: 0
   IsARepliesChoice: 0

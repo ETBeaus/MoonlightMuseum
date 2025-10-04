@@ -15,7 +15,7 @@ MonoBehaviour:
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: It is clear from works such as this that Carr felt truly in tune
-    with the nature of the land around her, and a love and fascination with Canadian
+    with the nature of the land around her and had a love and fascination with Canadian
     landscapes.
   IsAQuestion: 0
   IsARepliesChoice: 0

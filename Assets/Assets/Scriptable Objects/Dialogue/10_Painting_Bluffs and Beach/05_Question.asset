@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: 'The bright colours in this painting often remind me a certain lizard
-    creature that can be found in the area. Can you guess what it is? '
+  DialogueLine: 'The bright colours in this painting often remind me of a certain
+    lizard creature that can be found in the area. Can you guess what it is? '
   IsAQuestion: 1
   IsARepliesChoice: 0
   AnswerChoices: []

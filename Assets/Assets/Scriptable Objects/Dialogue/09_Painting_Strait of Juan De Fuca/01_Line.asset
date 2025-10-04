@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: 1936's Straight of Juan De Fuca by Emily Carr, such a delight. look
-    at those brush strokes, the sense of colour and presence
+  DialogueLine: 1936's Strait of Juan De Fuca by Emily Carr, such a delight. Look
+    at those brush strokes, the sense of colour and presence.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

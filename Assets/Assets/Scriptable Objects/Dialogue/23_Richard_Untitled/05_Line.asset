@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Richard
   PortraitTexture: {fileID: 2800000, guid: e32d0ef20c410a746b8bef45c430a84f, type: 3}
-  DialogueLine: 'Founded in 1920, they focused primarly on landscape paintings, wanting
-    to present an almost romantic version of our country. '
+  DialogueLine: 'Founded in 1920, they focused primarily on landscape paintings,
+    wanting to present an almost romantic version of our country. '
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

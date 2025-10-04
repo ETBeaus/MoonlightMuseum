@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Professor Beaver
   PortraitTexture: {fileID: 2800000, guid: c21dff99f1659d34d9fb6e62b943370a, type: 3}
-  DialogueLine: 'Did you know that their diets mainly consit of spiders and worms! '
+  DialogueLine: 'Did you know that their diets mainly consist of spiders and worms! '
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

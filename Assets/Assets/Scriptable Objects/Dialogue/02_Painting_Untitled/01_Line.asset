@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: 'Ah yes, one of my personal favourites on display tonight. Franklin
+  DialogueLine: 'Ah, yes, one of my personal favourites on display tonight. Franklin
     Carmichael''s "Untitled" is a gorgeous portrait of an Ontario landscape. As the
     description says, the sense of freedom is unrivalled. '
   IsAQuestion: 0

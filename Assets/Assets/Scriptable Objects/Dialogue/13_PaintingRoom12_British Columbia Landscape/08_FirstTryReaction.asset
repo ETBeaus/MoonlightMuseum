@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: It's a bird, it's a plane, it's.... the right answer! A stciker is
+  DialogueLine: It's a bird, it's a plane, it's... the right answer! A sticker is
     yours!
   IsAQuestion: 0
   IsARepliesChoice: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: A threatened species, the Eastern Hog-nosed Snake may look scary,
-    but it's venom is mild to most larger creatures .
+    but its venom is mild to most larger creatures .
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

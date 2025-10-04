@@ -15,7 +15,7 @@ MonoBehaviour:
   NameToDisplay: Sherry
   PortraitTexture: {fileID: 2800000, guid: d67fbe12724a5fe4d89a4c66e1869ba2, type: 3}
   DialogueLine: 'Research has also shown that certain pesticides can affect their
-    birthing success. Oh those poor mama birds. '
+    birthing success. Oh, those poor mama birds. '
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

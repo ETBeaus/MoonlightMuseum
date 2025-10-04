@@ -16,8 +16,8 @@ MonoBehaviour:
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: Arguably one of Canada's most famous performers, Emma Albani was
     an international star, touring Opera houses around the world! In fact, I believe
-    the "Place-des-Arts" metro station in Montreal has a mural dedicated to her.
-    The city also has a street named after her! A testament to her star power!
+    the Place-des-Arts metro station in Montreal has a mural dedicated to her. The
+    city also has a street named after her! A testament to her star power!
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

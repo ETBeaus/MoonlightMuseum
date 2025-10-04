@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: Why hello there young kit, and welcome to the Midnight Museum. A
+  DialogueLine: Why hello there, young kit, and welcome to the Midnight Museum. A
     night of art, beauty, and environmental enlightenment.
   IsAQuestion: 0
   IsARepliesChoice: 0

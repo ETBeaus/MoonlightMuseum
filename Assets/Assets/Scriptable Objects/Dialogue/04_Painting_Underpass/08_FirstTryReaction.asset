@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: Looks like this Beaver has wings of knowlage! A stciker for a correct
+  DialogueLine: Looks like this Beaver has wings of knowledge! A sticker for a correct
     answer!
   IsAQuestion: 0
   IsARepliesChoice: 0

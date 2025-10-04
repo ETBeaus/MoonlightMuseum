@@ -15,7 +15,7 @@ MonoBehaviour:
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: The Common Nighthawk has unfortunately become less common as the
-    years have gone by, now being considered and endangered species.
+    years have gone by, now being considered an endangered species.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

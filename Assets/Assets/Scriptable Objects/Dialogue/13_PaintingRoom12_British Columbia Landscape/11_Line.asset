@@ -15,7 +15,7 @@ MonoBehaviour:
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: Denman Island in British Columbia is the only place left in Canada
-    where this speicies can be found!
+    where this species can be found!
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

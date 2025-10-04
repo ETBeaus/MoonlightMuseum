@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: Carmicheal was a painter who became famous for his use of watercolours,
-    although, he had been known to experiment with other painting methods as well.
+  DialogueLine: Carmichael was a painter who became famous for his use of watercolours,
+    although he had been known to experiment with other painting methods as well.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

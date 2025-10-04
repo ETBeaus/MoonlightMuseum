@@ -15,8 +15,8 @@ MonoBehaviour:
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
   DialogueLine: Carr was mentored by Lawren Harris, a member of the artist collective
-    known as "The Group of Seven" and Carr herself was recognized as an unofficial
-    member to the group.
+    known as The Group of Seven, and Carr herself was recognized as an unofficial
+    member of the group.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

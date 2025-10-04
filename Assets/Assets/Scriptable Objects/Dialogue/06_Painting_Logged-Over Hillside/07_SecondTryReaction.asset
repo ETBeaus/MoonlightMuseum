@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: You got it! Somone's got a key eye for the right answers!
+  DialogueLine: You got it! Someone's got a key eye for the right answers!
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

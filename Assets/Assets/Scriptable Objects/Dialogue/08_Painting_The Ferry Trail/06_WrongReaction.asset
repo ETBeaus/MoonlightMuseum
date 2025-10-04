@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: Unfortunately that was not what I was looking for, but good guess!
+  DialogueLine: Unfortunately, that was not what I was looking for, but good guess!
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: FtzGerlad was also an art teacher at the Winnipeg School of Art and
-    even become principal later on in his career!
+  DialogueLine: FtizGerlad was also an art teacher at the Winnipeg School of Art
+    and even became principal later on in his career!
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

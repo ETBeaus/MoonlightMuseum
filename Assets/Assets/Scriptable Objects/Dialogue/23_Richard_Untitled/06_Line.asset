@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Richard
   PortraitTexture: {fileID: 2800000, guid: e32d0ef20c410a746b8bef45c430a84f, type: 3}
-  DialogueLine: The Group of Seven consisted of Franklin Carmicheal, A.Y Jackson,
-    Franz Johnston, Lawren Harris, Arthur Lismer, J.E.H MacDonald, and F.H Varley.
+  DialogueLine: The Group of Seven consisted of Franklin Carmichael, A.Y. Jackson,
+    Franz Johnston, Lawren Harris, Arthur Lismer, J.E.H. MacDonald, and F.H. Varley.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

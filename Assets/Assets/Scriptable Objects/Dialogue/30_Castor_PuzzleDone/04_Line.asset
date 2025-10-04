@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Castor
   PortraitTexture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
-  DialogueLine: 'Come now little on, I belive there is a special ceramony to be conducted
-    soon at the lobby. You''ll defently want to see this. '
+  DialogueLine: 'Come now, little one, I believe there is a special ceremony to be
+    conducted soon at the lobby. You''ll definitely want to see this. '
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

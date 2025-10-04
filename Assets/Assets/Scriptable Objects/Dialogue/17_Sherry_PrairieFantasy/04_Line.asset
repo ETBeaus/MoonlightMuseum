@@ -15,7 +15,8 @@ MonoBehaviour:
   NameToDisplay: Sherry
   PortraitTexture: {fileID: 2800000, guid: d67fbe12724a5fe4d89a4c66e1869ba2, type: 3}
   DialogueLine: Did you know he also experimented with abstract work later in his
-    carrer? He work with oil was truly a sight to behold no matter the genre he painted.
+    career? His work with oil was truly a sight to behold, no matter the genre he
+    painted.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []

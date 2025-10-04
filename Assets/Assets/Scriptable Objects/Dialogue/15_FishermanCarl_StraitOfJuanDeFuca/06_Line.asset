@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueTemplate
   NameToDisplay: Fisherman Carl
   PortraitTexture: {fileID: 2800000, guid: f62c22c89814ead4e8541d06b783a501, type: 3}
-  DialogueLine: Hehehe, no can do. I think my fishing poll would snap under that
-    pressure! Besides, I wouldin't want to disturb them.
+  DialogueLine: Hehehe, no can do. I think my fishing pole would snap under that
+    pressure! Besides, I wouldn't want to disturb them.
   IsAQuestion: 0
   IsARepliesChoice: 0
   AnswerChoices: []
