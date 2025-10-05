@@ -9,7 +9,7 @@ public class Handler : MonoBehaviour
 	private WordInspect _wordInspect;
 
 	private int _paintingCount = 12;
-	private int _paintingsStartId = 42; 
+	private int _paintingsStartId = 65; 
 
 	public bool diagActive = false;
 	public bool paintingViewActive;
