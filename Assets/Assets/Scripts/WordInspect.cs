@@ -14,6 +14,7 @@ public class WordInspect : MonoBehaviour
 
 	public bool _keywordHovered; 
 	public int _hoveredId;
+	private int _hoverIdPrev;
 
 	public TextMeshProUGUI textMesh;
 
@@ -38,6 +39,7 @@ public class WordInspect : MonoBehaviour
 		if(!inspectActive) return;
 
 		_wordHoverIdPrev = _wordHoverIdCurr;
+		_hoverIdPrev = _hoveredId;
 
 		bool updateFormat = false;
 
@@ -71,10 +73,8 @@ public class WordInspect : MonoBehaviour
 		bool click = Mouse.current.leftButton.wasPressedThisFrame;
 
 		// Add keyword to journal if clicked
-		if(_keywordHovered)
-		{
-			if(click) _journal.AddKeywordEntry(_db.dbEntries[_currPainting]);
-		}
+		if(_keywordHovered && click)
+			_journal.AddKeywordEntry(_db.dbEntries[_currPainting]);
 
 		if(updateFormat)
 		{
@@ -82,6 +82,13 @@ public class WordInspect : MonoBehaviour
 
 			var wordInfo = textMesh.textInfo.wordInfo[_wordHoverIdCurr];
 			FormatApply(wordInfo.firstCharacterIndex, wordInfo.lastCharacterIndex, "<u>", "</u>");
+
+			if(_keywordHovered)
+			{
+				string textColor = "#48cae4";
+				string defaultColor = "#000000";
+				FormatApply(kwStart, kwEnd, $"<color={textColor}>", $"<color={defaultColor}>");
+			}
 		}
     }
 
@@ -107,14 +114,6 @@ public class WordInspect : MonoBehaviour
 	{
 		if(textOriginal == null) return; 
 		textMesh.text = textOriginal;
-	}
-
-	bool WordInfoValid(TMP_WordInfo wordInfo)
-	{
-		if(wordInfo.firstCharacterIndex < 0 || wordInfo.lastCharacterIndex > textOriginal.Length)
-			return false;
-		
-		return true;
 	}
 
 	public void OnShow()
