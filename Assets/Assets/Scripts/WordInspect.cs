@@ -14,7 +14,8 @@ public class WordInspect : MonoBehaviour
 
 	public bool _keywordHovered; 
 	public int _hoveredId;
-	private int _hoverIdPrev;
+
+	private bool _keywordHoveredPrevFrame;
 
 	public TextMeshProUGUI textMesh;
 
@@ -39,7 +40,7 @@ public class WordInspect : MonoBehaviour
 		if(!inspectActive) return;
 
 		_wordHoverIdPrev = _wordHoverIdCurr;
-		_hoverIdPrev = _hoveredId;
+		_keywordHoveredPrevFrame = _keywordHovered;
 
 		bool updateFormat = false;
 
@@ -76,19 +77,20 @@ public class WordInspect : MonoBehaviour
 		if(_keywordHovered && click)
 			_journal.AddKeywordEntry(_db.dbEntries[_currPainting]);
 
-		if(updateFormat)
+		if(updateFormat || (_keywordHovered && !_keywordHoveredPrevFrame))
 		{
 			FormatReset();
-
-			var wordInfo = textMesh.textInfo.wordInfo[_wordHoverIdCurr];
-			FormatApply(wordInfo.firstCharacterIndex, wordInfo.lastCharacterIndex, "<u>", "</u>");
 
 			if(_keywordHovered)
 			{
 				string textColor = "#48cae4";
 				string defaultColor = "#000000";
 				FormatApply(kwStart, kwEnd, $"<color={textColor}>", $"<color={defaultColor}>");
+				return;
 			}
+
+			var wordInfo = textMesh.textInfo.wordInfo[_wordHoverIdCurr];
+			FormatApply(wordInfo.firstCharacterIndex, wordInfo.lastCharacterIndex, "<u>", "</u>");
 		}
     }
 
