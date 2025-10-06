@@ -8,7 +8,7 @@ using TMPro;
 [Serializable]
 public class WordEntry
 {
-	// jnote:
+	// note:
 	// Currently, class only stores painting entry for showing keyword text...
 	// More could be added later, different colors, pictures, etc.
 	public DB_Entry painting;
@@ -51,6 +51,9 @@ public class Journal : MonoBehaviour
 	public Texture2D[] stickerTextures = new Texture2D[12];
 	public Texture2D stickerBG;
 	public Image Img_stickerBG;
+
+	public GameObject StickerBgObject;
+	public GameObject StickerSpritePrefab;
 	
     void Start()
     {
@@ -158,7 +161,23 @@ public class Journal : MonoBehaviour
 		);
 
 		stickerEntries[_stickerCollCount++] = new StickerEntry((byte)texId, pos);
-		StickerTexUpdate();
+		
+		GameObject newSticker = Instantiate(StickerSpritePrefab, StickerBgObject.transform);
+		newSticker.transform.localPosition = pos;
+		newSticker.transform.localScale = Vector3.one;
+
+		Texture2D tex = stickerTextures[texId];
+		
+		Sprite newSprite = Sprite.Create(
+			tex,
+			new Rect(0, 0, tex.width, tex.height),
+			Vector2.one * 0.5f, 
+			1f
+		);
+
+		newSticker.GetComponent<Image>().sprite = newSprite;
+
+		//StickerTexUpdate();
 	}
 
 	public void StickerTexUpdate()

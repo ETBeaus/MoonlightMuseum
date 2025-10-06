@@ -28116,6 +28116,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: a70cdce1c32ac4a18878557886eeb03e, type: 3}
   stickerBG: {fileID: 0}
   Img_stickerBG: {fileID: 2028103092}
+  StickerBgObject: {fileID: 2028103090}
+  StickerSpritePrefab: {fileID: 836304773500551590, guid: 7df68acbf12c761198b28c076c66a70d, type: 3}
 --- !u!1 &965145977
 GameObject:
   m_ObjectHideFlags: 0
