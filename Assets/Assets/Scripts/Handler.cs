@@ -79,6 +79,8 @@ public class Handler : MonoBehaviour
 
 		paintingViewActive = true;
 		//_tm.pageToDisplay = 0;
+		
+		_wordInspect.OnShow();
 	}
 
 	public void PaintingTextClose()

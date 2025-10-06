@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using TMPro; 
 using UnityEngine.InputSystem;
@@ -15,6 +16,15 @@ public class WordInspect : MonoBehaviour
 	public int _hoveredId;
 
 	public TextMeshProUGUI textMesh;
+
+	private int _wordStart;
+	private int _wordEnd;
+
+	private int _wordHoverIdCurr;
+	private int _wordHoverIdPrev;
+
+	public string textOriginal;
+	public string textFormatted;
 	
     void Start()
     {
@@ -27,6 +37,10 @@ public class WordInspect : MonoBehaviour
 		// Skip update if inspection mode inactive
 		if(!inspectActive) return;
 
+		_wordHoverIdPrev = _wordHoverIdCurr;
+
+		bool updateFormat = false;
+
 		// Get cursor position
 		Vector2 mousePos = Mouse.current.position.ReadValue();
 		
@@ -36,6 +50,14 @@ public class WordInspect : MonoBehaviour
 				mousePos,
 				null,
 				true
+		);
+		
+		_wordHoverIdCurr = TMPro.TMP_TextUtilities.FindIntersectingWord(textMesh, mousePos, null);
+
+		updateFormat = (
+				_wordHoverIdPrev != _wordHoverIdCurr && 
+				_wordHoverIdCurr > -1 &&
+				_wordHoverIdCurr < textMesh.textInfo.wordCount
 		);
 
 		int kwStart = _db.dbEntries[_currPainting].keyStart;
@@ -49,10 +71,55 @@ public class WordInspect : MonoBehaviour
 		bool click = Mouse.current.leftButton.wasPressedThisFrame;
 
 		// Add keyword to journal if clicked
-		if(click && _keywordHovered)
+		if(_keywordHovered)
 		{
-			_journal.AddKeywordEntry(_db.dbEntries[_currPainting]);
+			if(click) _journal.AddKeywordEntry(_db.dbEntries[_currPainting]);
+		}
+
+		if(updateFormat)
+		{
+			FormatReset();
+
+			var wordInfo = textMesh.textInfo.wordInfo[_wordHoverIdCurr];
+			FormatApply(wordInfo.firstCharacterIndex, wordInfo.lastCharacterIndex, "<u>", "</u>");
 		}
     }
+
+	void FormatApply(int startId, int endId, string tagOpen, string tagClose)
+	{
+		if(textOriginal == null || startId < 0 || endId >= textOriginal.Length) return;
+		
+		string textLocal = textOriginal[startId..(endId+1)];
+		string formatted = String.Empty;
+
+		formatted = (
+			textOriginal[0..startId] +
+			tagOpen +
+			textLocal +
+			tagClose + 
+			textOriginal[(endId+1)..]
+		);
+
+		textMesh.text = formatted;
+	}
+
+	void FormatReset()
+	{
+		if(textOriginal == null) return; 
+		textMesh.text = textOriginal;
+	}
+
+	bool WordInfoValid(TMP_WordInfo wordInfo)
+	{
+		if(wordInfo.firstCharacterIndex < 0 || wordInfo.lastCharacterIndex > textOriginal.Length)
+			return false;
+		
+		return true;
+	}
+
+	public void OnShow()
+	{
+		textOriginal = _db.dbEntries[_currPainting].description;
+	}
 }
 
