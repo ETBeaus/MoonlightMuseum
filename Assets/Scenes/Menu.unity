@@ -708,8 +708,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Load Gym
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 956a6aa54ab5add4d98fd0ed679cbffc, type: 2}
+  m_sharedMaterial: {fileID: 2245335849926974586, guid: 956a6aa54ab5add4d98fd0ed679cbffc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -844,8 +844,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Moonlight Museum
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c921ff4c36530042b2475884d9f00bc, type: 2}
+  m_sharedMaterial: {fileID: 4733406597488183643, guid: 3c921ff4c36530042b2475884d9f00bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1627,8 +1627,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 956a6aa54ab5add4d98fd0ed679cbffc, type: 2}
+  m_sharedMaterial: {fileID: 2245335849926974586, guid: 956a6aa54ab5add4d98fd0ed679cbffc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1942,8 +1942,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 956a6aa54ab5add4d98fd0ed679cbffc, type: 2}
+  m_sharedMaterial: {fileID: 2245335849926974586, guid: 956a6aa54ab5add4d98fd0ed679cbffc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
