@@ -183,6 +183,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1f63418a7ad172499c7a9197581a917, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -599,6 +600,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a16a8a93728a75f4eada9fd062cfb191, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -772,6 +774,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ab16ca5f81d03a40a9a2f10a93b5a2e, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -1101,6 +1104,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -1584,6 +1588,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -3138,6 +3143,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b53b00dfba6492b4aa1718bb12a9d262, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -4935,6 +4941,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4c3332b38b578d148bb9ce090f6ba2ef, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -5044,6 +5051,101 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184288567}
   m_CullTransparentMesh: 1
+--- !u!1 &185626093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185626094}
+  - component: {fileID: 185626096}
+  - component: {fileID: 185626095}
+  m_Layer: 5
+  m_Name: Empty_CastorIntro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &185626094
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185626093}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 263441008}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -120}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &185626095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185626093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d014d88869924448a7baddefcfa68f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CastorIntro
+  ViewManager: {fileID: 1843235725}
+--- !u!114 &185626096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185626093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbeae11395ac3764a90bd26f416abc8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  DialogueCanvas: {fileID: 1847254261972849108}
+  BeaverPortraitUI: {fileID: 1182626008462744766}
+  DialogueTextOutput: {fileID: 3648027651962093503}
+  NameOutput: {fileID: 729409862421915616}
+  EndDialogueButton: {fileID: 7111603444851824454}
+  NextDialogueButton: {fileID: 4721563986288809142}
+  DialoguePanel: {fileID: 1181407667699177957}
+  ChoicePanel: {fileID: 6446514068262118551}
+  ChoiceButton_Prefab: {fileID: 8483594955216161987, guid: d6091f2513e6ba44bb72367f34beba4e, type: 3}
+  SO_DialogueEvents:
+  - {fileID: 11400000, guid: 7943b962f70ae1241ac1874f0ce1b60c, type: 2}
+  - {fileID: 11400000, guid: 25c7b6d6c28bcb2459a71833d264952f, type: 2}
+  - {fileID: 11400000, guid: d74bc995e602ccc4198ac576047776f4, type: 2}
+  - {fileID: 11400000, guid: 973685217f02a7542aa46807462b45d6, type: 2}
+  - {fileID: 11400000, guid: 0e744461d05dca540a795075b28e28e1, type: 2}
+  - {fileID: 11400000, guid: c850f73344c6d9e4db2861c48a1596d1, type: 2}
+  - {fileID: 11400000, guid: 9f4c05bcb8fe1fb43b349be6643beeaa, type: 2}
+  - {fileID: 11400000, guid: f986a3da80e03a24ea4cc7b26c3f6fec, type: 2}
+  - {fileID: 11400000, guid: 925d9e2667a675c4ab7eb683a5fff30f, type: 2}
+  - {fileID: 11400000, guid: 03196246321ac9b4c9e8879cf9b9798f, type: 2}
+  - {fileID: 11400000, guid: bfd34b0933c927644abd79065041e4f6, type: 2}
+  - {fileID: 11400000, guid: e78f7e9c9d5294342920d29d8b375ce8, type: 2}
+  - {fileID: 11400000, guid: e57208f15e11bcf439e505b231c6e6ef, type: 2}
+  - {fileID: 11400000, guid: db4f69e91ca7b3347af1e07e4c443650, type: 2}
+  - {fileID: 11400000, guid: a2fad9d8be1994441a1873b0ed65c5df, type: 2}
+  - {fileID: 11400000, guid: 546117698b7b7394ea8556d739479602, type: 2}
+  - {fileID: 11400000, guid: ee9ac8781db8d1146969be1bae8d169b, type: 2}
+  IsRepeatableInteraction: 0
+  hasQuizQuestion: 0
+  CanExitAtAnyTime: 0
+  journal: {fileID: 0}
+  _questionWasAnswered: 0
+  _currentDialogueIndex: 0
 --- !u!1 &196741311
 GameObject:
   m_ObjectHideFlags: 0
@@ -5420,6 +5522,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ab16ca5f81d03a40a9a2f10a93b5a2e, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -5674,6 +5777,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2be6c4091d594ea4e9a6c0219dcb81be, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -6579,6 +6683,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 12ec943891eb3f04081b42c0a00d19cd, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -6789,6 +6894,7 @@ RectTransform:
   - {fileID: 1756513410}
   - {fileID: 699456364}
   - {fileID: 890925630}
+  - {fileID: 185626094}
   m_Father: {fileID: 1282296956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7177,6 +7283,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d8a13e3c6670a644ca1edad7244ab5e8, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -8891,6 +8998,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304340912}
   m_CullTransparentMesh: 1
+--- !u!1 &310538196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310538197}
+  - component: {fileID: 310538199}
+  - component: {fileID: 310538198}
+  m_Layer: 5
+  m_Name: Castor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &310538197
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310538196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008391525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -19.2, y: -44.6}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &310538198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310538196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: f464fefe809192d4cad6dbf3ca58d5de, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &310538199
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310538196}
+  m_CullTransparentMesh: 1
 --- !u!1 &314377171
 GameObject:
   m_ObjectHideFlags: 0
@@ -10228,6 +10407,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -10505,6 +10685,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -10834,6 +11015,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 12ec943891eb3f04081b42c0a00d19cd, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -11163,6 +11345,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b53b00dfba6492b4aa1718bb12a9d262, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -11538,6 +11721,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -12431,6 +12615,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426022440}
   m_CullTransparentMesh: 1
+--- !u!1 &428800344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 428800345}
+  - component: {fileID: 428800347}
+  - component: {fileID: 428800346}
+  m_Layer: 5
+  m_Name: FishermanCarl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &428800345
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428800344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008391525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 121.4, y: 24.5}
+  m_SizeDelta: {x: 79.671, y: 79.0114}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &428800346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428800344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: f62c22c89814ead4e8541d06b783a501, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &428800347
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428800344}
+  m_CullTransparentMesh: 1
 --- !u!1 &429144046
 GameObject:
   m_ObjectHideFlags: 0
@@ -12745,6 +13001,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05b01d8bcb17575428f882a7fdc0a15f, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -12918,6 +13175,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1f63418a7ad172499c7a9197581a917, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -13091,6 +13349,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -13596,6 +13855,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -14332,6 +14592,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -14505,6 +14766,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ab16ca5f81d03a40a9a2f10a93b5a2e, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -14972,6 +15234,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bacf7858d9e05414f858a8bf1443e1d5, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -15145,6 +15408,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 90f81e985f600cc4a89215b3efabe869, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -15326,6 +15590,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c5627dbb46820704d99dbe8959ce99b6, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -17276,6 +17541,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -18130,6 +18396,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05b01d8bcb17575428f882a7fdc0a15f, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -18675,6 +18942,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ab16ca5f81d03a40a9a2f10a93b5a2e, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -19134,6 +19402,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -19307,6 +19576,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ab16ca5f81d03a40a9a2f10a93b5a2e, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -19645,6 +19915,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dbc27597cb52c284584a9e5dad0d4281, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -19840,6 +20111,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -20013,6 +20285,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5584bb14100e5b4ca17f83630f1d784, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -20198,6 +20471,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5cc4cf09385fd6843acc8160d0473585, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -20982,6 +21256,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2e3f8224ca2fc654e96db2d075af5492, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -22127,6 +22402,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f606764a200e01c45bff61346ea38b92, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -22821,6 +23097,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f96c3d31cde54b74dad410ac5fc6c9fd, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -23578,6 +23855,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753649459}
   m_CullTransparentMesh: 1
+--- !u!1 &755779587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 755779588}
+  - component: {fileID: 755779590}
+  - component: {fileID: 755779589}
+  m_Layer: 5
+  m_Name: Ralph
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &755779588
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755779587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7952829, y: 0.7952829, z: 0.7952829}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008391525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -213.4, y: 1.7}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &755779589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755779587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 2023ad658b8bf304aa09b674c8f1501f, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &755779590
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755779587}
+  m_CullTransparentMesh: 1
 --- !u!1 &761793947
 GameObject:
   m_ObjectHideFlags: 0
@@ -23664,6 +24013,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -24510,6 +24860,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -24861,6 +25212,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f96c3d31cde54b74dad410ac5fc6c9fd, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -25192,6 +25544,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -25636,6 +25989,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 41d14eb02ecf6da4abb65d3fcae5d5a0, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -26121,6 +26475,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5118bc3192b8a2149a3bdca38d59af92, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -26450,6 +26805,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1f63418a7ad172499c7a9197581a917, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -27432,6 +27788,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -28043,6 +28400,8 @@ MonoBehaviour:
   _keywordHovered: 0
   _hoveredId: 0
   textMesh: {fileID: 0}
+  textOriginal: 
+  textFormatted: 
 --- !u!224 &956325047
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28204,6 +28563,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -28377,6 +28737,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ab16ca5f81d03a40a9a2f10a93b5a2e, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -29312,6 +29673,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5584bb14100e5b4ca17f83630f1d784, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -29820,6 +30182,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ab16ca5f81d03a40a9a2f10a93b5a2e, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -30366,6 +30729,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b53b00dfba6492b4aa1718bb12a9d262, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -30776,6 +31140,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35c3d036947c82c4397443b9448c4659, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -30949,6 +31314,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5584bb14100e5b4ca17f83630f1d784, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -31867,6 +32233,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a6293ab6781132e48b976b0a898f8d12, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -32559,6 +32926,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5584bb14100e5b4ca17f83630f1d784, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -32745,6 +33113,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2a6aca6d5e9abae45b70407041851d8e, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -32853,6 +33222,78 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117464318}
+  m_CullTransparentMesh: 1
+--- !u!1 &1126575366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1126575367}
+  - component: {fileID: 1126575369}
+  - component: {fileID: 1126575368}
+  m_Layer: 5
+  m_Name: Richard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1126575367
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126575366}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008391525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -237.9, y: -32.3}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1126575368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126575366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: e32d0ef20c410a746b8bef45c430a84f, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1126575369
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126575366}
   m_CullTransparentMesh: 1
 --- !u!1 &1128271911
 GameObject:
@@ -33021,6 +33462,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ab16ca5f81d03a40a9a2f10a93b5a2e, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -33841,6 +34283,98 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148398662}
   m_CullTransparentMesh: 1
+--- !u!1 &1150910234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1150910235}
+  - component: {fileID: 1150910237}
+  - component: {fileID: 1150910236}
+  m_Layer: 5
+  m_Name: Empty_EndCutscene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1150910235
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150910234}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008391525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 400, y: 180}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1150910236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150910234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db09cea07e513040b358b59df7b5636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EndCutscene
+--- !u!114 &1150910237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150910234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbeae11395ac3764a90bd26f416abc8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  DialogueCanvas: {fileID: 1847254261972849108}
+  BeaverPortraitUI: {fileID: 1182626008462744766}
+  DialogueTextOutput: {fileID: 3648027651962093503}
+  NameOutput: {fileID: 729409862421915616}
+  EndDialogueButton: {fileID: 7111603444851824454}
+  NextDialogueButton: {fileID: 4721563986288809142}
+  DialoguePanel: {fileID: 1181407667699177957}
+  ChoicePanel: {fileID: 6446514068262118551}
+  ChoiceButton_Prefab: {fileID: 8483594955216161987, guid: d6091f2513e6ba44bb72367f34beba4e, type: 3}
+  SO_DialogueEvents:
+  - {fileID: 11400000, guid: 49c4e5ed9c5564a44822222b1ce15bf9, type: 2}
+  - {fileID: 11400000, guid: c76d2b9a0f292994a842479fd0a03553, type: 2}
+  - {fileID: 11400000, guid: 546a63904ea18d343b4236f330d0ef1d, type: 2}
+  - {fileID: 11400000, guid: 2bf0a48df8d0ab0488f2463325f95fda, type: 2}
+  - {fileID: 11400000, guid: 321e4e69a227e01479ed8296deb75274, type: 2}
+  - {fileID: 11400000, guid: 68a68c3e5bf0f9e42831aeebf3b99325, type: 2}
+  - {fileID: 11400000, guid: f835c39cb87ed7d40874983c0bf96101, type: 2}
+  - {fileID: 11400000, guid: c0fd0104cf9ca3d4b9052b67af69eb12, type: 2}
+  - {fileID: 11400000, guid: f73b22b7ed9aa1d45b8fc4f72c8b09ca, type: 2}
+  - {fileID: 11400000, guid: 0c529a4eea29fb243b27f2157586505c, type: 2}
+  - {fileID: 11400000, guid: c3b304dfb89d8ae44ac90cc272ef6260, type: 2}
+  - {fileID: 11400000, guid: 10af036ffab19914b9a1114171faf0e5, type: 2}
+  - {fileID: 11400000, guid: 2ec66c0e0fe1b82409a0df685ee30fe1, type: 2}
+  - {fileID: 11400000, guid: b2a9738d941854347b006953dac99e27, type: 2}
+  - {fileID: 11400000, guid: 2bc44c807aa5f8742ae832a3964f60b3, type: 2}
+  IsRepeatableInteraction: 0
+  hasQuizQuestion: 0
+  CanExitAtAnyTime: 0
+  journal: {fileID: 0}
+  _questionWasAnswered: 0
+  _currentDialogueIndex: 0
 --- !u!1 &1154772024
 GameObject:
   m_ObjectHideFlags: 0
@@ -34152,6 +34686,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4576b55b546602b40bbacfc85178f60d, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -35104,6 +35639,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -35721,6 +36257,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a6293ab6781132e48b976b0a898f8d12, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -35907,6 +36444,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0cc4936612059f6479ab542d80769b41, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -36368,6 +36906,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5118bc3192b8a2149a3bdca38d59af92, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -36955,6 +37494,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -37389,6 +37929,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5118bc3192b8a2149a3bdca38d59af92, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -37574,6 +38115,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d53076ea4285e040bc27a9a7bd5f00e, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -37683,6 +38225,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261945007}
   m_CullTransparentMesh: 1
+--- !u!1 &1262658131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1262658132}
+  - component: {fileID: 1262658133}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1262658132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262658131}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 587.05536, y: 319.32867, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1262658133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262658131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776a98e5b07daa746b5285e1de31502f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  HasCompletedPoem: 0
+  ViewManager: {fileID: 1843235725}
 --- !u!1 &1264604662
 GameObject:
   m_ObjectHideFlags: 0
@@ -37852,6 +38440,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ab16ca5f81d03a40a9a2f10a93b5a2e, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -38199,6 +38788,7 @@ Transform:
   - {fileID: 1655457661}
   - {fileID: 1128271912}
   - {fileID: 843930377}
+  - {fileID: 2008391525}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1287967233
@@ -39491,6 +40081,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5118bc3192b8a2149a3bdca38d59af92, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -40200,6 +40791,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362032281}
   m_CullTransparentMesh: 1
+--- !u!1 &1373485031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1373485032}
+  - component: {fileID: 1373485034}
+  - component: {fileID: 1373485033}
+  m_Layer: 5
+  m_Name: Garrett
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1373485032
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373485031}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7952829, y: 0.7952829, z: 0.7952829}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008391525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -253.6, y: 1.7}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1373485033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373485031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: a20efab136abf9e4ca5a02fa59770ebe, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1373485034
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373485031}
+  m_CullTransparentMesh: 1
 --- !u!1 &1391610924
 GameObject:
   m_ObjectHideFlags: 0
@@ -40708,6 +41371,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -41974,6 +42638,78 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!1 &1444239106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1444239107}
+  - component: {fileID: 1444239109}
+  - component: {fileID: 1444239108}
+  m_Layer: 5
+  m_Name: ProfessorBeaver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1444239107
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444239106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008391525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 56.9, y: -56.8}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1444239108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444239106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: c21dff99f1659d34d9fb6e62b943370a, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1444239109
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444239106}
+  m_CullTransparentMesh: 1
 --- !u!1 &1445041466
 GameObject:
   m_ObjectHideFlags: 0
@@ -42506,6 +43242,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05b01d8bcb17575428f882a7fdc0a15f, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -43306,6 +44043,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a6293ab6781132e48b976b0a898f8d12, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -43743,6 +44481,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -44064,6 +44803,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2eb3006b372639a40a00f5956c015789, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -44309,6 +45049,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ab16ca5f81d03a40a9a2f10a93b5a2e, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -44554,6 +45295,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05b01d8bcb17575428f882a7fdc0a15f, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -45010,6 +45752,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 90f81e985f600cc4a89215b3efabe869, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -45726,6 +46469,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ad2aa92a77b3ee45add8cf66a303c3c, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -46499,6 +47243,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b53b00dfba6492b4aa1718bb12a9d262, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -46919,6 +47664,78 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613055544}
+  m_CullTransparentMesh: 1
+--- !u!1 &1614684360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1614684361}
+  - component: {fileID: 1614684363}
+  - component: {fileID: 1614684362}
+  m_Layer: 5
+  m_Name: Toni
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1614684361
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614684360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008391525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -145.1, y: -33.2}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1614684362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614684360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 37d870c9b70f2e446b8b5d91c9f4f7ba, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1614684363
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614684360}
   m_CullTransparentMesh: 1
 --- !u!1 &1627279028
 GameObject:
@@ -48230,6 +49047,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e134510b69c77c6438f5d5271e625f6a, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -48725,6 +49543,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3ed84474b86e0844cba97cb54d31d4d6, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -49163,6 +49982,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -49974,6 +50794,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5584bb14100e5b4ca17f83630f1d784, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -50712,6 +51533,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -50885,6 +51707,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f96c3d31cde54b74dad410ac5fc6c9fd, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -51199,6 +52022,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 380053cffb935a440ab5affe40fa0caf, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -52383,6 +53207,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ab16ca5f81d03a40a9a2f10a93b5a2e, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -53132,6 +53957,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2e3f8224ca2fc654e96db2d075af5492, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -53473,6 +54299,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8becdff19bef8cf4dbc84a2a626a8f33, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -54046,6 +54873,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3225436d7fb73674a960a4d179dd2c2e, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -54228,6 +55056,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: af0954d9f8190ee4ebb827ffa16de784, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -54401,6 +55230,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05b01d8bcb17575428f882a7fdc0a15f, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -55224,6 +56054,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 2d53eff716fac604dafbe04778e3817b, type: 3}
   - {fileID: 2800000, guid: 8be5ce751626ffe469c987d537e571f7, type: 3}
   - {fileID: 2800000, guid: 1fda59582ed2f9840a1a4bc6f704ac55, type: 3}
+  - {fileID: 2800000, guid: 8cb2cd519f769b142957e8aafb442ec8, type: 3}
   ButtonGroups:
   - {fileID: 263441004}
   - {fileID: 169779983}
@@ -55302,6 +56133,7 @@ MonoBehaviour:
   - {fileID: 1655457660}
   - {fileID: 1128271911}
   - {fileID: 843930376}
+  - {fileID: 2008391524}
   BackgroundImage: {fileID: 464360428}
   FadePanel: {fileID: 1064141992}
   FadeSpeed: 3
@@ -56201,6 +57033,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 087ec72792dbe7a409a7d4481ed4ec30, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -56737,6 +57570,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -57290,6 +58124,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910501798}
   m_CullTransparentMesh: 1
+--- !u!1 &1911031627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1911031628}
+  - component: {fileID: 1911031630}
+  - component: {fileID: 1911031629}
+  m_Layer: 5
+  m_Name: Sherry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1911031628
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911031627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.74366, y: 0.74366, z: 0.74366}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008391525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -66.4, y: -21}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1911031629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911031627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: d67fbe12724a5fe4d89a4c66e1869ba2, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1911031630
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911031627}
+  m_CullTransparentMesh: 1
 --- !u!1 &1911379267
 GameObject:
   m_ObjectHideFlags: 0
@@ -57429,6 +58335,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5118bc3192b8a2149a3bdca38d59af92, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -58123,6 +59030,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -58296,6 +59204,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -58716,6 +59625,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 31fc27580f4de7042ad25a9818a8969c, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -59465,6 +60375,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -60018,6 +60929,116 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999236776}
   m_CullTransparentMesh: 1
+--- !u!1 &2008391524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2008391525}
+  - component: {fileID: 2008391528}
+  - component: {fileID: 2008391527}
+  - component: {fileID: 2008391526}
+  m_Layer: 5
+  m_Name: 77_EndCutscene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2008391525
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008391524}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1150910235}
+  - {fileID: 310538197}
+  - {fileID: 1614684361}
+  - {fileID: 1373485032}
+  - {fileID: 755779588}
+  - {fileID: 1126575367}
+  - {fileID: 1911031628}
+  - {fileID: 1444239107}
+  - {fileID: 428800345}
+  m_Father: {fileID: 1282296956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &2008391526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008391524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &2008391527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008391524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &2008391528
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008391524}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1 &2013485985
 GameObject:
   m_ObjectHideFlags: 0
@@ -60247,6 +61268,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 48640c890f1f53b498bc8064c595d494, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -60431,6 +61453,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0bdaee376c8cb19439eb0167625b6038, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -61106,6 +62129,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cbc42d225e4f6a04faaef3897015125f, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -61515,6 +62539,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca10ac21c1e0f7c43a887aaf1315b428, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -62313,6 +63338,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05b01d8bcb17575428f882a7fdc0a15f, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -62595,6 +63621,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 97931c3973fcda740a9e4ba39a2fabba, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -63298,6 +64325,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4bf9f5d727076dc42914f0a7ade5115e, type: 2}
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -64382,6 +65410,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5118bc3192b8a2149a3bdca38d59af92, type: 2}
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
+  CanExitAtAnyTime: 1
   journal: {fileID: 0}
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
@@ -65780,6 +66809,7 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1838912412}
   - {fileID: 1843235726}
+  - {fileID: 1262658132}
   - {fileID: 918441181}
   - {fileID: 981948448}
   - {fileID: 5396016527420695865}

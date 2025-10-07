@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     public List<SO_DialogueTemplate> SO_DialogueEvents;
     public bool IsRepeatableInteraction = false;
     public bool hasQuizQuestion = false;
+    public bool CanExitAtAnyTime = true;
 	public Journal journal;
     #endregion
 
@@ -37,7 +38,10 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue()
     {
         ActivateDialogueCanvas();
-        ActivateEndDialogueButton();
+        if (CanExitAtAnyTime)
+        {
+            ActivateEndDialogueButton();
+        }
         ResetDialogueIndex();
         DeactivateInitialButton();
         DisplayLine();
@@ -130,6 +134,10 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        DeactivateDialogueCanvas();
+
+		_handler.diagActive = false;
+
         if (SO_DialogueEvents[_currentDialogueIndex].AnswerChoices.Count > 0)
         {
             ResetChoiceButtonList();
@@ -138,9 +146,10 @@ public class DialogueManager : MonoBehaviour
         {
             ActivateInitialButton();
         }
-        DeactivateDialogueCanvas();
-
-		_handler.diagActive = false;
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
     #endregion
 
@@ -211,6 +220,10 @@ public class DialogueManager : MonoBehaviour
             SetLine(_currentDialogueIndex);
         }
         ActivateNextDialogueButton();
+        if (!CanExitAtAnyTime && _currentDialogueIndex == SO_DialogueEvents.Count - 1)
+        {
+            ActivateEndDialogueButton();
+        }
     }
 
     private void SetPortraitImage(int dialogueIndex)
