@@ -7,14 +7,16 @@ public class GameManager : MonoBehaviour
 
     public ViewManager ViewManager;
 
+    private bool _startedEndCutscene = false;
+
     void Update()
     {
-        if (HasCompletedPoem)
+        if (HasCompletedPoem && !_startedEndCutscene)
         {
             ViewManager.ToggleActiveButtons();
             ViewManager.ChangeBackgroundButton(77);
             ViewManager.EnableNextViewButtons(77);
-            HasCompletedPoem = false;
+            _startedEndCutscene = true;
         }
     }
 }
