@@ -184,7 +184,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &387105
@@ -601,7 +601,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &16469403
@@ -775,7 +775,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &16721316
@@ -1105,7 +1105,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &37237538
@@ -1589,7 +1589,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &48350600
@@ -3144,7 +3144,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &109758038
@@ -4942,7 +4942,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &184288570
@@ -5143,7 +5143,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 0
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!1 &196741311
@@ -5523,7 +5523,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &211141030
@@ -5778,7 +5778,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &214657244
@@ -6684,7 +6684,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &262758070
@@ -7284,7 +7284,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &274166461
@@ -10408,7 +10408,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &368581088
@@ -10535,7 +10535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &369366063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10687,7 +10687,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &371599555
@@ -11017,7 +11017,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &390364780
@@ -11347,7 +11347,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &401742109
@@ -11723,7 +11723,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &413675561
@@ -13003,7 +13003,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &434114829
@@ -13177,7 +13177,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &434245925
@@ -13351,7 +13351,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &440955824
@@ -13857,7 +13857,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &445779263
@@ -14595,7 +14595,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &474326213
@@ -14769,7 +14769,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &480965369
@@ -15237,7 +15237,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &491675824
@@ -15411,7 +15411,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &493452232
@@ -15593,7 +15593,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &497414914
@@ -17544,7 +17544,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &544689260
@@ -18399,7 +18399,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &574576960
@@ -18945,7 +18945,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &621665374
@@ -19405,7 +19405,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &636776221
@@ -19579,7 +19579,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &640321544
@@ -19918,7 +19918,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &646192019
@@ -20114,7 +20114,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &647594156
@@ -20288,7 +20288,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &650257114
@@ -20474,7 +20474,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &674149393
@@ -21259,7 +21259,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &699456366
@@ -22405,7 +22405,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &734401325
@@ -23100,7 +23100,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &744913689
@@ -24016,7 +24016,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &761793951
@@ -24863,7 +24863,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &818787668
@@ -25215,7 +25215,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &829744674
@@ -25547,7 +25547,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &839249804
@@ -25992,7 +25992,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &845047118
@@ -26478,7 +26478,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &854389980
@@ -26808,7 +26808,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &890925632
@@ -27791,7 +27791,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &930435360
@@ -28573,7 +28573,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &965145981
@@ -28747,7 +28747,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &966026189
@@ -29683,7 +29683,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1014242661
@@ -30192,7 +30192,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1029471600
@@ -30739,7 +30739,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1038808498
@@ -31150,7 +31150,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1050507349
@@ -31324,7 +31324,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1059298525
@@ -32243,7 +32243,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1099562751
@@ -32936,7 +32936,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1113969995
@@ -33123,7 +33123,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1117464321
@@ -33472,7 +33472,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1130234687
@@ -34381,7 +34381,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 0
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!1 &1154772024
@@ -34696,7 +34696,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1156460652
@@ -35649,7 +35649,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1197572547
@@ -36267,7 +36267,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1211942881
@@ -36454,7 +36454,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1222249053
@@ -36916,7 +36916,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1228952151
@@ -37504,7 +37504,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1244006806
@@ -37939,7 +37939,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1259478218
@@ -38125,7 +38125,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1261945010
@@ -38450,7 +38450,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1270183874
@@ -40091,7 +40091,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1332395814
@@ -41381,7 +41381,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1399929908
@@ -43252,7 +43252,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1462385635
@@ -44053,7 +44053,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1485139694
@@ -44491,7 +44491,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1491039964
@@ -44813,7 +44813,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1495756640
@@ -45059,7 +45059,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1497747942
@@ -45305,7 +45305,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1527903502
@@ -45762,7 +45762,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1562787373
@@ -46479,7 +46479,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1592413981
@@ -47253,7 +47253,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1611307204
@@ -49057,7 +49057,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1657508767
@@ -49553,7 +49553,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1676730161
@@ -49992,7 +49992,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1684078013
@@ -50804,7 +50804,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1702472793
@@ -51543,7 +51543,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1714685971
@@ -51717,7 +51717,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1716803331
@@ -52032,7 +52032,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1734721220
@@ -53217,7 +53217,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1764814476
@@ -53967,7 +53967,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1776741025
@@ -54309,7 +54309,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1796813763
@@ -54883,7 +54883,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1809419633
@@ -55066,7 +55066,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1810429212
@@ -55240,7 +55240,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1810788790
@@ -57179,7 +57179,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1881829537
@@ -57716,7 +57716,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1895336719
@@ -58481,7 +58481,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1914323904
@@ -59176,7 +59176,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1934269576
@@ -59350,7 +59350,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1939351696
@@ -59771,7 +59771,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1945132396
@@ -60521,7 +60521,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &1968261645
@@ -61414,7 +61414,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &2014774808
@@ -61599,7 +61599,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 1
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &2022007173
@@ -62275,7 +62275,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &2032065681
@@ -62685,7 +62685,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &2037718323
@@ -63484,7 +63484,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &2060646515
@@ -63767,7 +63767,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &2076229839
@@ -64471,7 +64471,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 0
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &2106081986
@@ -65692,7 +65692,7 @@ MonoBehaviour:
   IsRepeatableInteraction: 1
   hasQuizQuestion: 0
   CanExitAtAnyTime: 1
-  journal: {fileID: 0}
+  IsForGym: 0
   _questionWasAnswered: 0
   _currentDialogueIndex: 0
 --- !u!114 &2132052751
