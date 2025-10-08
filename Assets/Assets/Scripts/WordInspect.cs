@@ -118,9 +118,6 @@ public class WordInspect : MonoBehaviour
 		textMesh.text = textOriginal;
 	}
 
-	public void OnShow()
-	{
-		textOriginal = _db.dbEntries[_currPainting].description;
-	}
+	public void OnShow() { textOriginal = _db.dbEntries[_currPainting].description; }
 }
 

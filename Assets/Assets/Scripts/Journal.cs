@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -56,24 +57,37 @@ public class Journal : MonoBehaviour
 	public GameObject StickerBgObject;
 	public GameObject StickerSpritePrefab;
 
-	private int _hoveredWordEntry;
-	//private int[] _keywordNewLineIds = new int[12];
+	private int _hoveredWordEntryPrev = -1, _hoveredWordEntryCurr = -1;
+	private int _hoveredPoemWordPrev = -1, _hoveredPoemWordCurr = -1;
 	
-	public TextMeshProUGUI KeyWordTM; 
-	public TextMeshProUGUI PoemTM;
+	public TextMeshProUGUI KeyWordTM, PoemTM;
 	
-	public GameObject KeywordBox;
-	public GameObject StickerBox;
-	public GameObject PoemBox;
+	public GameObject KeywordBox, StickerBox, PoemBox;
 
-    void Start()
-    {
+	private string _kwTextOriginal, _kwTextFormatted;
+	private string _poemTextOriginal, _poemTextFormatted;
+	
+	public TextMeshProUGUI CursorText;
+	public List<string> PoemWords;
+
+	private int _draggedPoemWord = -1;
+	private bool _onPoemBG = false;
+
+	private Vector2 _mousePos; 
+	private bool _clickDown;
+	private bool _clickUp;
+
+	private int _clickedKeyword = -1;
+	private string[] _poemFinal, _poemTexts;
+	
+    void Start() 
+	{
 		_canvas = GameObject.Find("JournalCanvas").GetComponent<Canvas>();
 		_paintingData = GameObject.Find("Paintings").GetComponent<PaintingData>();
 		_handler = GameObject.Find("HandlerObject").GetComponent<Handler>();
 
 		wordEntries = new WordEntry[_paintingData.dbEntries.Length];	
-		stickerEntries = new StickerEntry[_paintingData.dbEntries.Length];
+		stickerEntries = new StickerEntry[_paintingData.dbEntries.Length + 1];
 
 		_button = GameObject.Find("JournalButton").GetComponent<Button>();
 		_button.onClick.AddListener(() => {
@@ -82,6 +96,12 @@ public class Journal : MonoBehaviour
 
 		stickerBG = new Texture2D(200, 500);
 		stickerBG.wrapMode = TextureWrapMode.Clamp;
+
+		PoemWords = new List<String>();
+		_poemFinal = SetPoemFinal();
+		_poemTexts = SetPoemStrings();
+
+		for(int i = 0; i < _poemTexts.Length; i++) AddToPoem(_poemFinal[i]);
     }
 
     void Update()
@@ -96,20 +116,47 @@ public class Journal : MonoBehaviour
 		}
 
 		if(!FlagCheck(flag.f_show)) return;
-		Vector2 mousePos = Mouse.current.position.ReadValue();
+		_mousePos = Mouse.current.position.ReadValue();
 
-		_hoveredWordEntry = -1;
-		if(CursorAABB(mousePos, KeywordBox.GetComponent<Rect>()))
+		_hoveredWordEntryPrev = _hoveredWordEntryCurr;
+		_hoveredWordEntryCurr = -1;
+
+		int _hoveredWordEntryChar = -1;
+		_hoveredWordEntryChar = TMP_TextUtilities.FindIntersectingCharacter(KeyWordTM, _mousePos, null, true);
+
+		if(_hoveredWordEntryChar > -1)	
+			_hoveredWordEntryCurr = TMP_TextUtilities.FindIntersectingLine(KeyWordTM, _mousePos, null);
+
+		if(_hoveredWordEntryCurr != _hoveredWordEntryPrev)
+			KeywordTextFormatApply(_hoveredWordEntryCurr);
+
+		bool hoverWordValid = (_hoveredWordEntryCurr > -1 && _hoveredWordEntryCurr < _wordCollCount);
+
+		_clickDown = Mouse.current.leftButton.wasPressedThisFrame;
+		_clickUp   = Mouse.current.leftButton.wasReleasedThisFrame;
+
+		CursorText.transform.position = _mousePos;
+
+		_onPoemBG = RectTransformUtility.RectangleContainsScreenPoint(PoemBox.GetComponent<Image>().rectTransform, _mousePos, null);
+		PoemUpdate();
+		
+		if(hoverWordValid && _clickDown)
 		{
-			TMP_TextInfo textInfo = KeyWordTM.textInfo;
-			
-			_hoveredWordEntry = TMP_TextUtilities.FindIntersectingLine(
-					KeyWordTM,
-					mousePos,
-					null
-			);
+			FlagSetOn(flag.f_dragword);
 
-			if(_hoveredWordEntry > _wordCollCount) _hoveredWordEntry = -1;
+			if(CursorText.text != wordEntries[_hoveredWordEntryCurr].painting.keyWord)
+			{
+				CursorText.text = wordEntries[_hoveredWordEntryCurr].painting.keyWord;
+				_clickedKeyword = _hoveredWordEntryCurr;
+			}
+		} 
+		else if(FlagCheck(flag.f_dragword) && _clickUp)
+		{
+			if(_onPoemBG) 
+				AddToPoem(_poemTexts[_clickedKeyword]);
+			
+			CursorText.text = string.Empty;
+			FlagSetOff(flag.f_dragword);
 		}
     }
 
@@ -143,7 +190,8 @@ public class Journal : MonoBehaviour
 			output += " - " + wordEntries[i].painting.keyWord + "\n";
 
 		// Overwrite tm text with output string
-		KeyWordTM.text = output;
+		_kwTextOriginal = output;
+		KeyWordTM.text = _kwTextOriginal;
 	}
 
 	public void AddStickerEntry()
@@ -182,9 +230,8 @@ public class Journal : MonoBehaviour
 		}
 		
 		Vector2 pos = new Vector2(
-			UnityEngine.Random.Range(80, 200 - 80),
-			UnityEngine.Random.Range(80, 500 - 80)
-		);
+			UnityEngine.Random.Range(80, 220 - 80),
+			UnityEngine.Random.Range(80, 580 - 80));
 
 		stickerEntries[_stickerCollCount++] = new StickerEntry((byte)texId, pos);
 		
@@ -206,16 +253,149 @@ public class Journal : MonoBehaviour
 
 	private void KeywordTextFormatApply(int line) 
 	{
+		KeywordTextFormatClear();
+		if(line < 0 || line > _wordCollCount - 1 || _kwTextOriginal == null) return;
 		
+		string[] lines = _kwTextOriginal.Split('\n');
+		int lineEnd = lines[line].Length;
+
+		lines[line] = $"<u>{lines[line]}</u>";
+
+		string formatted = string.Empty;
+		
+		for(int i = 0; i < _wordCollCount; i++)
+			formatted = formatted + $"{lines[i]}\n";
+
+		_kwTextFormatted = formatted;
+		KeyWordTM.text = _kwTextFormatted;
 	}
 
 	private void KeywordTextFormatClear()
 	{
-	}	
+		if(_kwTextOriginal == null) return;
+		KeyWordTM.text = _kwTextOriginal;
+	}
+
+	private void AddToPoem(string word)
+	{
+		if(PoemWords.Contains(word) || word == String.Empty) return;
+
+		PoemWords.Add(word);
+		UpdatePoemText();
+
+		CursorText.text = String.Empty;
+	}
+
+	private void UpdatePoemText()
+	{
+		string text = string.Empty;
+
+		for(int i = 0; i < PoemWords.Count; i++)
+			text = text + PoemWords[i] + '\n';
+
+		_poemTextOriginal = text;
+		PoemTextFormatClear();
+	}
+
+	private void PoemTextFormatClear()
+	{
+		if(_poemTextOriginal == null) return;
+		PoemTM.text = _poemTextOriginal;
+	}
+
+	private void PoemTextFormatApply(int wordId)
+	{
+		PoemTextFormatClear();
+
+		if(_hoveredPoemWordCurr == -1) return; 
+
+		TMP_TextInfo textInfo = PoemTM.textInfo;
+		TMP_WordInfo wordInfo = textInfo.wordInfo[wordId];
+
+		string keyword = String.Empty;
+		for(int i = 0; i < PoemWords.Count; i++)
+		{
+			if(PoemWords[i].Contains(wordInfo.GetWord()))
+				keyword = PoemWords[i];
+		}
+
+		int startId = _poemTextOriginal.IndexOf(keyword);
+		int endId = startId + keyword.Length;
+
+		string textLocal = PoemTM.text[startId..(endId+1)];
+		string formatted = String.Empty;
+
+		formatted = (
+			_poemTextOriginal[0..startId] +
+			"<u>" +
+			textLocal +
+			"</u>" + 
+			_poemTextOriginal[(endId+1)..]
+		);
+
+		PoemTM.text = formatted;
+	}
+
+	private void PoemUpdate()
+	{
+		if(!_onPoemBG) return;
+
+		TMP_TextInfo textInfo = PoemTM.textInfo; 
+
+		_hoveredPoemWordPrev = _hoveredPoemWordCurr;
+		_hoveredPoemWordCurr = TMP_TextUtilities.FindIntersectingWord(PoemTM, _mousePos, null);
+
+		if(_hoveredPoemWordCurr != _hoveredPoemWordPrev) 
+			PoemTextFormatApply(_hoveredPoemWordCurr);
+
+		bool _hoverValid = (_hoveredPoemWordCurr > -1 && _hoveredPoemWordCurr < textInfo.wordCount && _onPoemBG);
+
+		if(_hoverValid && _clickDown)
+		{
+			TMP_WordInfo wordInfo = textInfo.wordInfo[_hoveredPoemWordCurr];
+			string word = wordInfo.GetWord();
+
+			for(int i = 0; i < PoemWords.Count; i++)
+			{
+				if(PoemWords[i].Contains(word))
+				{
+					_draggedPoemWord = i;
+					CursorText.text = PoemWords[i];
+					break;
+				}
+			}
+		}
+		else if(_draggedPoemWord > -1 && _clickUp && _hoverValid)
+		{
+			TMP_WordInfo wordInfo = textInfo.wordInfo[_hoveredPoemWordCurr];
+			string word = wordInfo.GetWord();
+
+			int swapId = -1;
+			for(int i = 0; i < PoemWords.Count; i++) 
+			{
+				if(PoemWords[i].Contains(word)) 
+				{
+					swapId = i;
+					break;
+				}
+			}
+
+			if(swapId > -1)
+			{
+				string swap = PoemWords[swapId];
+				PoemWords[swapId] = PoemWords[_draggedPoemWord];
+				PoemWords[_draggedPoemWord] = swap;
+
+				UpdatePoemText();
+			}
+
+			CursorText.text = string.Empty;
+			_draggedPoemWord = -1;
+		}
+	}
 
 	// *
 	// Flag helper functions:
-	// *note: type casting being necessary kinda sad /,:
 	//
 	// Check if flag is on/off 
 	public bool FlagCheck(Journal.flag flag) 	
@@ -231,15 +411,79 @@ public class Journal : MonoBehaviour
 
 	// Toggle flag on/off
 	public void FlagToggle(Journal.flag flag)	
-	{ flags ^= (byte)flag; }
+	{ 
+		flags ^= (byte)flag;
+		if(flag == flag.f_show && !FlagCheck(flag.f_show)) TestEndScene();
+	}
 
-	private bool CursorAABB(Vector2 cursorPos, Rect rect)
+	private void TestEndScene()
 	{
-		return ( 
-			cursorPos.x >= rect.x 				&&
-			cursorPos.x <= rect.x + rect.width  &&
-			cursorPos.y >= rect.y 				&&
-			cursorPos.y <= rect.y + rect.height );
+		Debug.Log("testing end...");
+		if(PoemWords.Count < _poemFinal.Length) 
+		{
+			Debug.Log("not enough words");
+			return;
+		}
+
+		for(int i = 0; i < PoemWords.Count; i++)  
+		{
+			if(PoemWords[i] != _poemFinal[i])
+			{
+				Debug.Log("Out of order");
+				return;
+			}
+		}
+
+		var gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		gm.HasCompletedPoem = true;
+	}
+
+	private string[] SetPoemFinal()
+	{
+		return new string[] {
+			"Trees of green and blue sky, Where have we been, you and I?\n",
+			"Coast and sea, drifts of snow white, We didn't come between what happened out of sight.\n",
+			"This is our land, but it's always been theirs, too, Outstretch your hand, these repairs are past due.\n",
+			"When rivers are dried, and the needles have fell, Who will cry, and who will say \"\"oh, well.\"\"\n",
+			"When forests are burnt, and species become myth, Those with backs turned with bills in their fist,\n",
+			"Will stand in the ashes, with the world turned to profit, And the masses all know that this was it.\n",
+			"But it doesn't have to be this way, you see, It's not too late for us to succeed.\n",
+			"In saving the rivers, the sea and the beasts, In keeping money from growing on trees.\n",
+			"You may not realize, but we all hold a spark, We can capsize this future which all seems so dark.\n",
+			"Even we baby beavers can make a change, in this tapestry we weave here, in the digital age.\n",
+			"\"\"What can we do?\"\" so say we all, Learn, pursue, speak up when you can, for no voice is too small.\n",
+			"This is my land, and yours too, and when we stand together, there's nothing we can't do.\n"
+		};	
+	}
+
+	private string[] SetPoemStrings()
+	{
+		return new string[] {
+			// 0, Bluffs and Beach, Turkey Point, Lake Erie
+			"You may not realize, but we all hold a spark, We can capsize this future which all seems so dark.\n",
+			// 1, Untitled (Whitefish River Looking South to Manitoulin Island)
+			"Trees of green and blue sky, Where have we been, you and I?\n",
+			// 2, Prairie Fantasy
+			"Even we baby beavers can make a change, in this tapestry we weave here, in the digital age.\n",
+			// 3, Underpass, Montreal
+			"This is our land, but it's always been theirs, too, Outstretch your hand, these repairs are past due.\n", 
+			// 4, Manitoba Landscape
+			"When rivers are dried, and the needles have fell, Who will cry, and who will say \"\"oh, well.\"\"\n",
+			// 5, British Columbia Landscape
+			"This is my land, and yours too, and when we stand together, there's nothing we can't do.\n",
+			// 6, Logged-Over Hillside
+			"When forests are burnt, and species become myth, Those with backs turned with bills in their fist,\n",
+			// 7, Strait of Juan de Fuca
+			"In saving the rivers, the sea and the beasts, In keeping money from growing on trees.\n",
+			// 8, The Ferry Trail, North Saskatchewan River
+			"But it doesn't have to be this way, you see, It's not too late for us to succeed.\n",
+			// 9, Cove Fields, Quebec
+			"\"\"What can we do?\"\" so say we all, Learn, pursue, speak up when you can, for no voice is too small.\n",
+			// 10, Fishing Stages, Newfoundland
+			"Coast and sea, drifts of snow white, We didn't come between what happened out of sight.\n",
+			// 11, The Jack Pine
+			"Will stand in the ashes, with the world turned to profit, And the masses all know that this was it.\n"
+		};
 	}
 }
 

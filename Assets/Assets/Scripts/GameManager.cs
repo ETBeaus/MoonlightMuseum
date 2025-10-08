@@ -9,8 +9,12 @@ public class GameManager : MonoBehaviour
 
     private bool _startedEndCutscene = false;
 
+	//public Journal journal;
+
     void Update()
     {
+		//HasCompletedPoem = (journal.PoemWords.Count >= 11);
+
         if (HasCompletedPoem && !_startedEndCutscene)
         {
             ViewManager.ToggleActiveButtons();
