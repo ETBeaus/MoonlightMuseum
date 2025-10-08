@@ -100,8 +100,6 @@ public class Journal : MonoBehaviour
 		PoemWords = new List<String>();
 		_poemFinal = SetPoemFinal();
 		_poemTexts = SetPoemStrings();
-
-		for(int i = 0; i < _poemTexts.Length; i++) AddToPoem(_poemFinal[i]);
     }
 
     void Update()
