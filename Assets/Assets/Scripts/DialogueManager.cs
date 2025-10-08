@@ -21,7 +21,8 @@ public class DialogueManager : MonoBehaviour
     public bool IsRepeatableInteraction = false;
     public bool hasQuizQuestion = false;
     public bool CanExitAtAnyTime = true;
-	public Journal journal;
+    public bool IsForGym = false;
+	//public Journal journal;
     #endregion
 
     #region Private Fields
@@ -46,10 +47,13 @@ public class DialogueManager : MonoBehaviour
         DeactivateInitialButton();
         DisplayLine();
 
-		_journal = GameObject.Find("HandlerObject").GetComponent<Journal>();
-		_handler = GameObject.Find("HandlerObject").GetComponent<Handler>();
+        if (!IsForGym)
+        {
+            _journal = GameObject.Find("HandlerObject").GetComponent<Journal>();
+		    _handler = GameObject.Find("HandlerObject").GetComponent<Handler>();
 
-		_handler.diagActive = true;
+            _handler.diagActive = true;
+        }
     }
 
     /// <summary>
@@ -97,7 +101,11 @@ public class DialogueManager : MonoBehaviour
                 if (SO_DialogueEvents[i].IsFirstTryRightAnswerReaction)
                 {
                     _currentDialogueIndex = i;
-					_journal.AddStickerEntry();
+                    if (!IsForGym)
+                    {
+                        _journal.AddStickerEntry();
+                    }
+                    
                     break;
                 }
             }
@@ -136,7 +144,10 @@ public class DialogueManager : MonoBehaviour
     {
         DeactivateDialogueCanvas();
 
-		_handler.diagActive = false;
+        if (!IsForGym)
+        {
+            _handler.diagActive = false;
+        }
 
         if (SO_DialogueEvents[_currentDialogueIndex].AnswerChoices.Count > 0)
         {

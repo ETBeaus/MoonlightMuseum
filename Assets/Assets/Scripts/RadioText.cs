@@ -19,7 +19,6 @@ public class RadioText : MonoBehaviour
         if (AudioManager.ChangedSong)
         {
             ChangeSongReactionLine();
-            //AudioManager.ChangedSong = false;
         }
     }
 
