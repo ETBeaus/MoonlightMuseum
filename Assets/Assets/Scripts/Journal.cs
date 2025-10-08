@@ -1,9 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.LowLevel;
-using UnityEngine.Rendering;
 using TMPro;
+using UnityEngine.InputSystem;
 
 [Serializable]
 public class WordEntry
@@ -28,9 +27,11 @@ public class Journal : MonoBehaviour
 {
 	// Bit field enum for state flags
 	public enum flag : byte {
-		f_show = 0x01,	// Show journal
-		f_lock = 0x02,	// Lock journal view
-		f_poem = 0x04	// Poem edit mode
+		f_show			= 0x01,	// Show journal
+		f_lock			= 0x02,	// Lock journal view
+		f_poem			= 0x04,	// Poem edit mode
+		f_dragsticker 	= 0x08,
+		f_dragword  	= 0x10	 
 	}
 
 	// All flags off on start
@@ -54,7 +55,17 @@ public class Journal : MonoBehaviour
 
 	public GameObject StickerBgObject;
 	public GameObject StickerSpritePrefab;
+
+	private int _hoveredWordEntry;
+	//private int[] _keywordNewLineIds = new int[12];
 	
+	public TextMeshProUGUI KeyWordTM; 
+	public TextMeshProUGUI PoemTM;
+	
+	public GameObject KeywordBox;
+	public GameObject StickerBox;
+	public GameObject PoemBox;
+
     void Start()
     {
 		_canvas = GameObject.Find("JournalCanvas").GetComponent<Canvas>();
@@ -77,14 +88,29 @@ public class Journal : MonoBehaviour
     {
 		// Journal opening:
 		// todo: Add inputs with InputSystem, 
-		// toggle show flag
-		// Only if not locked
+		// toggle show flag only if not locked
     	if(!FlagCheck(flag.f_lock)) 
 		{
+			// If show journal, enable canvas
+			_canvas.enabled = (FlagCheck(flag.f_show));
 		}
 
-		// If show journal, enable canvas
-		_canvas.enabled = (FlagCheck(flag.f_show));
+		if(!FlagCheck(flag.f_show)) return;
+		Vector2 mousePos = Mouse.current.position.ReadValue();
+
+		_hoveredWordEntry = -1;
+		if(CursorAABB(mousePos, KeywordBox.GetComponent<Rect>()))
+		{
+			TMP_TextInfo textInfo = KeyWordTM.textInfo;
+			
+			_hoveredWordEntry = TMP_TextUtilities.FindIntersectingLine(
+					KeyWordTM,
+					mousePos,
+					null
+			);
+
+			if(_hoveredWordEntry > _wordCollCount) _hoveredWordEntry = -1;
+		}
     }
 
 	public void AddKeywordEntry(DB_Entry painting) 
@@ -117,7 +143,7 @@ public class Journal : MonoBehaviour
 			output += " - " + wordEntries[i].painting.keyWord + "\n";
 
 		// Overwrite tm text with output string
-		_canvas.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = output;	
+		KeyWordTM.text = output;
 	}
 
 	public void AddStickerEntry()
@@ -176,40 +202,16 @@ public class Journal : MonoBehaviour
 		);
 
 		newSticker.GetComponent<Image>().sprite = newSprite;
-
-		//StickerTexUpdate();
 	}
 
-	public void StickerTexUpdate()
+	private void KeywordTextFormatApply(int line) 
 	{
-		// Only apply entry at top of stack's texture 
-		StickerEntry newSticker = stickerEntries[_stickerCollCount - 1];
-		Texture2D tex = stickerTextures[newSticker.texId];
 		
-		// Get pixels
-		Color[] bgPX = stickerBG.GetPixels();
-		Color[] stickerPX = tex.GetPixels();
-
-		// Copy sticker pixels to background
-		for(UInt16 y = 0; y < (UInt16)(tex.height); y++) 
-		{
-			for(UInt16 x = 0; x < (UInt16)(tex.width); x++) 
-			{
-				// Ignore transparent pixels
-				if(stickerPX[x + y * tex.width].a == 0) continue;	
-
-				// Set background pixel to color local to sticker sprite index
-				bgPX[(UInt16)((x + newSticker.position.x) + (y + newSticker.position.y) * stickerBG.width)]
-					= stickerPX[x + y * tex.width];
-			}
-		}
-
-		// Set new pixels, apply
-		stickerBG.SetPixels(bgPX);	
-		stickerBG.Apply();
-		//Img_stickerBG.sprite = Sprite.Create(stickerBG, new Rect(0, 0, stickerBG.width, stickerBG.height), Vector2.one * 0.5f);
-		Img_stickerBG.sprite = Sprite.Create(stickerBG, new Rect(0, 0, stickerBG.width, stickerBG.height), Vector2.zero);
 	}
+
+	private void KeywordTextFormatClear()
+	{
+	}	
 
 	// *
 	// Flag helper functions:
@@ -230,5 +232,14 @@ public class Journal : MonoBehaviour
 	// Toggle flag on/off
 	public void FlagToggle(Journal.flag flag)	
 	{ flags ^= (byte)flag; }
+
+	private bool CursorAABB(Vector2 cursorPos, Rect rect)
+	{
+		return ( 
+			cursorPos.x >= rect.x 				&&
+			cursorPos.x <= rect.x + rect.width  &&
+			cursorPos.y >= rect.y 				&&
+			cursorPos.y <= rect.y + rect.height );
+	}
 }
 
