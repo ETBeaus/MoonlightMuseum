@@ -109,18 +109,17 @@ public class Journal : MonoBehaviour
 		stickerEntries = new StickerEntry[_paintingData.dbEntries.Length + 1];
 
 		_button = GameObject.Find("JournalButton").GetComponent<Button>();
-		_button.onClick.AddListener(() => {
-				FlagToggle(flag.f_show);
-		});
+		_button.onClick.AddListener(() => { FlagToggle(flag.f_show); });
 
 		PoemWords = new List<String>();
 		_poemFinal = SetPoemFinal();
-		_poemTexts = SetPoemStrings();
 
 		_outline = PoemOutline();
 		_poemTextOriginal = _outline; 
 		PoemTM.text = _poemTextOriginal;		
 		FindBlank();
+
+		//PoemFillCorrect();
     }
 
     void Update()
@@ -157,8 +156,7 @@ public class Journal : MonoBehaviour
 		CursorText.transform.position = _mousePos;
 
 		_onPoemBG = RectTransformUtility.RectangleContainsScreenPoint(PoemBox.GetComponent<Image>().rectTransform, _mousePos, null);
-		//PoemUpdate();
-		PoemUpdateOutline();		
+		PoemUpdate();		
 
 		if(hoverWordValid && _clickDown)
 		{
@@ -176,10 +174,7 @@ public class Journal : MonoBehaviour
 			if(_blankHoverCurr != -1)
 			{
 				if(_onPoemBG && CursorText.text == _correctKeywords[_blankHoverCurr]) 
-				{
-					AddToPoemOutline(CursorText.text);
-					//AddToPoem(_poemTexts[_clickedKeyword]);
-				}
+					AddToPoem(CursorText.text, -1);
 			}
 			
 			CursorText.text = string.Empty;
@@ -278,9 +273,15 @@ public class Journal : MonoBehaviour
 		newSticker.GetComponent<Image>().sprite = newSprite;
 	}
 
+	private void TextFormatClear(string original, TextMeshProUGUI tm)	
+	{
+		if(original == null) return;
+		tm.text = original;
+	}
+
 	private void KeywordTextFormatApply(int line) 
 	{
-		KeywordTextFormatClear();
+		TextFormatClear(_kwTextOriginal, KeyWordTM);
 		if(line < 0 || line > _wordCollCount - 1 || _kwTextOriginal == null) return;
 		
 		string[] lines = _kwTextOriginal.Split('\n');
@@ -296,134 +297,7 @@ public class Journal : MonoBehaviour
 		_kwTextFormatted = formatted;
 		KeyWordTM.text = _kwTextFormatted;
 	}
-
-	private void KeywordTextFormatClear()
-	{
-		if(_kwTextOriginal == null) return;
-		KeyWordTM.text = _kwTextOriginal;
-	}
-
-	private void AddToPoem(string word)
-	{
-		if(PoemWords.Contains(word) || word == String.Empty) return;
-
-		PoemWords.Add(word);
-		UpdatePoemText();
-
-		CursorText.text = String.Empty;
-	}
-
-	private void UpdatePoemText()
-	{
-		string text = string.Empty;
-		text = PoemOutline();
-
-		/*
-		for(int i = 0; i < PoemWords.Count; i++)
-			text = text + PoemWords[i] + '\n';
-		*/
-
-		_poemTextOriginal = text;
-		PoemTextFormatClear();
-	}
-
-	private void PoemTextFormatClear()
-	{
-		if(_poemTextOriginal == null) return;
-		PoemTM.text = _poemTextOriginal;
-	}
-
-	private void PoemTextFormatApply(int wordId)
-	{
-		PoemTextFormatClear();
-
-		if(_hoveredPoemWordCurr == -1) return; 
-
-		TMP_TextInfo textInfo = PoemTM.textInfo;
-		TMP_WordInfo wordInfo = textInfo.wordInfo[wordId];
-
-		string keyword = String.Empty;
-		for(int i = 0; i < PoemWords.Count; i++)
-		{
-			if(PoemWords[i].Contains(wordInfo.GetWord()))
-				keyword = PoemWords[i];
-		}
-
-		int startId = _poemTextOriginal.IndexOf(keyword);
-		int endId = startId + keyword.Length;
-
-		string textLocal = PoemTM.text[startId..(endId+1)];
-		string formatted = String.Empty;
-
-		formatted = (
-			_poemTextOriginal[0..startId] +
-			"<u>" +
-			textLocal +
-			"</u>" + 
-			_poemTextOriginal[(endId+1)..]
-		);
-
-		PoemTM.text = formatted;
-	}
-
-	private void PoemUpdate()
-	{
-		if(!_onPoemBG) return;
-
-		TMP_TextInfo textInfo = PoemTM.textInfo; 
-
-		_hoveredPoemWordPrev = _hoveredPoemWordCurr;
-		_hoveredPoemWordCurr = TMP_TextUtilities.FindIntersectingWord(PoemTM, _mousePos, null);
-
-		if(_hoveredPoemWordCurr != _hoveredPoemWordPrev) 
-			PoemTextFormatApply(_hoveredPoemWordCurr);
-
-		bool _hoverValid = (_hoveredPoemWordCurr > -1 && _hoveredPoemWordCurr < textInfo.wordCount && _onPoemBG);
-
-		if(_hoverValid && _clickDown)
-		{
-			TMP_WordInfo wordInfo = textInfo.wordInfo[_hoveredPoemWordCurr];
-			string word = wordInfo.GetWord();
-
-			for(int i = 0; i < PoemWords.Count; i++)
-			{
-				if(PoemWords[i].Contains(word))
-				{
-					_draggedPoemWord = i;
-					CursorText.text = PoemWords[i];
-					break;
-				}
-			}
-		}
-		else if(_draggedPoemWord > -1 && _clickUp && _hoverValid)
-		{
-			TMP_WordInfo wordInfo = textInfo.wordInfo[_hoveredPoemWordCurr];
-			string word = wordInfo.GetWord();
-
-			int swapId = -1;
-			for(int i = 0; i < PoemWords.Count; i++) 
-			{
-				if(PoemWords[i].Contains(word)) 
-				{
-					swapId = i;
-					break;
-				}
-			}
-
-			if(swapId > -1)
-			{
-				string swap = PoemWords[swapId];
-				PoemWords[swapId] = PoemWords[_draggedPoemWord];
-				PoemWords[_draggedPoemWord] = swap;
-
-				UpdatePoemText();
-			}
-
-			CursorText.text = string.Empty;
-			_draggedPoemWord = -1;
-		}
-	}
-
+	
 	// *
 	// Flag helper functions:
 	//
@@ -442,7 +316,10 @@ public class Journal : MonoBehaviour
 	// Toggle flag on/off
 	public void FlagToggle(Journal.flag flag)	
 	{ 
+		// Invert flag value
 		flags ^= (byte)flag;
+
+		// Check win condition when "show" flag gets set to off
 		if(flag == flag.f_show && !FlagCheck(flag.f_show)) TestEndScene();
 	}
 
@@ -457,7 +334,10 @@ public class Journal : MonoBehaviour
 
 		for(int i = 0; i < PoemWords.Count; i++)  
 		{
-			if(PoemWords[i] != _correctKeywords[i])
+			string inputWord = PoemWords[i].ToLower().Trim();
+			string correctWord = _correctKeywords[i].ToLower().Trim();
+			
+			if(inputWord != correctWord)
 			{
 				Debug.Log("Out of order");
 				return;
@@ -484,36 +364,6 @@ public class Journal : MonoBehaviour
 			"\"\"What can we do?\"\" so say we all, Learn, pursue, speak up when you can, for no voice is too small.\n",
 			"This is my land, and yours too, and when we stand together, there's nothing we can't do.\n"
 		};	
-	}
-
-	private string[] SetPoemStrings()
-	{
-		return new string[] {
-			// 0, Bluffs and Beach, Turkey Point, Lake Erie
-			"You may not realize, but we all hold a spark, We can capsize this future which all seems so dark.\n",
-			// 1, Untitled (Whitefish River Looking South to Manitoulin Island)
-			"Trees of green and blue sky, Where have we been, you and I?\n",
-			// 2, Prairie Fantasy
-			"Even we baby beavers can make a change, in this tapestry we weave here, in the digital age.\n",
-			// 3, Underpass, Montreal
-			"This is our land, but it's always been theirs, too, Outstretch your hand, these repairs are past due.\n", 
-			// 4, Manitoba Landscape
-			"When rivers are dried, and the needles have fell, Who will cry, and who will say \"\"oh, well.\"\"\n",
-			// 5, British Columbia Landscape
-			"This is my land, and yours too, and when we stand together, there's nothing we can't do.\n",
-			// 6, Logged-Over Hillside
-			"When forests are burnt, and species become myth, Those with backs turned with bills in their fist,\n",
-			// 7, Strait of Juan de Fuca
-			"In saving the rivers, the sea and the beasts, In keeping money from growing on trees.\n",
-			// 8, The Ferry Trail, North Saskatchewan River
-			"But it doesn't have to be this way, you see, It's not too late for us to succeed.\n",
-			// 9, Cove Fields, Quebec
-			"\"\"What can we do?\"\" so say we all, Learn, pursue, speak up when you can, for no voice is too small.\n",
-			// 10, Fishing Stages, Newfoundland
-			"Coast and sea, drifts of snow white, We didn't come between what happened out of sight.\n",
-			// 11, The Jack Pine
-			"Will stand in the ashes, with the world turned to profit, And the masses all know that this was it.\n"
-		};
 	}
 
 	private String PoemOutline()
@@ -559,7 +409,7 @@ public class Journal : MonoBehaviour
 		*/
 	}
 	
-	private void PoemUpdateOutline()
+	private void PoemUpdate()
 	{
 		int len = "-----".Length;
 
@@ -588,10 +438,10 @@ public class Journal : MonoBehaviour
 			{
 				int open = blankWordIds[_blankHoverCurr]; 
 				int close = Math.Min(blankWordIds[_blankHoverCurr] + len, _outline.Length);
-				OutlineFormatApply(open, close, "<color=#48cae4>", "</color>");
+				PoemTextFormatApply(open, close, "<color=#48cae4>", "</color>");
 			}
 			else
-				PoemTextFormatClear();
+				TextFormatClear(_poemTextOriginal, PoemTM);
 		}
 
 		if(_onPoemBG && _blankHoverCurr != -1 )
@@ -605,7 +455,7 @@ public class Journal : MonoBehaviour
 		}
 	}
 
-	void OutlineFormatApply(int startId, int endId, string tagOpen, string tagClose)
+	void PoemTextFormatApply(int startId, int endId, string tagOpen, string tagClose)
 	{
 		if(_poemTextOriginal == null || startId < 0 || endId >= _poemTextOriginal.Length) return;
 		
@@ -623,13 +473,14 @@ public class Journal : MonoBehaviour
 		PoemTM.text = formatted;
 	}
 
-	void AddToPoemOutline(string word)
+	void AddToPoem(string word, int autoId)
 	{
-		if(_blankHoverCurr < 0 || _blankHoverCurr >= blankWordIds.Length) return;
+		if(autoId == -1 && (_blankHoverCurr < 0 || _blankHoverCurr >= blankWordIds.Length)) return;
 		if(PoemWords.Contains(word) || word == String.Empty) return;
 		PoemWords.Add(word);
 
-		int id = blankWordIds[_blankHoverCurr];
+		//int id = blankWordIds[_blankHoverCurr];
+		int id = blankWordIds[(autoId == -1) ? _blankHoverCurr : autoId];
 		int len = "-----".Length;
 
 		_poemTextOriginal = _poemTextOriginal.Remove(id, len).Insert(id, word);
@@ -641,6 +492,12 @@ public class Journal : MonoBehaviour
 
 		_blankHoverCurr = -1;
 		_outline = _poemTextOriginal;
+	}
+	
+	void PoemFillCorrect()	
+	{
+		for(int i = 0; i < _correctKeywords.Length; i++)
+			AddToPoem(_correctKeywords[i], i);
 	}
 }
 
