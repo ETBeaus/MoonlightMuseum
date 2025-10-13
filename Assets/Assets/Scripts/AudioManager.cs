@@ -11,12 +11,12 @@ public class AudioManager : MonoBehaviour
     private AudioSource _audioSource;
     [SerializeField] private List<AudioClip> _playedSongsList = new List<AudioClip>();
 
-    void Start()
+    private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
     }
 
-    void Update()
+    private void Update()
     {
         if (RadioSongsList.Count == 0)
         {
@@ -29,6 +29,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Adds back the songs from the played songs list to the main songs list and clears the played songs list.
+    /// </summary>
     private void RepopulateSongsList()
     {
         for (int i = 0; i < _playedSongsList.Count; i++)
@@ -38,9 +41,12 @@ public class AudioManager : MonoBehaviour
         _playedSongsList.Clear();
     }
 
+    /// <summary>
+    /// Picks a random song, removes it from the songs list and adds played songs to a different list, waiting for the songs list to be empty.
+    /// </summary>
     private void RandomizeNextSong()
     {
-        int randomIndex = Random.Range(0, RadioSongsList.Count-1);
+        int randomIndex = Random.Range(0, RadioSongsList.Count - 1);
 
         _audioSource.clip = RadioSongsList[randomIndex];
         CurrentRadioSong = _audioSource.clip;

@@ -4,14 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class EndCutscene : MonoBehaviour
 {
-    private DialogueManager _DialogueManager;
+    private DialogueManager _dialogueManager;
 
     private void OnEnable()
     {
-        _DialogueManager = GetComponent<DialogueManager>();
-        _DialogueManager.StartDialogue();
-        _DialogueManager.EndDialogueButton.GetComponent<Button>().onClick.AddListener(BackToMainMenu);
-        _DialogueManager.EndDialogueButton.SetActive(false);
+        //Force starts the end cutscene dialogue.
+        _dialogueManager = GetComponent<DialogueManager>();
+        _dialogueManager.StartDialogue();
+        _dialogueManager.EndDialogueButton.GetComponent<Button>().onClick.AddListener(BackToMainMenu);
+        _dialogueManager.EndDialogueButton.SetActive(false);
     }
 
     public void BackToMainMenu()

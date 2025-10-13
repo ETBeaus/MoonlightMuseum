@@ -18,11 +18,13 @@ public class DialogueManager : MonoBehaviour
     public GameObject ChoicePanel;
     public GameObject ChoiceButton_Prefab;
     public List<SO_DialogueTemplate> SO_DialogueEvents;
+
+    [Header("Bools")]
     public bool IsRepeatableInteraction = false;
     public bool hasQuizQuestion = false;
     public bool CanExitAtAnyTime = true;
     public bool IsForGym = false;
-	//public Journal journal;
+    //public Journal journal;
     #endregion
 
     #region Private Fields
@@ -30,12 +32,16 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private bool _questionWasAnswered = false;
     [SerializeField] private int _currentDialogueIndex;
     private List<GameObject> _choiceButtons = new List<GameObject>();
-	private Journal _journal;
-	private Handler _handler;
+    private Journal _journal;
+    private Handler _handler;
     #endregion
 
     //------------------------------------------------PUBLIC BUTTON METHODS------------------------------------------------------
     #region Public Button Methods
+
+    /// <summary>
+    /// Activates all the appropriate boxes/buttons and displays the first line of the sequence.
+    /// </summary>
     public void StartDialogue()
     {
         ActivateDialogueCanvas();
@@ -50,7 +56,7 @@ public class DialogueManager : MonoBehaviour
         if (!IsForGym)
         {
             _journal = GameObject.Find("HandlerObject").GetComponent<Journal>();
-		    _handler = GameObject.Find("HandlerObject").GetComponent<Handler>();
+            _handler = GameObject.Find("HandlerObject").GetComponent<Handler>();
 
             _handler.diagActive = true;
         }
@@ -59,7 +65,7 @@ public class DialogueManager : MonoBehaviour
     /// <summary>
     /// Resets the buttons and increments the _currentDialogueIndex.
     /// If need be, reloads the question.
-    /// Then, display the associated line.
+    /// Then, displays the associated line.
     /// </summary>
     public void NextLine()
     {
@@ -88,12 +94,13 @@ public class DialogueManager : MonoBehaviour
         DisplayLine();
     }
 
+    /// <summary>
+    /// If you got it right on the first try, cycles the list of dialogue to find the appropriate reaction. Same process if you get it right, but not on the first try. Then, displays the corresponding line.
+    /// </summary>
     public void RightAnswer()
     {
         if (!_questionWasAnswered)
         {
-            //StickerLogic
-
             _questionWasAnswered = true;
 
             for (int i = _currentDialogueIndex; i < SO_DialogueEvents.Count; i++)
@@ -105,7 +112,6 @@ public class DialogueManager : MonoBehaviour
                     {
                         _journal.AddStickerEntry();
                     }
-                    
                     break;
                 }
             }
@@ -125,6 +131,9 @@ public class DialogueManager : MonoBehaviour
         DisplayLine();
     }
 
+    /// <summary>
+    /// Cycles the list of dialogue to find the appropriate reaction. Then, displays the corresponding line.
+    /// </summary>
     public void WrongAnswer()
     {
         _questionWasAnswered = true;
@@ -140,6 +149,9 @@ public class DialogueManager : MonoBehaviour
         DisplayLine();
     }
 
+    /// <summary>
+    /// Deactivates all buttons/boxes and activates or destroys the initial button depending on the situation.
+    /// </summary>
     public void EndDialogue()
     {
         DeactivateDialogueCanvas();
@@ -212,7 +224,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Cycles through the methods needed to display the correct name, portrait and line or buttons
+    /// Cycles through the methods needed to display the correct name, portrait and line or buttons.
     /// </summary>
     private void DisplayLine()
     {
@@ -236,66 +248,6 @@ public class DialogueManager : MonoBehaviour
             ActivateEndDialogueButton();
         }
     }
-
-    private void SetPortraitImage(int dialogueIndex)
-    {
-        BeaverPortraitUI.texture = SO_DialogueEvents[dialogueIndex].PortraitTexture;
-    }
-
-    private void SetName(int dialogueIndex)
-    {
-        NameOutput.text = SO_DialogueEvents[dialogueIndex].NameToDisplay;
-    }
-
-    private void SetLine(int dialogueIndex)
-    {
-        DialogueTextOutput.text = SO_DialogueEvents[dialogueIndex].DialogueLine;
-    }
-
-    private void ActivateDialogueCanvas()
-    {
-        DialogueCanvas.SetActive(true);
-    }
-
-    private void DeactivateDialogueCanvas()
-    {
-        DialogueCanvas.SetActive(false);
-    }
-
-    private void ActivateDialoguePanel()
-    {
-        DialoguePanel.SetActive(true);
-    }
-
-    private void DeactivateDialoguePanel()
-    {
-        DialoguePanel.SetActive(false);
-    }
-
-    private void ActivateChoicePanel()
-    {
-        ChoicePanel.SetActive(true);
-    }
-
-    private void DeactivateChoicePanel()
-    {
-        ChoicePanel.SetActive(false);
-    }
-
-    private void ActivateNextDialogueButton()
-    {
-        if (SO_DialogueEvents.Count > 1 && _currentDialogueIndex != SO_DialogueEvents.Count - 1 && !SO_DialogueEvents[_currentDialogueIndex].IsARepliesChoice)
-        {
-            NextDialogueButton.SetActive(true);
-            NextDialogueButton.GetComponent<Button>().onClick.RemoveAllListeners();
-            NextDialogueButton.GetComponent<Button>().onClick.AddListener(NextLine);
-        }
-        else
-        {
-            NextDialogueButton.SetActive(false);
-        }
-    }
-
 
     /// <summary>
     /// Instantiates button prefabs by cycling through the Answer List.
@@ -329,6 +281,72 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private void SetPortraitImage(int dialogueIndex)
+    {
+        BeaverPortraitUI.texture = SO_DialogueEvents[dialogueIndex].PortraitTexture;
+    }
+
+    private void SetName(int dialogueIndex)
+    {
+        NameOutput.text = SO_DialogueEvents[dialogueIndex].NameToDisplay;
+    }
+
+    private void SetLine(int dialogueIndex)
+    {
+        DialogueTextOutput.text = SO_DialogueEvents[dialogueIndex].DialogueLine;
+    }
+
+
+    #region Toggles
+    private void ActivateDialogueCanvas()
+    {
+        DialogueCanvas.SetActive(true);
+    }
+
+    private void DeactivateDialogueCanvas()
+    {
+        DialogueCanvas.SetActive(false);
+    }
+
+    private void ActivateDialoguePanel()
+    {
+        DialoguePanel.SetActive(true);
+    }
+
+    private void DeactivateDialoguePanel()
+    {
+        DialoguePanel.SetActive(false);
+    }
+
+    private void ActivateChoicePanel()
+    {
+        ChoicePanel.SetActive(true);
+    }
+
+    private void DeactivateChoicePanel()
+    {
+        ChoicePanel.SetActive(false);
+    }
+
+    /// <summary>
+    /// Toggles the Next Dialogue Button and makes sure the appropriate listener is on.
+    /// </summary>
+    private void ActivateNextDialogueButton()
+    {
+        if (SO_DialogueEvents.Count > 1 && _currentDialogueIndex != SO_DialogueEvents.Count - 1 && !SO_DialogueEvents[_currentDialogueIndex].IsARepliesChoice)
+        {
+            NextDialogueButton.SetActive(true);
+            NextDialogueButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            NextDialogueButton.GetComponent<Button>().onClick.AddListener(NextLine);
+        }
+        else
+        {
+            NextDialogueButton.SetActive(false);
+        }
+    }
+
+
+
     private void DeactivateInitialButton()
     {
         this.gameObject.SetActive(false);
@@ -338,5 +356,7 @@ public class DialogueManager : MonoBehaviour
     {
         this.gameObject.SetActive(true);
     }
+    #endregion
+    
     #endregion
 }

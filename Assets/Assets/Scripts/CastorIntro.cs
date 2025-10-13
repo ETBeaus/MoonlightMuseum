@@ -3,12 +3,15 @@ using UnityEngine;
 public class CastorIntro : MonoBehaviour
 {
     public ViewManager ViewManager;
-    private DialogueManager _DialogueManager;
+
+
+    private DialogueManager _dialogueManager;
 
     void Start()
     {
-        _DialogueManager = GetComponent<DialogueManager>();
-        _DialogueManager.StartDialogue();
+        //Force starts the Intro dialogue and disables player input
+        _dialogueManager = GetComponent<DialogueManager>();
+        _dialogueManager.StartDialogue();
         ViewManager.ToggleActiveButtons();
     }
 }

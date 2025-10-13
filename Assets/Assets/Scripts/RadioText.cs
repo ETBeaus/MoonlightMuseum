@@ -9,19 +9,23 @@ public class RadioText : MonoBehaviour
 
     private DialogueManager _dialogueManager;
 
-    void Start()
+    private void Start()
     {
         _dialogueManager = GetComponent<DialogueManager>();
     }
 
-    void Update()
+    private void Update()
     {
+        //If I had to redo that, I'd clearly use a delegate here instead of checking that every frame...!
         if (AudioManager.ChangedSong)
         {
             ChangeSongReactionLine();
         }
     }
 
+    /// <summary>
+    /// Changes the song reaction line depending on the name of the currently played song.
+    /// </summary>
     private void ChangeSongReactionLine()
     {
         if (_dialogueManager.SO_DialogueEvents.Count > 1)
@@ -53,7 +57,7 @@ public class RadioText : MonoBehaviour
         {
             _dialogueManager.SO_DialogueEvents.Add(RadioReactionLines[4]);
         }
-        
+
         if (AudioManager.CurrentRadioSong.name == "06_Michael Mitchell")
         {
             _dialogueManager.SO_DialogueEvents.Add(RadioReactionLines[5]);

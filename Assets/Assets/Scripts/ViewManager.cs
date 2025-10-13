@@ -6,13 +6,17 @@ using UnityEngine.UIElements;
 
 public class ViewManager : MonoBehaviour
 {
+    #region Public Fields
+    //References
     public List<Texture2D> Views;
     public List<GameObject> ButtonGroups;
     public RawImage BackgroundImage;
     public CanvasGroup FadePanel;
 
     public float FadeSpeed = 3f;
+    #endregion
 
+    #region Private Fields
     private bool _isChangingBackground = false;
     private bool _isFadingOut = false;
     private bool _isFadingIn = false;
@@ -26,22 +30,23 @@ public class ViewManager : MonoBehaviour
     private int _currentViewButtonsIndex = 0;
     private int _nextViewButtonsIndex;
 
-	public MapLoader _mapLoader;
-	
-	// NOTE: **
-	// For use in test scene
-	public void SetViewId(int id) 
-	{ 
-		_currentViewIndex = id;
-		BackgroundImage.texture = Views[id];
-	}
+    public MapLoader _mapLoader;
+    #endregion
 
-	public int GetViewId() 
-	{
-		return _currentViewIndex;
-	}
+    // NOTE: **
+    // For use in test scene
+    public void SetViewId(int id)
+    {
+        _currentViewIndex = id;
+        BackgroundImage.texture = Views[id];
+    }
 
-    void Update()
+    public int GetViewId()
+    {
+        return _currentViewIndex;
+    }
+
+    private void Update()
     {
         if (_isChangingBackground)
         {
@@ -50,7 +55,11 @@ public class ViewManager : MonoBehaviour
     }
 
     //-------------------------UI OnClick() METHODS--------------------------------
-
+    #region Public Button Methods
+    /// <summary>
+    /// Stores the current view as the previous view and toggles the background change for the next view.
+    /// </summary>
+    /// <param name="nextViewIndex"></param>
     public void ChangeBackgroundButton(int nextViewIndex)
     {
         _previousViewIndex = _currentViewIndex;
@@ -73,6 +82,10 @@ public class ViewManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Stores the current buttons index as the previous buttons index and toggles the next buttons.
+    /// </summary>
+    /// <param name="nextViewButtonsIndex"></param>
     public void EnableNextViewButtons(int nextViewButtonsIndex)
     {
         _previousViewButtonsIndex = _currentViewButtonsIndex;
@@ -80,21 +93,29 @@ public class ViewManager : MonoBehaviour
         _currentViewButtonsIndex = _nextViewButtonsIndex;
     }
 
+    //Was only used in early, early testing.
     public void MiscInteraction(GameObject textToShow)
     {
         textToShow.SetActive(true);
     }
 
+    /// <summary>
+    /// Reverts back to previous views and previous buttons.
+    /// </summary>
     public void WalkBack()
     {
         ToggleActiveButtons();
         ChangeBackgroundButton(_previousViewIndex);
         EnableNextViewButtons(_previousViewButtonsIndex);
     }
-
+    #endregion
 
     //------------------------PRIVATE METHODS---------------------------------
-
+    #region Private Methods
+    /// <summary>
+    /// Fades out, changes background, then fades back in and activates the next buttons.
+    /// </summary>
+    /// <param name="nextViewIndex"></param>
     private void ChangeBackground(int nextViewIndex)
     {
         if (FadePanel.alpha == 0 && _timer == 0)
@@ -102,6 +123,7 @@ public class ViewManager : MonoBehaviour
             _isFadingOut = true;
         }
         _timer += Time.deltaTime;
+        //Actually, more of a fade in, since it's the black background that fades in an out... will name that differently next time!
         if (_isFadingOut == true)
         {
             if (FadePanel.alpha < 1)
@@ -128,11 +150,13 @@ public class ViewManager : MonoBehaviour
 
         if (FadePanel.alpha == 0 && _isFadingIn)
         {
-            ButtonGroups[_nextViewButtonsIndex].SetActive(true); //Activates the UI buttons for next room
+            //Activates the UI buttons for next room
+            ButtonGroups[_nextViewButtonsIndex].SetActive(true);
             _isFadingIn = false;
             _timer = 0;
             _isChangingBackground = false;
         }
         Debug.Log("Entering view" + _currentViewIndex);
     }
+    #endregion
 }
