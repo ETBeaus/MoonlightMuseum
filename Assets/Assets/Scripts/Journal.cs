@@ -26,12 +26,14 @@ public class StickerEntry
 
 public class Journal : MonoBehaviour
 {
-	// Bit field enum for state flags
+	/// <summary>
+	/// Bit field enum for state flags
+	/// </summary>
 	public enum flag : byte {
 		f_show			= 0x01,	// Show journal
 		f_lock			= 0x02,	// Lock journal view
 		f_poem			= 0x04,	// Poem edit mode
-		f_dragsticker 	= 0x08,
+		f_dragsticker 	= 0x08, // Drag a sticker
 		f_dragword  	= 0x10	 
 	}
 
@@ -70,7 +72,6 @@ public class Journal : MonoBehaviour
 	public TextMeshProUGUI CursorText;
 	public List<string> PoemWords;
 
-	private int _draggedPoemWord = -1;
 	private bool _onPoemBG = false;
 
 	private Vector2 _mousePos; 
@@ -112,14 +113,11 @@ public class Journal : MonoBehaviour
 		_button.onClick.AddListener(() => { FlagToggle(flag.f_show); });
 
 		PoemWords = new List<String>();
-		_poemFinal = SetPoemFinal();
 
 		_outline = PoemOutline();
 		_poemTextOriginal = _outline; 
 		PoemTM.text = _poemTextOriginal;		
 		FindBlank();
-
-		//PoemFillCorrect();
     }
 
     void Update()
@@ -182,6 +180,9 @@ public class Journal : MonoBehaviour
 		}
     }
 
+	/// <summary>
+	/// Add a keyword to journal
+	/// </summary>
 	public void AddKeywordEntry(DB_Entry painting) 
 	{
 		// Check if already in journal
@@ -215,7 +216,10 @@ public class Journal : MonoBehaviour
 		_kwTextOriginal = output;
 		KeyWordTM.text = _kwTextOriginal;
 	}
-
+	
+	/// <summary>
+	/// Add a sticker to journal
+	/// </summary>
 	public void AddStickerEntry()
 	{
 		sbyte texId = (sbyte)UnityEngine.Random.Range(0, 11);
@@ -348,24 +352,9 @@ public class Journal : MonoBehaviour
 		gm.HasCompletedPoem = true;
 	}
 
-	private string[] SetPoemFinal()
-	{
-		return new string[] {
-			"Trees of Green and Blue sky, Where have we been, you and I?\n",
-			"Coast and sea, drifts of snow white, We didn't come between what happened out of sight.\n",
-			"This is our land, but it's always been theirs, too, Outstretch your hand, these repairs are past due.\n",
-			"When rivers are dried, and the needles have fell, Who will cry, and who will say \"\"oh, well.\"\"\n",
-			"When forests are burnt, and species become myth, Those with backs turned with bills in their fist,\n",
-			"Will stand in the ashes, with the world turned to profit, And the masses all know that this was it.\n",
-			"But it doesn't have to be this way, you see, It's not too late for us to succeed.\n",
-			"In saving the rivers, the sea and the beasts, In keeping money from growing on trees.\n",
-			"You may not realize, but we all hold a spark, We can capsize this future which all seems so dark.\n",
-			"Even we baby beavers can make a change, in this tapestry we weave here, in the digital age.\n",
-			"\"\"What can we do?\"\" so say we all, Learn, pursue, speak up when you can, for no voice is too small.\n",
-			"This is my land, and yours too, and when we stand together, there's nothing we can't do.\n"
-		};	
-	}
-
+	/// <summary>
+	/// Returns poem strings without user input, no words added 
+	/// </summary>
 	private String PoemOutline()
 	{
 		return (
@@ -384,6 +373,9 @@ public class Journal : MonoBehaviour
 	   	);
 	}
 
+	/// <summary>
+	/// Find indices of blank words in poem
+	/// </summary>
 	private void FindBlank()
 	{
 		string poem = PoemOutline(), blank = "-----";
@@ -394,19 +386,6 @@ public class Journal : MonoBehaviour
 			blankWordIds[count++] = id;
 			id += blank.Length;
 		}
-
-		/*
-		char[] chars = _outline.ToCharArray();
-		for(int i = 0; i < count; i++)
-		{
-			chars[blankWordIds[i]] = '*'; 
-			chars[blankWordIds[i]+blank.Length] = '*';
-		}
-
-		_outline = chars.ArrayToString();
-		_poemTextOriginal = _outline;
-		PoemTM.text = _poemTextOriginal;
-		*/
 	}
 	
 	private void PoemUpdate()
@@ -455,6 +434,9 @@ public class Journal : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Apply rich text formating to poem
+	/// </summary>
 	void PoemTextFormatApply(int startId, int endId, string tagOpen, string tagClose)
 	{
 		if(_poemTextOriginal == null || startId < 0 || endId >= _poemTextOriginal.Length) return;
@@ -473,13 +455,15 @@ public class Journal : MonoBehaviour
 		PoemTM.text = formatted;
 	}
 
+	/// <summary>
+	/// Add a keyword to poem
+	/// </summary>
 	void AddToPoem(string word, int autoId)
 	{
 		if(autoId == -1 && (_blankHoverCurr < 0 || _blankHoverCurr >= blankWordIds.Length)) return;
 		if(PoemWords.Contains(word) || word == String.Empty) return;
 		PoemWords.Add(word);
 
-		//int id = blankWordIds[_blankHoverCurr];
 		int id = blankWordIds[(autoId == -1) ? _blankHoverCurr : autoId];
 		int len = "-----".Length;
 
@@ -494,6 +478,10 @@ public class Journal : MonoBehaviour
 		_outline = _poemTextOriginal;
 	}
 	
+	/// <summary>
+	/// For testing if win condition is working
+	/// fills poem with correct words
+	/// </summary>
 	void PoemFillCorrect()	
 	{
 		for(int i = 0; i < _correctKeywords.Length; i++)

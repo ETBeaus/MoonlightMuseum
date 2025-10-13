@@ -20,9 +20,6 @@ public class Handler : MonoBehaviour
 
 	public TextMeshProUGUI _tm;
 	public Canvas canvas;
-
-	public Button btn_Prev;
-	public Button btn_Next;
 	
     void Start()
     {
@@ -32,10 +29,6 @@ public class Handler : MonoBehaviour
 
 		_tm = GetComponentInChildren<TextMeshProUGUI>();
 		_wordInspect.textMesh = _tm;
-
-		// *note: 
-		// Set in editor, this is broken?
-		//canvas = GetComponentInChildren<Canvas>();
     }
 
     void Update()
@@ -58,7 +51,6 @@ public class Handler : MonoBehaviour
 			if(prevViewId != currViewId)
 			{
 				PaintingTextInit();
-				Debug.Log($"painting id: {paintingId}");
 			}
 		}
 		else if(_wordInspect.inspectActive)
@@ -67,6 +59,9 @@ public class Handler : MonoBehaviour
 		}
     }
 
+	/// <summary>
+	/// Open painting description
+	/// </summary>
 	public void PaintingTextInit()
 	{
 		canvas.enabled = true;
@@ -78,11 +73,13 @@ public class Handler : MonoBehaviour
 		_tm.text = _paintingData.dbEntries[paintingId].description;
 
 		paintingViewActive = true;
-		//_tm.pageToDisplay = 0;
 		
 		_wordInspect.OnShow();
 	}
 
+	/// <summary>	
+	/// Close painting description
+	/// </summary>
 	public void PaintingTextClose()
 	{
 		canvas.enabled = false;
@@ -90,12 +87,6 @@ public class Handler : MonoBehaviour
 		_tm.enabled = false;
 
 		paintingViewActive = false;
-	}
-
-	public void CyclePage(sbyte dir) 	
-	{
-		//if(!(_tm.pageToDisplay + dir > -1 && _tm.pageToDisplay < _tm.GetTextInfo(_tm.text).pageCount - 1)) return;
-		//_tm.pageToDisplay += dir;
 	}
 }
 

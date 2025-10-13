@@ -94,6 +94,11 @@ public class WordInspect : MonoBehaviour
 		}
     }
 
+	/// <summary>
+	/// Apply rich text formatting 
+	/// from char index startId to endId
+	/// with tags tagOpen and tagClose
+	/// </summary>
 	void FormatApply(int startId, int endId, string tagOpen, string tagClose)
 	{
 		if(textOriginal == null || startId < 0 || endId >= textOriginal.Length) return;
@@ -112,6 +117,9 @@ public class WordInspect : MonoBehaviour
 		textMesh.text = formatted;
 	}
 
+	/// <summary>
+	/// Clear text formatting
+	/// </summary>
 	void FormatReset()
 	{
 		if(textOriginal == null) return; 
