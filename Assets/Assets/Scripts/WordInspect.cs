@@ -8,12 +8,12 @@ public class WordInspect : MonoBehaviour
 	private PaintingData _db;
 	private Journal _journal;
 
-	public int _currPainting;
+	private int _currPainting;
 
 	public bool inspectActive = false;
 
-	public bool _keywordHovered; 
-	public int _hoveredId;
+	private bool _keywordHovered; 
+	private int _hoveredId;
 
 	private bool _keywordHoveredPrevFrame;
 
@@ -25,8 +25,8 @@ public class WordInspect : MonoBehaviour
 	private int _wordHoverIdCurr;
 	private int _wordHoverIdPrev;
 
-	public string textOriginal;
-	public string textFormatted;
+	public string TextOriginal;
+	public string TextFormatted;
 	
     void Start()
     {
@@ -63,8 +63,8 @@ public class WordInspect : MonoBehaviour
 				_wordHoverIdCurr < textMesh.textInfo.wordCount
 		);
 
-		int kwStart = _db.dbEntries[_currPainting].keyStart;
-		int kwEnd   = _db.dbEntries[_currPainting].keyEnd;
+		int kwStart = _db.dbEntries[_currPainting].KeyStart;
+		int kwEnd   = _db.dbEntries[_currPainting].KeyEnd;
 
 		// If hovered character index falls between start and end index of keyword,
 		// count keyword hovered as true
@@ -101,17 +101,17 @@ public class WordInspect : MonoBehaviour
 	/// </summary>
 	void FormatApply(int startId, int endId, string tagOpen, string tagClose)
 	{
-		if(textOriginal == null || startId < 0 || endId >= textOriginal.Length) return;
+		if(TextOriginal == null || startId < 0 || endId >= TextOriginal.Length) return;
 		
-		string textLocal = textOriginal[startId..(endId+1)];
+		string textLocal = TextOriginal[startId..(endId+1)];
 		string formatted = String.Empty;
 
 		formatted = (
-			textOriginal[0..startId] +
+			TextOriginal[0..startId] +
 			tagOpen +
 			textLocal +
 			tagClose + 
-			textOriginal[(endId+1)..]
+			TextOriginal[(endId+1)..]
 		);
 
 		textMesh.text = formatted;
@@ -122,10 +122,10 @@ public class WordInspect : MonoBehaviour
 	/// </summary>
 	void FormatReset()
 	{
-		if(textOriginal == null) return; 
-		textMesh.text = textOriginal;
+		if(TextOriginal == null) return; 
+		textMesh.text = TextOriginal;
 	}
 
-	public void OnShow() { textOriginal = _db.dbEntries[_currPainting].description; }
+	public void OnShow() { TextOriginal = _db.dbEntries[_currPainting].Description; }
 }
 

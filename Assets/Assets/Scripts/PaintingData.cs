@@ -9,24 +9,24 @@ public class DB_Entry
 {
 	// Start and end indices of keyword in description string
 	// Used for word inspection
-    public int keyStart;
-    public int keyEnd;
+    public int KeyStart;
+    public int KeyEnd;
 
-    public string title;
-    public string link;
-    public string description;
-    public string keyWord;
-    public string dataPoint;
-    public string painterName;
+    public string Title;
+    public string Link;
+    public string Description;
+    public string KeyWord;
+    public string DataPoint;
+    public string PainterName;
 
 	public DB_Entry(string _title, string _link, string _description, string _keyword, string _datapoint, string _painterName)
 	{
-		title = _title;
-		link = _link;
-		description = _description;
-		keyWord = _keyword;
-		dataPoint = _datapoint;
-		painterName = _painterName;
+		Title = _title;
+		Link = _link;
+		Description = _description;
+		KeyWord = _keyword;
+		DataPoint = _datapoint;
+		PainterName = _painterName;
 	}
 }
 
@@ -89,7 +89,7 @@ public class PaintingData : MonoBehaviour
 				string title = line[1..braceCloseId];
 
 				// Increment current entry, set title 
-                dbEntries[++currId].title = title;
+                dbEntries[++currId].Title = title;
             }
 
             return;
@@ -104,11 +104,11 @@ public class PaintingData : MonoBehaviour
 		// Set appopriate value
         switch(key)
         {
-            case "link":			entry.link = val;				break;
-            case "desc":			entry.description = val;		break;
-            case "key_word":		entry.keyWord = val;			break;
-            case "data_point": 		entry.dataPoint = val;			break;
-            case "painter_name": 	entry.painterName = val;		break;
+            case "link":			entry.Link = val;				break;
+            case "desc":			entry.Description = val;		break;
+            case "key_word":		entry.KeyWord = val;			break;
+            case "data_point": 		entry.DataPoint = val;			break;
+            case "painter_name": 	entry.PainterName = val;		break;
         }
     }
 
@@ -120,18 +120,18 @@ public class PaintingData : MonoBehaviour
             DB_Entry entry = dbEntries[i];
 
 			// Iterate through description string
-			for(int j = 0; j < entry.description.Length; j++) {
+			for(int j = 0; j < entry.Description.Length; j++) {
 				// Early out if remaining chars too small
-				if(j + entry.keyWord.Length > entry.description.Length) break;	
+				if(j + entry.KeyWord.Length > entry.Description.Length) break;	
 
 				// Get string portion 
-				string str = entry.description[j..(j+entry.keyWord.Length)].ToLower();
+				string str = entry.Description[j..(j+entry.KeyWord.Length)].ToLower();
 
 				// If portion + keyword are equal, set key indices
-				if(str.Equals(entry.keyWord.ToLower()))
+				if(str.Equals(entry.KeyWord.ToLower()))
 				{
-					entry.keyStart = j;
-					entry.keyEnd = j + entry.keyWord.Length;
+					entry.KeyStart = j;
+					entry.KeyEnd = j + entry.KeyWord.Length;
 				}
 			}
         }

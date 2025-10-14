@@ -11,12 +11,12 @@ public class Handler : MonoBehaviour
 	private int _paintingCount = 12;
 	private int _paintingsStartId = 65; 
 
-	public bool diagActive = false;
-	public bool paintingViewActive;
-	public int prevViewId;
-	public int currViewId;
+	public bool DiagActive = false;
+	public bool PaintingViewActive;
+	public int PrevViewId;
+	public int CurrviewId;
 
-	public int paintingId;
+	public int PaintingId;
 
 	public TextMeshProUGUI _tm;
 	public Canvas canvas;
@@ -33,22 +33,22 @@ public class Handler : MonoBehaviour
 
     void Update()
     {
-		if(diagActive) 
+		if(DiagActive) 
 		{
-			if(paintingViewActive) PaintingTextClose();
-			paintingViewActive = false;
+			if(PaintingViewActive) PaintingTextClose();
+			PaintingViewActive = false;
 			return;
 		}
 
-		prevViewId = currViewId;
-		currViewId = _viewManager.GetViewId();
+		PrevViewId = CurrviewId;
+		CurrviewId = _viewManager.GetViewId();
 
-		paintingId = currViewId - _paintingsStartId;
-		paintingViewActive = (paintingId >= 0 && paintingId < _paintingCount);
+		PaintingId = CurrviewId - _paintingsStartId;
+		PaintingViewActive = (PaintingId >= 0 && PaintingId < _paintingCount);
 
-		if(paintingViewActive)		
+		if(PaintingViewActive)		
 		{
-			if(prevViewId != currViewId)
+			if(PrevViewId != CurrviewId)
 			{
 				PaintingTextInit();
 			}
@@ -66,13 +66,13 @@ public class Handler : MonoBehaviour
 	{
 		canvas.enabled = true;
 
-		_wordInspect._currPainting = paintingId; 
+		_wordInspect._currPainting = PaintingId; 
 		_wordInspect.inspectActive = true;
 
 		_tm.enabled = true;
-		_tm.text = _paintingData.dbEntries[paintingId].description;
+		_tm.text = _paintingData.dbEntries[PaintingId].description;
 
-		paintingViewActive = true;
+		PaintingViewActive = true;
 		
 		_wordInspect.OnShow();
 	}
@@ -86,7 +86,7 @@ public class Handler : MonoBehaviour
 		_wordInspect.inspectActive = false;
 		_tm.enabled = false;
 
-		paintingViewActive = false;
+		PaintingViewActive = false;
 	}
 }
 

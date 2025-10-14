@@ -11,23 +11,23 @@ public class WordEntry
 	// note:
 	// Currently, class only stores painting entry for showing keyword text...
 	// More could be added later, different colors, pictures, etc.
-	public DB_Entry painting;
-	public WordEntry(DB_Entry _painting) { painting = _painting; }
+	public DB_Entry Painting;
+	public WordEntry(DB_Entry _painting) { Painting = _painting; }
 }
 
 [Serializable]
 public class StickerEntry
 {
-	public byte texId;
-	public Vector2 position;
+	public byte TexId;
+	public Vector2 Position;
 
-	public StickerEntry(byte _texId, Vector2 _pos) { texId = _texId; position = _pos; }
+	public StickerEntry(byte _texId, Vector2 _pos) { TexId = _texId; Position = _pos; }
 }
 
 public class Journal : MonoBehaviour
 {
 	/// <summary>
-	/// Bit field enum for state flags
+	/// Bit field enum for state Flags
 	/// </summary>
 	public enum flag : byte {
 		f_show			= 0x01,	// Show journal
@@ -37,15 +37,15 @@ public class Journal : MonoBehaviour
 		f_dragword  	= 0x10	 
 	}
 
-	// All flags off on start
-	public byte flags = (0);
+	// All Flags off on start
+	public byte Flags = (0);
 
 	private Canvas _canvas; 
 	private PaintingData _paintingData;
 	private Handler _handler;
 
-	public WordEntry[] wordEntries;
-	public StickerEntry[] stickerEntries;
+	public WordEntry[] WordEntries;
+	public StickerEntry[] StickerEntries;
 
 	private byte _wordCollCount = 0;
 	private byte _stickerCollCount = 0;
@@ -53,8 +53,6 @@ public class Journal : MonoBehaviour
 	private Button _button;  
 
 	public Texture2D[] stickerTextures = new Texture2D[12];
-	public Texture2D stickerBG;
-	public Image Img_stickerBG;
 
 	public GameObject StickerBgObject;
 	public GameObject StickerSpritePrefab;
@@ -106,8 +104,8 @@ public class Journal : MonoBehaviour
 		_paintingData = GameObject.Find("Paintings").GetComponent<PaintingData>();
 		_handler = GameObject.Find("HandlerObject").GetComponent<Handler>();
 
-		wordEntries = new WordEntry[_paintingData.dbEntries.Length];	
-		stickerEntries = new StickerEntry[_paintingData.dbEntries.Length + 1];
+		WordEntries = new WordEntry[_paintingData.dbEntries.Length];	
+		StickerEntries = new StickerEntry[_paintingData.dbEntries.Length + 1];
 
 		_button = GameObject.Find("JournalButton").GetComponent<Button>();
 		_button.onClick.AddListener(() => { FlagToggle(flag.f_show); });
@@ -160,9 +158,9 @@ public class Journal : MonoBehaviour
 		{
 			FlagSetOn(flag.f_dragword);
 
-			if(CursorText.text != wordEntries[_hoveredWordEntryCurr].painting.keyWord)
+			if(CursorText.text != WordEntries[_hoveredWordEntryCurr].Painting.KeyWord)
 			{
-				CursorText.text = wordEntries[_hoveredWordEntryCurr].painting.keyWord;
+				CursorText.text = WordEntries[_hoveredWordEntryCurr].Painting.KeyWord;
 				_clickedKeyword = _hoveredWordEntryCurr;
 			}
 
@@ -189,12 +187,12 @@ public class Journal : MonoBehaviour
 		for(byte i = 0; i < _wordCollCount; i++)
 		{
 			// Don't add entry if it exists already
-			bool skipAdd = (wordEntries[i].painting.keyWord == painting.keyWord);	
+			bool skipAdd = (WordEntries[i].Painting.KeyWord == painting.KeyWord);	
 			if(skipAdd) return;
 		}
 
 		// Add entry, increment collected count
-		wordEntries[_wordCollCount++] = new WordEntry(painting);
+		WordEntries[_wordCollCount++] = new WordEntry(painting);
 
 		// Update text mesh
 		UpdateKeywordText();
@@ -210,7 +208,7 @@ public class Journal : MonoBehaviour
 
 		// For each journal entry, print keyword + newline char
 		for(byte i = 0; i < _wordCollCount; i++)
-			output += " - " + wordEntries[i].painting.keyWord + "\n";
+			output += " - " + WordEntries[i].Painting.KeyWord + "\n";
 
 		// Overwrite tm text with output string
 		_kwTextOriginal = output;
@@ -222,12 +220,12 @@ public class Journal : MonoBehaviour
 	/// </summary>
 	public void AddStickerEntry()
 	{
-		sbyte texId = (sbyte)UnityEngine.Random.Range(0, 11);
+		sbyte TexId = (sbyte)UnityEngine.Random.Range(0, 11);
 		
 		bool texIdFree = true;
 		for(byte i = 0; i < _stickerCollCount; i++)
 		{
-			if(stickerEntries[i].texId == texId)
+			if(StickerEntries[i].TexId == TexId)
 			{
 				texIdFree = false;
 				break;
@@ -236,13 +234,13 @@ public class Journal : MonoBehaviour
 
 		while(!texIdFree)
 		{
-			texId++;
-			if(texId > 11) texId = 0;
+			TexId++;
+			if(TexId > 11) TexId = 0;
 			
 			bool isFree = true;
 			for(byte i = 0; i < _stickerCollCount; i++)
 			{
-				if(texId == stickerEntries[i].texId)
+				if(TexId == StickerEntries[i].TexId)
 				{
 					isFree = false;
 				}
@@ -259,13 +257,13 @@ public class Journal : MonoBehaviour
 			UnityEngine.Random.Range(80, 200 - 80),
 			UnityEngine.Random.Range(80, 500 - 80));
 
-		stickerEntries[_stickerCollCount++] = new StickerEntry((byte)texId, pos);
+		StickerEntries[_stickerCollCount++] = new StickerEntry((byte)TexId, pos);
 		
 		GameObject newSticker = Instantiate(StickerSpritePrefab, StickerBgObject.transform);
 		newSticker.transform.localPosition = pos;
 		newSticker.transform.localScale = Vector3.one;
 
-		Texture2D tex = stickerTextures[texId];
+		Texture2D tex = stickerTextures[TexId];
 		
 		Sprite newSprite = Sprite.Create(
 			tex,
@@ -307,21 +305,21 @@ public class Journal : MonoBehaviour
 	//
 	// Check if flag is on/off 
 	public bool FlagCheck(Journal.flag flag) 	
-	{ return ((flags & (byte)flag) != 0); }
+	{ return ((Flags & (byte)flag) != 0); }
 
 	// Set flag to on
 	public void FlagSetOn(Journal.flag flag) 	
-	{ flags |= (byte)flag; }
+	{ Flags |= (byte)flag; }
 
 	// Set flag to off
 	public void FlagSetOff(Journal.flag flag) 	
-	{ flags &= (byte)~flag; }
+	{ Flags &= (byte)~flag; }
 
 	// Toggle flag on/off
 	public void FlagToggle(Journal.flag flag)	
 	{ 
 		// Invert flag value
-		flags ^= (byte)flag;
+		Flags ^= (byte)flag;
 
 		// Check win condition when "show" flag gets set to off
 		if(flag == flag.f_show && !FlagCheck(flag.f_show)) TestEndScene();
