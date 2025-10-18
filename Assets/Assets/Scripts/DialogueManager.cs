@@ -58,7 +58,7 @@ public class DialogueManager : MonoBehaviour
             _journal = GameObject.Find("HandlerObject").GetComponent<Journal>();
             _handler = GameObject.Find("HandlerObject").GetComponent<Handler>();
 
-            _handler.diagActive = true;
+            _handler.DiagActive = true;
         }
     }
 
@@ -158,7 +158,7 @@ public class DialogueManager : MonoBehaviour
 
         if (!IsForGym)
         {
-            _handler.diagActive = false;
+            _handler.DiagActive = false;
         }
 
         if (SO_DialogueEvents[_currentDialogueIndex].AnswerChoices.Count > 0)

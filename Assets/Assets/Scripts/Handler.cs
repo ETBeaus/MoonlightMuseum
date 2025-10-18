@@ -66,11 +66,11 @@ public class Handler : MonoBehaviour
 	{
 		canvas.enabled = true;
 
-		_wordInspect._currPainting = PaintingId; 
+		_wordInspect.CurrPainting = PaintingId; 
 		_wordInspect.inspectActive = true;
 
 		_tm.enabled = true;
-		_tm.text = _paintingData.dbEntries[PaintingId].description;
+		_tm.text = _paintingData.dbEntries[PaintingId].Description;
 
 		PaintingViewActive = true;
 		

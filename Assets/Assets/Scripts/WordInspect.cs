@@ -8,7 +8,7 @@ public class WordInspect : MonoBehaviour
 	private PaintingData _db;
 	private Journal _journal;
 
-	private int _currPainting;
+	public int CurrPainting;
 
 	public bool inspectActive = false;
 
@@ -63,8 +63,8 @@ public class WordInspect : MonoBehaviour
 				_wordHoverIdCurr < textMesh.textInfo.wordCount
 		);
 
-		int kwStart = _db.dbEntries[_currPainting].KeyStart;
-		int kwEnd   = _db.dbEntries[_currPainting].KeyEnd;
+		int kwStart = _db.dbEntries[CurrPainting].KeyStart;
+		int kwEnd   = _db.dbEntries[CurrPainting].KeyEnd;
 
 		// If hovered character index falls between start and end index of keyword,
 		// count keyword hovered as true
@@ -75,7 +75,7 @@ public class WordInspect : MonoBehaviour
 
 		// Add keyword to journal if clicked
 		if(_keywordHovered && click)
-			_journal.AddKeywordEntry(_db.dbEntries[_currPainting]);
+			_journal.AddKeywordEntry(_db.dbEntries[CurrPainting]);
 
 		if(updateFormat || (_keywordHovered && !_keywordHoveredPrevFrame))
 		{
@@ -126,6 +126,6 @@ public class WordInspect : MonoBehaviour
 		textMesh.text = TextOriginal;
 	}
 
-	public void OnShow() { TextOriginal = _db.dbEntries[_currPainting].Description; }
+	public void OnShow() { TextOriginal = _db.dbEntries[CurrPainting].Description; }
 }
 
