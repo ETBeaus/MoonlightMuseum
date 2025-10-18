@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Cutscences and menu handlers">
+    <Position X="3.201" Y="1.854" Height="0.291" Width="2.065" />
+  </Comment>
+  <Comment CommentText="Radio System">
+    <Position X="3.657" Y="8.533" Height="0.291" Width="1.181" />
+  </Comment>
+  <Comment CommentText="Interactive Text">
+    <Position X="11.774" Y="1.232" Height="0.291" Width="1.421" />
+  </Comment>
+  <Comment CommentText="Data References">
+    <Position X="22.826" Y="13.742" Height="0.291" Width="1.421" />
+  </Comment>
+  <Comment CommentText="Dialogue System">
+    <Position X="23.138" Y="1.186" Height="0.291" Width="1.421" />
+  </Comment>
+  <Comment CommentText="Movement System">
+    <Position X="29.573" Y="1.196" Height="0.291" Width="1.421" />
+  </Comment>
+  <Class Name="AudioManager">
+    <Position X="2.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgQAAABCAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Assets\Scripts\AudioManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CastorIntro">
+    <Position X="1.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACACAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Assets\Scripts\CastorIntro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogueManager">
+    <Position X="22" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgADABQSgKAASGhCAAkMAACAGAgADIABIABEQqIAEDg=</HashCode>
+      <FileName>Assets\Assets\Scripts\DialogueManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EndCutscene">
+    <Position X="3.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAEAAAAAACAA=</HashCode>
+      <FileName>Assets\Assets\Scripts\EndCutscene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager">
+    <Position X="3.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Handler">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASFEAAAACAACAAAAIAAAAgCAoAAAAAABAAAIAAEAAA=</HashCode>
+      <FileName>Assets\Assets\Scripts\Handler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WordEntry">
+    <Position X="15.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Assets\Scripts\Journal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StickerEntry">
+    <Position X="15.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Assets\Scripts\Journal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Journal">
+    <Position X="13" Y="7.25" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Journal.flag" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Assets\Scripts\Journal.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AG0BlkQBSKAIAMgGAJMAlACACJACAIgEsMKUIRIFIAI=</HashCode>
+      <FileName>Assets\Assets\Scripts\Journal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenu">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Assets\Scripts\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DB_Entry">
+    <Position X="23.75" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAGAAAIAAAAABAAAAAAAAAAACQAAAIAA=</HashCode>
+      <FileName>Assets\Assets\Scripts\PaintingData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PaintingData">
+    <Position X="21.75" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAIAAACAAAAAACAAAAAAAAAAAABEAAgAAAAAAAAA=</HashCode>
+      <FileName>Assets\Assets\Scripts\PaintingData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RadioText">
+    <Position X="4.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAIAAAAAAAEAAAAAAAAAAAOAAAA=</HashCode>
+      <FileName>Assets\Assets\Scripts\RadioText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SO_AnswersTemplate">
+    <Position X="24.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIgAgAAA=</HashCode>
+      <FileName>Assets\Assets\Scripts\SO_AnswersTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SO_DialogueTemplate">
+    <Position X="24.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAgAEAAQAAAAAAgAAAAAACBgAAQAAAAAAAg=</HashCode>
+      <FileName>Assets\Assets\Scripts\SO_DialogueTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ViewManager">
+    <Position X="29.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgSAIgQACAQgAABQIAEAIABAECAgIAAAAAACAIgACAE=</HashCode>
+      <FileName>Assets\Assets\Scripts\ViewManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WordInspect">
+    <Position X="10.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAYCgAAAACAAAgAAIAAaAEUAAAAAAAEAAAAEACQEAAA=</HashCode>
+      <FileName>Assets\Assets\Scripts\WordInspect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
